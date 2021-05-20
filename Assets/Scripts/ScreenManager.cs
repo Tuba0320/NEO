@@ -17,7 +17,7 @@ public class ScreenManager : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        if (SceneManager.GetActiveScene().name == "MenuScene" || SceneManager.GetActiveScene().name == "Config" || SceneManager.GetActiveScene().name == "Extra" || SceneManager.GetActiveScene().name == "ScoreView" || SceneManager.GetActiveScene().name == "LogIn" || SceneManager.GetActiveScene().name == "Score" || SceneManager.GetActiveScene().name == "Ending")
+        if (SceneManager.GetActiveScene().name == "MenuScene" || SceneManager.GetActiveScene().name == "Config" || SceneManager.GetActiveScene().name == "Extra" || SceneManager.GetActiveScene().name == "ScoreView" || SceneManager.GetActiveScene().name == "LogIn" || SceneManager.GetActiveScene().name == "Score" || SceneManager.GetActiveScene().name == "Ending" || SceneManager.GetActiveScene().name == "Extra 1")
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;

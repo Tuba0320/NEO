@@ -17,6 +17,10 @@ public class MySceneManager : MonoBehaviour
     StageManager stage;
     RestManager restM;
 
+    float cnt_t = 0f;
+    bool flag_t = false;
+    int cnt_s = 0;
+
     void Start()
     {
         stage = GetComponent<StageManager>();
@@ -31,18 +35,31 @@ public class MySceneManager : MonoBehaviour
 
     void Update()
     {
-        GoLoginScene();
+        GoMenuScene();
         View();
         cnt += Time.deltaTime;
+
+        if (flag_t)
+        {
+            cnt_t += Time.deltaTime;
+        }
     }
 
-    public void GoLoginScene()
+    public void GoMenuScene()
     {
-        if (Input.GetMouseButton(0) && SceneManager.GetActiveScene().name == "TitleScene")
+        if (Input.GetMouseButton(0) && SceneManager.GetActiveScene().name == "TitleScene" || flag_t)
         {
-            sm.StartFade();
-            
-            SceneManager.LoadScene("Login");
+            flag_t = true;
+            if (cnt_s == 0)
+            {
+                sm.StartFade();
+                cnt_s++;
+            }
+            if (cnt_t < 2)
+            {
+                return;
+            }
+            SceneManager.LoadScene("MenuScene");
         }
     }
 
