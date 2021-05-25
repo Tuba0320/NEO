@@ -13,37 +13,22 @@ public class EnemyMuzzleController : MonoBehaviour
     [SerializeField]
     int bulletLimit = 5;
     float timeCount;
-    GameObject[] bullets = new GameObject[100];
-    int n = 0;
+    
 
     void Update()
     {
         timeCount += Time.deltaTime;
-        if (timeCount >= shotInterval && n < bulletLimit)
+        if (timeCount >= shotInterval)
         {
             timeCount = 0;
             if (Bflag)
             {
-                bullets[n] = Instantiate(enemyBulletPrefab, transform.position, Quaternion.identity, transform);
-                n++;
+                Instantiate(enemyBulletPrefab, transform.position, Quaternion.identity,transform);
             }
             else
             {
                 Instantiate(enemyBulletPrefab, transform.position, transform.rotation);
             }
-        }
-    }
-
-    public void subNum()
-    {
-        n--;
-    }
-
-    public void EraseAll()
-    {
-        foreach (GameObject bullet in bullets)
-        {
-            Destroy(bullet);
         }
     }
 }

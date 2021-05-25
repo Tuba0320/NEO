@@ -20,11 +20,23 @@ public class EnemyController : MonoBehaviour
     float cnt;
     float v_cnt;
 
+    [SerializeField]
+    GameObject Item = null;
+    float odd;
+
+    Rigidbody rb;
+
     void Start()
     {
+        if (isRotate)
+        {
+            Destroy(gameObject, 15);
+        }
+        Destroy(gameObject, 60);
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         target = GameObject.FindGameObjectWithTag("Player");
         emc = transform.Find("EnemyMuzzleBtype").GetComponent<EnemyMuzzleController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -47,7 +59,7 @@ public class EnemyController : MonoBehaviour
     {
         if (cl.gameObject.tag == "Player")
         {
-            cl.GetComponent<PlayerController>().ReceveDamage(5);
+            cl.GetComponent<PlayerController>().ReceveDamage(3);
             Destroy(gameObject);
         }
     }
@@ -57,14 +69,25 @@ public class EnemyController : MonoBehaviour
         if (v_cnt >= 0.5) 
         {
             v_cnt = 0;
-            sound.PlaySeByName("robo02");
+            sound.PlaySeByName("ロボットを殴る1");
         }
         enemyHP -= damageSorce;
         Debug.Log(damageSorce + "ダメージ与えました");
         if (enemyHP <= 0)
         {
             Instantiate(particle, this.transform.position, Quaternion.identity);
+            odd = Random.Range(1f, 100f);
+            if (odd < 50 && Item != null)
+            {
+                Instantiate(Item, this.transform.position, Quaternion.identity);
+            }
+            sound.PlaySeByName("爆発2");
             Destroy(this.gameObject);
         }
+    }
+
+    public void TheDead()
+    {
+        Destroy(this.gameObject);
     }
 }

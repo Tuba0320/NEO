@@ -9,10 +9,16 @@ public class PlayerBulletController : MonoBehaviour
     Image sight;
     float rayLength = 200;
     RaycastHit hitObject;
-    int damageSorce = 15;
+    int damageSorce = 25;
     LineRenderer lr;
 
+    [SerializeField]
+    GameObject bullet;
+
     PlayerController pc;
+    float cnt = 0f;
+    [SerializeField]
+    float interval = 2f;
 
     void Start()
     {
@@ -23,6 +29,13 @@ public class PlayerBulletController : MonoBehaviour
 
     void Update()
     {
+        cnt += Time.deltaTime;
+        if (Input.GetMouseButton(2) && interval < cnt) 
+        {
+            cnt = 0;
+            Instantiate(bullet, transform.position, transform.rotation, transform);
+        }
+
         if (pc.GetStopFlag())
         {
             return;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class StageManager : MonoBehaviour
@@ -10,8 +11,23 @@ public class StageManager : MonoBehaviour
     static bool[] isStageClear = new bool[stageNum];
     MySceneManager sceneM;
 
+    [SerializeField]
+    Text text = null;
+
     void Start()
     {
+        int cnt = 0;
+        foreach(bool flag in isStageClear){
+            if (text == null)
+            {
+                break;
+            }
+            if (flag && cnt > 0)
+            {
+                text.enabled = false;
+            }
+            cnt++;
+        }
         isStageClear[0] = true;
         sceneM = GetComponent<MySceneManager>();
 

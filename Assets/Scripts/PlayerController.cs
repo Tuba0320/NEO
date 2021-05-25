@@ -33,6 +33,16 @@ public class PlayerController : MonoBehaviour
     public bool stopFlag = false;
     public bool antiFlag = false;
 
+    [SerializeField]
+    GameObject[] muzzles;
+
+    [SerializeField]
+    float hPIntervel = 3f;
+    float cnt_in = 0f;
+
+    float interval_se = 28f;
+    float cnt_se = 0f;
+
     void Start()
     {
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
@@ -41,17 +51,31 @@ public class PlayerController : MonoBehaviour
         camera = Camera.main.transform;
         rotationXcamera = camera.localEulerAngles.x;
         pos = camera.localPosition;
+        sound.PlaySeByName("戦闘機内（飛行中）");
     }
 
 
     void Update()
     {
+        cnt_se += Time.deltaTime;
         v_cnt += Time.deltaTime;
+        cnt_in += Time.deltaTime;
         movePermission();
+        if (interval_se >= cnt_se)
+        {
+            return;
+        }
+        if (stopFlag)
+        {
+            sound.StopSe();
+        }
+        cnt_se = 0;
+        sound.PlaySeByName("戦闘機内（飛行中）");
     }
     
     void FixedUpdate()
     {
+        Hpbar();
         if (stopFlag)
         {
             rigidbody.velocity = Vector3.zero;
@@ -59,6 +83,15 @@ public class PlayerController : MonoBehaviour
         }
         transform.position += transform.TransformDirection(Vector3.forward * speed);
         moveExcution();
+        if (hPIntervel < cnt_in)
+        {
+            cnt_in = 0;
+            if (playerHp >= 20)
+            {
+                return;
+            }
+            playerHp++;
+        }
     }
     
     void movePermission()
@@ -67,7 +100,6 @@ public class PlayerController : MonoBehaviour
         moveZ = Input.GetAxis("Vertical");
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
-
         if (antiFlag)
         {
             moveX = Input.GetAxis("Vertical") * 100;
@@ -118,7 +150,7 @@ public class PlayerController : MonoBehaviour
             }
 
             rigidbody.MoveRotation(Quaternion.Euler(0.0f, rigidbody.rotation.eulerAngles.y + mouseX * Time.deltaTime * 100.0f * mouseSpeed, 0.0f));
-            rotationXcamera = Mathf.Clamp(rotationXcamera - mouseY * Time.deltaTime * 100.0f * mouseSpeed, -75, 0);
+            rotationXcamera = Mathf.Clamp(rotationXcamera - mouseY * Time.deltaTime * 100.0f * mouseSpeed, -100, 5);
             camera.localEulerAngles = new Vector3(rotationXcamera, 0, 0);
         }
         else
@@ -129,97 +161,193 @@ public class PlayerController : MonoBehaviour
 
     public void ReceveDamage(int damageSorce)
     {
-        if (v_cnt >= 0.5)
+        if (v_cnt >= 0.2)
         {
             v_cnt = 0;
+            playerHp -= damageSorce;
+            StartCoroutine("damageFlashing");
+            StartCoroutine(shakeCamera(duration, magnitude));
             sound.PlaySeByName("othr07");
         }
-        playerHp -= damageSorce;
-        rigidbody.AddForce(-transform.forward * 250f, ForceMode.VelocityChange);
-        StartCoroutine("damageFlashing");
-        StartCoroutine(shakeCamera(duration,magnitude));
+    }
 
+    void Hpbar()
+    {
         if (playerHp <= 19)
         {
             remainingHp.transform.Find("RemainingHp_20").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_20").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 18)
         {
             remainingHp.transform.Find("RemainingHp_19").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_19").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 17)
         {
             remainingHp.transform.Find("RemainingHp_18").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_18").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 16)
         {
             remainingHp.transform.Find("RemainingHp_17").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_17").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 15)
         {
             remainingHp.transform.Find("RemainingHp_16").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_16").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 14)
         {
             remainingHp.transform.Find("RemainingHp_15").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_15").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 13)
         {
             remainingHp.transform.Find("RemainingHp_14").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_14").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 12)
         {
             remainingHp.transform.Find("RemainingHp_13").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_13").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 11)
         {
             remainingHp.transform.Find("RemainingHp_12").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_12").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 10)
         {
             remainingHp.transform.Find("RemainingHp_11").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_11").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 9)
         {
             remainingHp.transform.Find("RemainingHp_10").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_10").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 8)
         {
             remainingHp.transform.Find("RemainingHp_9").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_9").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 7)
         {
             remainingHp.transform.Find("RemainingHp_8").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_8").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 6)
         {
             remainingHp.transform.Find("RemainingHp_7").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_7").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 5)
         {
             remainingHp.transform.Find("RemainingHp_6").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_6").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 4)
         {
             remainingHp.transform.Find("RemainingHp_5").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_5").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 3)
         {
             remainingHp.transform.Find("RemainingHp_4").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_4").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 2)
         {
             remainingHp.transform.Find("RemainingHp_3").gameObject.GetComponent<Image>().color = Color.black;
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_3").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
         if (playerHp <= 1)
         {
             remainingHp.transform.Find("RemainingHp_2").gameObject.GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_2").gameObject.GetComponent<Image>().color = Color.yellow;
         }
         if (playerHp <= 0)
         {
             remainingHp.transform.Find("RemainingHp_1").gameObject.GetComponent<Image>().color = Color.black;
             GameObject.Find("GameManager").GetComponent<RestManager>().subRest();
         }
+        else
+        {
+            remainingHp.transform.Find("RemainingHp_1").gameObject.GetComponent<Image>().color = Color.yellow;
+        }
+    }
+
+    public GameObject[] getMuzzles()
+    {
+        return muzzles;
+    }
+
+    public void setPlayerHp(int num)
+    {
+        if (playerHp + num > 20)
+        {
+            return;
+        }
+        playerHp += num;
     }
 
     IEnumerator damageFlashing()

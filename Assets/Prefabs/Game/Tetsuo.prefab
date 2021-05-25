@@ -344,7 +344,6 @@ GameObject:
   - component: {fileID: 5887633473327866732}
   - component: {fileID: 5222284779322273376}
   - component: {fileID: 1312211968489263754}
-  - component: {fileID: 5865063848795067626}
   m_Layer: 8
   m_Name: MapIcon
   m_TagString: Untagged
@@ -413,19 +412,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5865063848795067626
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050451298761231387}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1052964614646132134
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +973,7 @@ MonoBehaviour:
   isRotate: 0
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
+  Item: {fileID: 0}
 --- !u!1 &4700376187862326659
 GameObject:
   m_ObjectHideFlags: 0

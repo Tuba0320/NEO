@@ -824,7 +824,7 @@ PrefabInstance:
     - target: {fileID: 1745840461946298984, guid: 7df46159ef350f4439e100cf6ab3a17c,
         type: 3}
       propertyPath: m_Text
-      value: "\u25A0\u73FE\u5728\u3001\u97F3\u91CF\u306E\u307F\u8A2D\u5B9A\u53EF\u80FD\u3002\u4ED6\u30AA\u30D7\u30B7\u30E7\u30F3\u306E\u5B9F\u88C5\u3092\u4E88\u5B9A\u4E2D"
+      value: "\u25A0\u73FE\u5728\u3001\u97F3\u91CF\u306E\u307F\u304C\u8A2D\u5B9A\u53EF\u80FD\u3068\u306A\u3063\u3066\u304A\u308A\u307E\u3059\u3002\u8A2D\u5B9A\u306F\u4E0D\u5B9A\u671F\u306B\u8FFD\u52A0\u3059\u308B\u3068\u601D\u3044\u307E\u3059\u3002"
       objectReference: {fileID: 0}
     - target: {fileID: 1745840461946298984, guid: 7df46159ef350f4439e100cf6ab3a17c,
         type: 3}
@@ -832,6 +832,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 53c2a0927fcb3e047b6a366f403e90e3,
         type: 3}
+    - target: {fileID: 1745840461946298986, guid: 7df46159ef350f4439e100cf6ab3a17c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 650
+      objectReference: {fileID: 0}
     - target: {fileID: 1745840461981423325, guid: 7df46159ef350f4439e100cf6ab3a17c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

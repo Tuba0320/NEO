@@ -46,7 +46,7 @@ MonoBehaviour:
   Bflag: 1
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
     type: 3}
-  shotInterval: 6
+  shotInterval: 3
   bulletLimit: 2
 --- !u!1 &4555406299345060503
 GameObject:
@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 4555406299345060500}
   - component: {fileID: 4555406299345060501}
   - component: {fileID: 4555406299345060502}
+  - component: {fileID: 8201070405161086290}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -77,7 +78,7 @@ Transform:
   m_GameObject: {fileID: 4555406299345060503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 30}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 7728429304617656719}
   - {fileID: 1768121685334675080}
@@ -160,11 +161,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47f560bd696b264aa0f4b72a5799b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 200
-  speed: 5
+  enemyHP: 100
+  speed: 1
   isRotate: 0
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
+  Item: {fileID: 803124592413104650, guid: 1b09b85d20109434dbae9f9246623506, type: 3}
+--- !u!54 &8201070405161086290
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4555406299345060503}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4693884826617924002
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,13 +207,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4693884826617924002}
-  m_LocalRotation: {x: -0.04361567, y: 0.013077125, z: 0.0005709598, w: 0.9989627}
-  m_LocalPosition: {x: 1.5, y: 0.5, z: 1}
+  m_LocalRotation: {x: 0.052335404, y: 0.0043572946, z: -0.00022835587, w: 0.9986201}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4555406299345060498}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -5, y: 1.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 6, y: 0.5, z: 0}
 --- !u!114 &913843179450734372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +229,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.25
+  shotInterval: 0.3
   bulletLimit: 1000
 --- !u!1 &6409900728855122826
 GameObject:
@@ -237,13 +255,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6409900728855122826}
-  m_LocalRotation: {x: 0, y: 0.013089582, z: 0, w: 0.99991435}
-  m_LocalPosition: {x: 1.5, y: 0, z: 1}
+  m_LocalRotation: {x: 0.052335404, y: 0.0043572946, z: -0.00022835587, w: 0.9986201}
+  m_LocalPosition: {x: 0.5, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4555406299345060498}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 1.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 6, y: 0.5, z: 0}
 --- !u!114 &5922429986699991678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +277,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.25
+  shotInterval: 0.3
   bulletLimit: 1000
 --- !u!1 &6431568281780725661
 GameObject:
@@ -285,13 +303,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6431568281780725661}
-  m_LocalRotation: {x: -0.04361567, y: -0.013077125, z: -0.0005709598, w: 0.9989627}
-  m_LocalPosition: {x: -1.5, y: 0.5, z: 1}
+  m_LocalRotation: {x: 0.052335404, y: -0.004357388, z: 0.00022836078, w: 0.9986201}
+  m_LocalPosition: {x: -0.5, y: 0.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4555406299345060498}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -5, y: -1.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 6, y: -0.5, z: 0}
 --- !u!114 &8749258584637216924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +325,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.25
+  shotInterval: 0.3
   bulletLimit: 1000
 --- !u!1 &6500740650536701682
 GameObject:
@@ -333,13 +351,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6500740650536701682}
-  m_LocalRotation: {x: 0, y: -0.013089582, z: 0, w: 0.99991435}
-  m_LocalPosition: {x: -1.5, y: 0, z: 1}
+  m_LocalRotation: {x: 0.052335404, y: -0.004357388, z: 0.00022836078, w: 0.9986201}
+  m_LocalPosition: {x: -0.5, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4555406299345060498}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: -1.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 6, y: -0.5, z: 0}
 --- !u!114 &3400857474444232656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +373,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.25
+  shotInterval: 0.3
   bulletLimit: 1000
 --- !u!1 &8187278637971399706
 GameObject:

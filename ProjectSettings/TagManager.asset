@@ -13,6 +13,8 @@ TagManager:
   - BulletBtype
   - Bill
   - Rocket
+  - PlayerMuzzle
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

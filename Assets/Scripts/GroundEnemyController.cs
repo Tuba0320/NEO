@@ -6,11 +6,9 @@ public class GroundEnemyController : MonoBehaviour
 {
     [SerializeField]
     int enemyHP = 3;
-    EnemyMuzzleController emc;
 
     void Start()
     {
-        emc = transform.Find("EnemyMuzzleBtype").GetComponent<EnemyMuzzleController>();
     }
 
     void Update()
@@ -23,7 +21,6 @@ public class GroundEnemyController : MonoBehaviour
         enemyHP -= damageSorce;
         if (enemyHP <= 0)
         {
-            emc.EraseAll();
             Destroy(this.gameObject);
         }
     }

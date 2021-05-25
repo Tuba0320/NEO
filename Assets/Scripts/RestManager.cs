@@ -7,7 +7,7 @@ public class RestManager : MonoBehaviour
 {
     private GameObject GMnager;
 
-    public static int restNum = 30;
+    public static int restNum = 10;
 
     [SerializeField]
     private Text restText = null;
@@ -50,5 +50,10 @@ public class RestManager : MonoBehaviour
     public void setRest(int set)
     {
         restNum = set;
+    }
+
+    public void addRest(int add)
+    {
+        restNum += add;
     }
 }

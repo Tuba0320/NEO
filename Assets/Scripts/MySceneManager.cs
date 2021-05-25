@@ -82,10 +82,12 @@ public class MySceneManager : MonoBehaviour
     {
         if (isGameOver)
         {
+            sound.StopSe();
             SceneManager.LoadScene("GameOverScene");
         }
         else
         {
+            sound.StopSe();
             Scene load = SceneManager.GetActiveScene();
             SceneManager.LoadScene(load.name);
         }
@@ -94,7 +96,7 @@ public class MySceneManager : MonoBehaviour
 
     public void ToGameClearScene()
     {
-      // sm.Fadeout();
+        sound.StopSe();
         SceneManager.LoadScene("GameClearScene");
     }
 

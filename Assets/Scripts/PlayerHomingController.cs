@@ -10,27 +10,36 @@ public class PlayerHomingController : MonoBehaviour
     GameObject terget;
     [SerializeField]
     float speed = 1.0f;
-    [SerializeField]
-    int damageSorce = 1;
-    PlayerGeneralMuzzleController pmc;
     GameObject[] enemy;
+    [SerializeField]
+    bool flag_nav = false;
+
+    float interval = 0.5f;
+    float cnt = 0f;
+
+    StageController stageC;
 
     void Start()
     {
+        if (flag_nav)
+        {
+            Destroy(gameObject, 7);
+        }
         rb = this.GetComponent<Rigidbody>();
-        pmc = transform.parent.gameObject.GetComponent<PlayerGeneralMuzzleController>();
+        Destroy(gameObject, 2);
+
+        stageC = GameObject.Find("GameSetManager").GetComponent<StageController>();
     }
 
     void Update()
-    {
-        enemy = GameObject.FindGameObjectsWithTag("Enemy");
-        if (enemy.Length != 0)
+    {    
+        if (stageC.getIsBoss())
         {
-            terget = GameObject.FindGameObjectWithTag("Enemy"); 
+            terget = GameObject.FindGameObjectWithTag("Boss");
         }
-        else 
+        else if (flag_nav)
         {
-            terget = GameObject.FindGameObjectWithTag("Boss"); 
+            terget = GameObject.FindGameObjectWithTag("Enemy");
         }
 
         if (terget == null)
@@ -39,28 +48,41 @@ public class PlayerHomingController : MonoBehaviour
             return;
         }
         transform.LookAt(Vector3.Lerp(transform.forward + transform.position, terget.transform.position, 10f));
-        rb.velocity = transform.forward * speed;
+        rb.AddForce(transform.forward * speed);
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        if (flag_nav)
+        {
+            return;
+        }
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<EnemyController>().ReceveDamage(100);
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.tag == "Stage" || other.gameObject.tag == "Bill")
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
+        if (flag_nav)
+        {
+            return;
+        }
         if (other.tag == "Enemy")
         {
-            other.GetComponent<EnemyController>().ReceveDamage(damageSorce);
-            pmc.subNum();
-            Destroy(gameObject);
-        }
-
-        if (other.tag == "Stage" || other.tag == "Bill")
-        {
-            pmc.subNum();
-            Destroy(gameObject);
+            terget = other.gameObject;
         }
     }
 
     public void ReceveDamage(int damageScore)
     {
-        pmc.subNum();
         Destroy(gameObject);
     }
 }

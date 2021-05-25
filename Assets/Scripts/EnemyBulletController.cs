@@ -11,14 +11,12 @@ public class EnemyBulletController : MonoBehaviour
     float speed = 1.0f;
     [SerializeField]
     int damageSorce = 1;
-    EnemyMuzzleController emc;
 
     void Start()
     {
         terget = GameObject.FindGameObjectWithTag("Player");
         rb = this.GetComponent<Rigidbody>();
-        emc = transform.parent.gameObject.GetComponent <EnemyMuzzleController> ();
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 3f);
     }
 
     void Update()
@@ -32,20 +30,17 @@ public class EnemyBulletController : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerController>().ReceveDamage(damageSorce);
-            emc.subNum();
             Destroy(gameObject);
         }
 
         if(other.tag == "Stage" || other.tag == "Bill")
         {
-            emc.subNum();
             Destroy(gameObject);
         }
     }
 
     public void ReceveDamage(int damageScore)
     {
-            emc.subNum();
             Destroy(gameObject);
     }
 }

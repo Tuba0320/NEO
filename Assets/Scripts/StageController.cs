@@ -60,26 +60,32 @@ public class StageController : MonoBehaviour
 
         if (elapsedTime > apperNextTime)
         {
+            GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+            if (enemy.Length > 15)
+            {
+                return;
+            }
+
             ApperEnemy();
 
-            apperNextTime = Random.Range(1f, 3f);
+            apperNextTime = Random.Range(0.2f, 0.9f);
         }
     }
 
     Vector3 GetRandomPosition()
     {
-        float x = Random.Range(100f, -100f);
-        float y = Random.Range(15f, 40f);
-        float z = Random.Range(100, -100f);
+        float x = Random.Range(250f, -250f);
+        float y = Random.Range(10f, 75f);
+        float z = Random.Range(250, -250f);
 
         return new Vector3(x, y, z);
     }
 
     Vector3 GetFieldPosition()
     {
-        float x = Random.Range(750f, -750f);
+        float x = Random.Range(250f, -250f);
         float y = Random.Range(100, 0f);
-        float z = Random.Range(750f, -750f);
+        float z = Random.Range(250f, -250f);
 
         return new Vector3(x, y, z);
     }
@@ -111,7 +117,7 @@ public class StageController : MonoBehaviour
     void StageUp()
     {
         cnt += Time.deltaTime;
-        if (cnt <= 3)
+        if (cnt <= 0.55f)
         {
             GameObject.Instantiate(Field, GetFieldPosition(), Quaternion.Euler(0f, 0f, 0f));
         }
@@ -141,5 +147,10 @@ public class StageController : MonoBehaviour
             stageM.isClear(stageNum);
             GameObject.Find("GameManager").GetComponent<MySceneManager>().ToGameClearScene();
         }
+    }
+
+    public bool getIsBoss()
+    {
+        return isBoss;
     }
 }

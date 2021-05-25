@@ -7,6 +7,8 @@ public class EnemyCount : MonoBehaviour
 {
     [SerializeField]
     Text text;
+    float interval = 1f;
+    float cnt = 0f;
 
     void Start()
     {
@@ -15,9 +17,13 @@ public class EnemyCount : MonoBehaviour
 
     void Update()
     {
-        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-
-        text.text = enemy.Length.ToString("00");
+        cnt += Time.deltaTime;
+        if (interval < cnt)
+        {
+            GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+            text.text = enemy.Length.ToString("00");
+            cnt = 0;
+        }
 
     }
 }

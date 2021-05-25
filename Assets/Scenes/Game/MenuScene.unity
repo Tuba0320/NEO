@@ -970,7 +970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 329.2}
+  m_AnchoredPosition: {x: 50, y: 375}
   m_SizeDelta: {x: 645, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421956898
@@ -1064,8 +1064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 257.2}
-  m_SizeDelta: {x: 645, y: 50}
+  m_AnchoredPosition: {x: 100, y: 275}
+  m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469876652
 MonoBehaviour:
@@ -1103,7 +1103,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 53c2a0927fcb3e047b6a366f403e90e3, type: 3}
-    m_FontSize: 30
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1114,7 +1114,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u203B\u521D\u3081\u3066\u306E\u65B9\u306FManual\u3092\u3069\u3046\u305E"
+  m_Text: "\u203B\u521D\u3081\u3066\u306E\u65B9\u306B\u306FManual\u306E\u89B3\u89A7\u3092\u63A8\u5968\u3057\u307E\u3059"
 --- !u!222 &469876654
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1892,6 +1892,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 476530800343767483, guid: da0d0ba7bd3499b4d9f561f03c4ff583,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 469876653}
     - target: {fileID: 3146480913265441744, guid: da0d0ba7bd3499b4d9f561f03c4ff583,
         type: 3}
       propertyPath: m_RootOrder
