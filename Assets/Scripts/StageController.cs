@@ -84,7 +84,7 @@ public class StageController : MonoBehaviour
     Vector3 GetFieldPosition()
     {
         float x = Random.Range(250f, -250f);
-        float y = Random.Range(100, 0f);
+        float y = Random.Range(100, -75f);
         float z = Random.Range(250f, -250f);
 
         return new Vector3(x, y, z);
@@ -119,7 +119,8 @@ public class StageController : MonoBehaviour
         cnt += Time.deltaTime;
         if (cnt <= 0.55f)
         {
-            GameObject.Instantiate(Field, GetFieldPosition(), Quaternion.Euler(0f, 0f, 0f));
+            float y = Random.Range(250f, -250f);
+            GameObject.Instantiate(Field, GetFieldPosition(), Quaternion.Euler(0f, y, 0f));
         }
     }
 

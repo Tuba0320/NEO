@@ -16,7 +16,7 @@ public class EnemyBulletController : MonoBehaviour
     {
         terget = GameObject.FindGameObjectWithTag("Player");
         rb = this.GetComponent<Rigidbody>();
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 2f);
     }
 
     void Update()

@@ -102,8 +102,8 @@ public class PlayerController : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y");
         if (antiFlag)
         {
-            moveX = Input.GetAxis("Vertical") * 100;
-            moveZ = Input.GetAxis("Horizontal") * 500;
+            moveX = Input.GetAxis("Vertical") * 1000;
+            moveZ = Input.GetAxis("Horizontal") * 1000;
             mouseX = Input.GetAxis("Mouse Y");
             mouseY = Input.GetAxis("Mouse X");
         }
@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
             mouseXpermission = false;
             mouseYpermission = false;
 
-            vec3 = new Vector3(moveX * 100, 0, moveZ * 200);
+            vec3 = new Vector3(moveX * 200, 0, moveZ * 200);
 
             if (vec3.magnitude > 1)
             {

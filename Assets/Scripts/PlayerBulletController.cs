@@ -7,7 +7,7 @@ public class PlayerBulletController : MonoBehaviour
 {
     [SerializeField]
     Image sight;
-    float rayLength = 200;
+    float rayLength = 1000;
     RaycastHit hitObject;
     int damageSorce = 25;
     LineRenderer lr;

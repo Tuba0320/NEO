@@ -32,7 +32,7 @@ public class RocketController : MonoBehaviour
         }
         else if (cl.gameObject.tag == "Bill")
         {
-            cl.gameObject.GetComponent<BillController>().ReceveDamage(500);
+            Destroy(cl.gameObject);
             Destroy(gameObject);
         }
         else if (cl.gameObject.tag == "Stage" || cl.gameObject.tag == "Rocket")
