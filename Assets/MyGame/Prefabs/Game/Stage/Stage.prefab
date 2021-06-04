@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8720057574281973015
 Transform:
@@ -111,7 +111,7 @@ GameObject:
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8720057574410823406
 Transform:
@@ -202,7 +202,7 @@ GameObject:
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8720057574516440602
 Transform:
@@ -240,7 +240,7 @@ GameObject:
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8720057575080485808
 Transform:
@@ -410,7 +410,7 @@ GameObject:
   m_TagString: SubCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8720057575487590655
 Transform:

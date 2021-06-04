@@ -42,6 +42,19 @@ public class StageController : MonoBehaviour
     void Update()
     {
 
+        cnt += Time.deltaTime;
+
+        if (cnt < 3)
+        {
+            return;
+        }
+
+        elapsedTime += Time.deltaTime;
+
+    }
+
+    void FixedUpdate()
+    {
         StageUp();
         GameClear();
 
@@ -55,8 +68,6 @@ public class StageController : MonoBehaviour
         {
             return;
         }
-
-        elapsedTime += Time.deltaTime;
 
         if (elapsedTime > apperNextTime)
         {
@@ -84,7 +95,7 @@ public class StageController : MonoBehaviour
     Vector3 GetFieldPosition()
     {
         float x = Random.Range(250f, -250f);
-        float y = Random.Range(100, -75f);
+        float y = Random.Range(100, 0f);
         float z = Random.Range(250f, -250f);
 
         return new Vector3(x, y, z);
@@ -116,7 +127,6 @@ public class StageController : MonoBehaviour
 
     void StageUp()
     {
-        cnt += Time.deltaTime;
         if (cnt <= 0.55f)
         {
             float y = Random.Range(250f, -250f);

@@ -346,7 +346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8415227260368476935}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &8633700768317203267
 ParticleSystem:
@@ -5149,54 +5149,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &2923005258820863184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6817698782834324374}
-  - component: {fileID: 826267284049199522}
-  m_Layer: 10
-  m_Name: EnemyMuzzleBtype (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6817698782834324374
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2923005258820863184}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8415227260368476935}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &826267284049199522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2923005258820863184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30764c85a2cb77b408e1eba26ca96a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bflag: 1
-  enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
-    type: 3}
-  shotInterval: 100
-  bulletLimit: 0
 --- !u!1 &3008512864662314035
 GameObject:
   m_ObjectHideFlags: 0
@@ -5227,7 +5179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8415227260368476935}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &6543694048180554307
 SphereCollider:
@@ -5364,7 +5316,7 @@ Transform:
   m_LocalScale: {x: 6, y: 0.25, z: 6}
   m_Children: []
   m_Father: {fileID: 8415227260368476935}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9047338157659997461
 MeshFilter:
@@ -5413,54 +5365,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &4734083233628483547
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7908258978384715902}
-  - component: {fileID: 4542318186648908242}
-  m_Layer: 10
-  m_Name: EnemyMuzzleBtype
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7908258978384715902
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4734083233628483547}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8415227260368476935}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4542318186648908242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4734083233628483547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30764c85a2cb77b408e1eba26ca96a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bflag: 1
-  enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
-    type: 3}
-  shotInterval: 100
-  bulletLimit: 0
 --- !u!1 &5206799418439092874
 GameObject:
   m_ObjectHideFlags: 0
@@ -6058,7 +5962,7 @@ Transform:
   - {fileID: 2555249736194564997}
   - {fileID: 3351918778697397860}
   m_Father: {fileID: 8415227260368476935}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7619732220168886976
 GameObject:
@@ -6139,54 +6043,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &7928477297512608789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1470406009617006120}
-  - component: {fileID: 833618464215173191}
-  m_Layer: 10
-  m_Name: EnemyMuzzleBtype (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1470406009617006120
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7928477297512608789}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8415227260368476935}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &833618464215173191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7928477297512608789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30764c85a2cb77b408e1eba26ca96a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bflag: 1
-  enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
-    type: 3}
-  shotInterval: 100
-  bulletLimit: 0
 --- !u!1 &7929880964702143112
 GameObject:
   m_ObjectHideFlags: 0
@@ -6376,14 +6232,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7908258978384715902}
   - {fileID: 4433716480548569306}
-  - {fileID: 1199645916060952301}
   - {fileID: 2748037533471403195}
   - {fileID: 4293628589005860999}
   - {fileID: 5106099699916131170}
-  - {fileID: 1470406009617006120}
-  - {fileID: 6817698782834324374}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6465,51 +6317,3 @@ MonoBehaviour:
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
   Item: {fileID: 803124592413104650, guid: 1b09b85d20109434dbae9f9246623506, type: 3}
---- !u!1 &9036655567361634130
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1199645916060952301}
-  - component: {fileID: 7666955024155837199}
-  m_Layer: 10
-  m_Name: EnemyMuzzleBtype (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1199645916060952301
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036655567361634130}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8415227260368476935}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7666955024155837199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036655567361634130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30764c85a2cb77b408e1eba26ca96a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bflag: 1
-  enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
-    type: 3}
-  shotInterval: 100
-  bulletLimit: 0

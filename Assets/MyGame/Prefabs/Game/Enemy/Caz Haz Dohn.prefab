@@ -743,54 +743,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!1 &4907300764496344231
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3605579491888051202}
-  - component: {fileID: 4080093090726639803}
-  m_Layer: 10
-  m_Name: EnemyMuzzleBtype (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3605579491888051202
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4907300764496344231}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6373681793018974748}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4080093090726639803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4907300764496344231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30764c85a2cb77b408e1eba26ca96a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bflag: 1
-  enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
-    type: 3}
-  shotInterval: 0.75
-  bulletLimit: 10
 --- !u!1 &5398212671358655554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +986,6 @@ Transform:
   - {fileID: 2770031096775171697}
   - {fileID: 1609000845805732101}
   - {fileID: 8061856264681173596}
-  - {fileID: 3605579491888051202}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

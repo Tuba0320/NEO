@@ -11,7 +11,6 @@ public class EnemyController : MonoBehaviour
     int enemyHP = 3;
     [SerializeField]
     float speed = 1f;
-    EnemyMuzzleController emc;
     [SerializeField]
     bool isRotate = false;
     [SerializeField]
@@ -35,7 +34,6 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject, 60);
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         target = GameObject.FindGameObjectWithTag("Player");
-        emc = transform.Find("EnemyMuzzleBtype").GetComponent<EnemyMuzzleController>();
         rb = GetComponent<Rigidbody>();
     }
 
