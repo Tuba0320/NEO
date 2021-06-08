@@ -72,7 +72,7 @@ public class StageController : MonoBehaviour
         if (elapsedTime > apperNextTime)
         {
             GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemy.Length > 15)
+            if (enemy.Length >= 15)
             {
                 return;
             }
