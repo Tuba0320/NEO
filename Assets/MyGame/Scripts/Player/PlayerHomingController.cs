@@ -14,9 +14,6 @@ public class PlayerHomingController : MonoBehaviour
     [SerializeField]
     bool flag_nav = false;
 
-    float interval = 0.5f;
-    float cnt = 0f;
-
     StageController stageC;
 
     void Start()

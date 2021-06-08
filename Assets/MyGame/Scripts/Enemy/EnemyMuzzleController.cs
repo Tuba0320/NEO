@@ -10,8 +10,6 @@ public class EnemyMuzzleController : MonoBehaviour
     GameObject enemyBulletPrefab;
     [SerializeField]
     float shotInterval = 1.0f;
-    [SerializeField]
-    int bulletLimit = 5;
     float timeCount;
     
 

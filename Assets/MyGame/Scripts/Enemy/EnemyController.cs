@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject, 15);
         }
-        Destroy(gameObject, 60);
+        Destroy(gameObject, 50);
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
