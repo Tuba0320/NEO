@@ -51,7 +51,7 @@ public class PlayerGeneralMuzzleController : MonoBehaviour
         timeCount += Time.deltaTime;
         if (timeCount >= shotInterval[0] && Input.GetMouseButton(0) && !isGeneral)
         {
-            soundM.PlaySeByName("ショット");
+            soundM.PlaySeByName("狙撃銃発射");
             timeCount = 0;
             Instantiate(BulletPrefab[0], transform.position, transform.rotation, transform);
         }

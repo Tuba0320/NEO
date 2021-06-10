@@ -126,7 +126,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
     type: 3}
   shotInterval: 100
-  bulletLimit: 0
 --- !u!1 &801913206098725759
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47f560bd696b264aa0f4b72a5799b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 7500
+  hp: 6000
   speed: 10
   isRotate: 0
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
@@ -609,7 +608,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
   shotInterval: 0.3
-  bulletLimit: 1000
 --- !u!1 &5967302042455472929
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +734,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
   shotInterval: 0.3
-  bulletLimit: 1000
 --- !u!1 &6126725590194522710
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +781,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
   shotInterval: 0.3
-  bulletLimit: 1000
 --- !u!1 &6324548779774367534
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +828,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
   shotInterval: 0.3
-  bulletLimit: 1000
 --- !u!1 &6718709792630265900
 GameObject:
   m_ObjectHideFlags: 0

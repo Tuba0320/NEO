@@ -36,10 +36,6 @@ public class RestManager : MonoBehaviour
         {
             GMnager.GetComponent <MySceneManager>().ToGameOverScene(true);
         }
-        else
-        {
-            GMnager.GetComponent <MySceneManager>().ToGameOverScene(false);
-        }
     }
 
     public int getRest()

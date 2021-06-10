@@ -6,29 +6,31 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     SoundManager sound;
-    float v_cnt;
+    Vector3 pos;
+    Rigidbody rigidbody;
+    Transform camera;
+    Vector3 vec3;
 
     [SerializeField]
     float moveSpeed = 1.0f;
     [SerializeField]
     float mouseSpeed = 1.0f;
-    Rigidbody rigidbody;
+    [SerializeField]
+    float AlwaysMoveSpeed = 0.1f;
+
     float moveX, moveZ;
     bool moveXpermission, moveZpermission;
     float mouseX, mouseY;
     float rotationXcamera;
     bool mouseXpermission, mouseYpermission;
-    Transform camera;
-    Vector3 vec3;
+
     [SerializeField]
     int playerHp = 5;
     public Image damageBoard;
     public GameObject remainingHp;
+
     [SerializeField]
     float duration = 1.0f, magnitude = 1.0f;
-    Vector3 pos;
-    [SerializeField]
-    float speed = 0.1f;
 
     public bool stopFlag = false;
     public bool antiFlag = false;
@@ -37,9 +39,11 @@ public class PlayerController : MonoBehaviour
     GameObject[] muzzles;
 
     [SerializeField]
-    float hPIntervel = 3f;
-    float cnt_in = 0f;
-
+    float intervel_hp = 3f;
+    float cnt_hp = 0f;
+    [SerializeField]
+    float interval_damage = 0.2f;
+    float cnt_damage = 0f;
     float interval_se = 28f;
     float cnt_se = 0f;
 
@@ -58,8 +62,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         cnt_se += Time.deltaTime;
-        v_cnt += Time.deltaTime;
-        cnt_in += Time.deltaTime;
+        cnt_damage += Time.deltaTime;
+        cnt_hp += Time.deltaTime;
         movePermission();
         if (interval_se >= cnt_se)
         {
@@ -81,11 +85,11 @@ public class PlayerController : MonoBehaviour
             rigidbody.velocity = Vector3.zero;
             return;
         }
-        transform.position += transform.TransformDirection(Vector3.forward * speed);
+        transform.position += transform.TransformDirection(Vector3.forward * AlwaysMoveSpeed);
         moveExcution();
-        if (hPIntervel < cnt_in)
+        if (intervel_hp < cnt_hp)
         {
-            cnt_in = 0;
+            cnt_hp = 0;
             if (playerHp >= 20)
             {
                 return;
@@ -161,9 +165,9 @@ public class PlayerController : MonoBehaviour
 
     public void ReceveDamage(int damageSorce)
     {
-        if (v_cnt >= 0.2)
+        if (cnt_damage >= interval_damage)
         {
-            v_cnt = 0;
+            cnt_damage = 0;
             playerHp -= damageSorce;
             StartCoroutine("damageFlashing");
             StartCoroutine(shakeCamera(duration, magnitude));
@@ -329,6 +333,7 @@ public class PlayerController : MonoBehaviour
         {
             remainingHp.transform.Find("RemainingHp_1").gameObject.GetComponent<Image>().color = Color.black;
             GameObject.Find("GameManager").GetComponent<RestManager>().subRest();
+            playerHp = 20;
         }
         else
         {

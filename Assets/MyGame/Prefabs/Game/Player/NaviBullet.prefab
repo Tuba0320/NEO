@@ -60607,10 +60607,10 @@ GameObject:
   - component: {fileID: 1781068522743103826}
   - component: {fileID: 8469645743529178467}
   - component: {fileID: 3344076629224047480}
-  - component: {fileID: 2752286511660485597}
+  - component: {fileID: 2916226803139828743}
   m_Layer: 0
   m_Name: NaviBullet
-  m_TagString: PlayerBullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60706,7 +60706,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &2752286511660485597
+--- !u!114 &2916226803139828743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60715,8 +60715,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708259551735715449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f192e1c5d0af3324c843a3eeeb02a8ef, type: 3}
+  m_Script: {fileID: 11500000, guid: d34e10dfee0db3b41ab24ac659746c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 65
-  flag_nav: 1
+  speed: 50
+  damageSorce: 1
+  destroyInterval: 7
+  isHorming: 0
+  isNavigation: 1

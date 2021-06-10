@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    SoundManager sound;
-
+    SoundManager sm;
+    Rigidbody rb;
     GameObject target;
+
     [SerializeField]
-    int enemyHP = 3;
+    int hp = 3;
+
     [SerializeField]
     float speed = 1f;
+
     [SerializeField]
     bool isRotate = false;
+
     [SerializeField]
     GameObject particle;
-    GameObject typhoon;
-    float cnt;
-    float v_cnt;
 
     [SerializeField]
     GameObject Item = null;
-    float odd;
 
-    Rigidbody rb;
+    float cnt_se;
 
     void Start()
     {
@@ -32,25 +32,15 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject, 15);
         }
         Destroy(gameObject, 50);
-        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        v_cnt += Time.deltaTime;
-        cnt += Time.deltaTime;
-        if (isRotate)
-        {
-            transform.Rotate(new Vector3(0, 1, 0),25);
-        }
-        else
-        {
-            transform.LookAt(target.transform);
-        }
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-
+        cnt_se += Time.deltaTime;
+        Move();
     }
 
     void OnTriggerEnter(Collider cl)
@@ -62,30 +52,41 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void ReceveDamage(int damageSorce)
+    void Move()
     {
-        if (v_cnt >= 0.5) 
+        if (isRotate)
         {
-            v_cnt = 0;
-            sound.PlaySeByName("ロボットを殴る1");
+            transform.Rotate(new Vector3(0, 1, 0), 25);
         }
-        enemyHP -= damageSorce;
-        Debug.Log(damageSorce + "ダメージ与えました");
-        if (enemyHP <= 0)
+        else
+        {
+            transform.LookAt(target.transform);
+        }
+        if (speed <= 0)
+        {
+            return;
+        }
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
+
+    public void ReceveDamage(int damage)
+    {
+        if (cnt_se >= 0.5) 
+        {
+            cnt_se = 0;
+            sm.PlaySeByName("ロボットを殴る1");
+        }
+        hp -= damage;
+        if (hp <= 0)
         {
             Instantiate(particle, this.transform.position, Quaternion.identity);
-            odd = Random.Range(1f, 100f);
-            if (odd < 50 && Item != null)
+            float odd = Random.Range(1f, 100f);
+            if (odd < 25 && Item != null)
             {
                 Instantiate(Item, this.transform.position, Quaternion.identity);
             }
-            sound.PlaySeByName("爆発2");
+            sm.PlaySeByName("爆発2");
             Destroy(this.gameObject);
         }
-    }
-
-    public void TheDead()
-    {
-        Destroy(this.gameObject);
     }
 }

@@ -31,7 +31,7 @@ public class ItemController : MonoBehaviour
             odd = Random.Range(1f, 100f);
             if (odd > 50)
             {
-                sound.PlaySeByName("btn08");
+                sound.PlaySeByName("ショット");
                 foreach(GameObject muzzle in other.GetComponent<PlayerController>().getMuzzles())
                 {
                     muzzle.GetComponent<PlayerGeneralMuzzleController>().setInterval(-0.2f);

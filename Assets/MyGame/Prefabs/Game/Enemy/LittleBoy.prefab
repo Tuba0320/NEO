@@ -47,7 +47,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
   shotInterval: 0.3
-  bulletLimit: 900
 --- !u!1 &388170195430700668
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +94,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a,
     type: 3}
   shotInterval: 1
-  bulletLimit: 50
 --- !u!1 &468745902255461233
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +141,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
   shotInterval: 0.3
-  bulletLimit: 900
 --- !u!1 &708011467981369491
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +188,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a,
     type: 3}
   shotInterval: 1
-  bulletLimit: 1000
 --- !u!1 &826982213378915235
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +393,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a,
     type: 3}
   shotInterval: 1
-  bulletLimit: 50
 --- !u!1 &1351188365975041400
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +647,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
   shotInterval: 0.3
-  bulletLimit: 900
 --- !u!1 &2584135066794610063
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +694,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a,
     type: 3}
   shotInterval: 1
-  bulletLimit: 1000
 --- !u!1 &2654816297914871040
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +978,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
   shotInterval: 0.3
-  bulletLimit: 900
 --- !u!1 &4207824196182824532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,7 +1321,7 @@ Transform:
   m_GameObject: {fileID: 5136872184879727481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4, z: 0}
-  m_LocalScale: {x: 4, y: 2, z: 4}
+  m_LocalScale: {x: 6, y: 1, z: 6}
   m_Children: []
   m_Father: {fileID: 8691203390391785537}
   m_RootOrder: 4
@@ -1507,7 +1499,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a,
     type: 3}
   shotInterval: 1
-  bulletLimit: 1000
 --- !u!1 &5613570266644196509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1546,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
     type: 3}
   shotInterval: 5
-  bulletLimit: 1000
 --- !u!1 &6203142382582407158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,7 +1751,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
     type: 3}
   shotInterval: 5
-  bulletLimit: 1000
 --- !u!1 &6679244197176658016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,7 +1798,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a,
     type: 3}
   shotInterval: 1
-  bulletLimit: 50
 --- !u!1 &6949995720661657667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,7 +1845,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a,
     type: 3}
   shotInterval: 1
-  bulletLimit: 50
 --- !u!1 &7275119251067327865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,8 +2283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47f560bd696b264aa0f4b72a5799b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 10000
-  speed: 1
+  hp: 6000
+  speed: 0
   isRotate: 0
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
@@ -2349,7 +2336,6 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a,
     type: 3}
   shotInterval: 1
-  bulletLimit: 1000
 --- !u!1 &8939383381255664533
 GameObject:
   m_ObjectHideFlags: 0
