@@ -30,11 +30,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        if (isRotate)
-        {
-            Destroy(gameObject, 10);
-        }
-        Destroy(gameObject, 30);
+        Destroy(gameObject, 10);
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
@@ -77,7 +73,7 @@ public class EnemyController : MonoBehaviour
         }
         if (!isHoming)
         {
-            transform.Translate(0, 0, 2f, Space.World);
+            transform.Translate(0, 0, 1.5f, Space.World);
             return;
         }
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);

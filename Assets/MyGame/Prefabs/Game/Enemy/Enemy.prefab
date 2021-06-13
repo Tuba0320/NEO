@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 500
-  speed: 1
+  speed: 10
   isRotate: 0
   isHoming: 1
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,

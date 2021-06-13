@@ -6,7 +6,7 @@ public class BillController : MonoBehaviour
 {
     void FixedUpdate()
     {
-        transform.Translate(0, 0, 2f, Space.World);
+        transform.Translate(0, 0, 1.5f, Space.World);
         if (transform.position.z >= 200)
         {
             Destroy(gameObject);

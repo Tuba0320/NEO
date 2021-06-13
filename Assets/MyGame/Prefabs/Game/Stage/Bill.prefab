@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 5233900446354556015}
   - component: {fileID: 2726788168026608966}
   - component: {fileID: 1760166543998483195}
-  - component: {fileID: 9096151742798799797}
   m_Layer: 0
   m_Name: Bill
   m_TagString: Bill
@@ -172,19 +171,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9096151742798799797
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743025568346234486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7545293057347435197
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +182,6 @@ GameObject:
   - component: {fileID: 9132615785532837092}
   - component: {fileID: 5513518709873086705}
   - component: {fileID: 1645618289181900623}
-  - component: {fileID: 3018000639909296450}
   m_Layer: 0
   m_Name: Bill (1)
   m_TagString: Bill
@@ -265,19 +250,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3018000639909296450
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7545293057347435197}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8284720628914946042
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,9 +292,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8653055515369087729}
   - component: {fileID: 2548567243720541188}
+  - component: {fileID: 4876451600585371426}
   m_Layer: 0
   m_Name: Bill
-  m_TagString: Untagged
+  m_TagString: Bill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -355,3 +328,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bb6f52e92bec54792fed98376ae154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4876451600585371426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653055515369087733}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: -0.5}

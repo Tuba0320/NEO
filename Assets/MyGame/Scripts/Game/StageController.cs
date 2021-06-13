@@ -97,8 +97,8 @@ public class StageController : MonoBehaviour
 
     Vector3 GetRandomPosition()
     {
-        float x = Random.Range(100f, -100f);
-        float y = Random.Range(20f, 50f);
+        float x = Random.Range(150f, -150f);
+        float y = Random.Range(40f, 70f);
 
         return new Vector3(x, y, -210);
     }
