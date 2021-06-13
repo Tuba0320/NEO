@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class VoodooController : MonoBehaviour
 {
+    SoundManager sound;
+
     [SerializeField]
     float interval = 5.0f;
     float time;
@@ -12,6 +14,11 @@ public class VoodooController : MonoBehaviour
     float stopInterval = 3.0f;
     float stopTime;
     bool stopFlag = false;
+
+    void Start()
+    {
+        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+    }
 
     void Update()
     {
@@ -46,6 +53,7 @@ public class VoodooController : MonoBehaviour
             {
                 stopFlag = true;
                 other.GetComponent<PlayerController>().SetStopFlag(true);
+                sound.PlaySeByName("敵ユニット出現");
             }
         }
     }

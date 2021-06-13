@@ -18,8 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float AlwaysMoveSpeed = 0.1f;
 
-    float moveX, moveZ;
-    bool moveXpermission, moveZpermission;
+    float moveX;
+    bool moveXpermission;
     float mouseX, mouseY;
     float rotationXcamera;
     bool mouseXpermission, mouseYpermission;
@@ -38,9 +38,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject[] muzzles;
 
-    [SerializeField]
-    float intervel_hp = 3f;
-    float cnt_hp = 0f;
     [SerializeField]
     float interval_damage = 0.2f;
     float cnt_damage = 0f;
@@ -63,8 +60,15 @@ public class PlayerController : MonoBehaviour
     {
         cnt_se += Time.deltaTime;
         cnt_damage += Time.deltaTime;
-        cnt_hp += Time.deltaTime;
         movePermission();
+        if (transform.position.z <= -150)
+        {
+            transform.position = new Vector3(transform.position.x, 0.5f, 150);
+        }
+        else  if (transform.position.z >= 150)
+        {
+            transform.position = new Vector3(transform.position.x, 0.5f, -150);
+        }
         if (interval_se >= cnt_se)
         {
             return;
@@ -87,27 +91,15 @@ public class PlayerController : MonoBehaviour
         }
         transform.position += transform.TransformDirection(Vector3.forward * AlwaysMoveSpeed);
         moveExcution();
-        if (intervel_hp < cnt_hp)
-        {
-            cnt_hp = 0;
-            if (playerHp >= 20)
-            {
-                return;
-            }
-            playerHp++;
-        }
     }
     
     void movePermission()
     {
         moveX = Input.GetAxis("Horizontal");
-        moveZ = Input.GetAxis("Vertical");
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         if (antiFlag)
         {
-            moveX = Input.GetAxis("Vertical") * 1000;
-            moveZ = Input.GetAxis("Horizontal") * 1000;
             mouseX = Input.GetAxis("Mouse Y");
             mouseY = Input.GetAxis("Mouse X");
         }
@@ -115,11 +107,6 @@ public class PlayerController : MonoBehaviour
         if (moveX != 0)
         {
             moveXpermission = true;
-        }
-
-        if (moveZ != 0)
-        {
-            moveZpermission = true;
         }
 
         if (mouseX != 0)
@@ -135,14 +122,13 @@ public class PlayerController : MonoBehaviour
 
     void moveExcution()
     {
-        if (moveXpermission || moveZpermission || mouseXpermission || mouseYpermission)
+        if (moveXpermission || mouseXpermission || mouseYpermission)
         {
             moveXpermission = false;
-            moveZpermission = false;
             mouseXpermission = false;
             mouseYpermission = false;
 
-            vec3 = new Vector3(moveX * 200, 0, moveZ * 200);
+            vec3 = new Vector3(moveX * 200, 0, 0);
 
             if (vec3.magnitude > 1)
             {
@@ -167,11 +153,11 @@ public class PlayerController : MonoBehaviour
     {
         if (cnt_damage >= interval_damage)
         {
+            sound.PlaySeByName("パソコンの電源を切る");
             cnt_damage = 0;
             playerHp -= damageSorce;
             StartCoroutine("damageFlashing");
             StartCoroutine(shakeCamera(duration, magnitude));
-            sound.PlaySeByName("othr07");
         }
     }
 

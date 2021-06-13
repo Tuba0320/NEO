@@ -18,6 +18,9 @@ public class EnemyController : MonoBehaviour
     bool isRotate = false;
 
     [SerializeField]
+    bool isHoming = false;
+
+    [SerializeField]
     GameObject particle;
 
     [SerializeField]
@@ -29,9 +32,9 @@ public class EnemyController : MonoBehaviour
     {
         if (isRotate)
         {
-            Destroy(gameObject, 15);
+            Destroy(gameObject, 10);
         }
-        Destroy(gameObject, 50);
+        Destroy(gameObject, 30);
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
@@ -39,7 +42,17 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.z >= 150 && !isHoming)
+        {
+            float x = Random.Range(100f, -100f);
+            float y = Random.Range(75, 25f);
+            transform.position = new Vector3(x, y, -200);
+        }
         cnt_se += Time.deltaTime;
+    }
+
+    void FixedUpdate()
+    {
         Move();
     }
 
@@ -62,8 +75,9 @@ public class EnemyController : MonoBehaviour
         {
             transform.LookAt(target.transform);
         }
-        if (speed <= 0)
+        if (!isHoming)
         {
+            transform.Translate(0, 0, 2f, Space.World);
             return;
         }
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
@@ -81,7 +95,7 @@ public class EnemyController : MonoBehaviour
         {
             Instantiate(particle, this.transform.position, Quaternion.identity);
             float odd = Random.Range(1f, 100f);
-            if (odd < 25 && Item != null)
+            if (odd < 5 && Item != null)
             {
                 Instantiate(Item, this.transform.position, Quaternion.identity);
             }

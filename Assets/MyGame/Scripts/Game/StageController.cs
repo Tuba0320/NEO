@@ -24,8 +24,13 @@ public class StageController : MonoBehaviour
     private int numberOfEnemy = 0;
     private float elapsedTime = 0f;
 
-    private float cnt = 0f;
+    float cnt_v1 = 0f;
+    float cnt_v2 = 0f;
+    bool isStage = false;
     bool isBoss = false;
+
+    float interval_bill = 0.5f;
+    float cnt_bill = 0f;
 
     Score score;
     CountTime time;
@@ -42,9 +47,10 @@ public class StageController : MonoBehaviour
     void Update()
     {
 
-        cnt += Time.deltaTime;
+        cnt_v1 += Time.deltaTime;
+        cnt_bill += Time.deltaTime;
 
-        if (cnt < 3)
+        if (cnt_v1 < 3)
         {
             return;
         }
@@ -55,8 +61,14 @@ public class StageController : MonoBehaviour
 
     void FixedUpdate()
     {
-        StageUp();
         GameClear();
+
+        if (cnt_bill >= interval_bill)
+        {
+            float y = Random.Range(250f, -250f);
+            GameObject.Instantiate(Field, GetFieldPosition(), Quaternion.Euler(0f, y, 0f));
+            cnt_bill = 0;
+        }
 
         if (numberOfEnemy >= maxNumOfEnemys)
         {
@@ -64,7 +76,7 @@ public class StageController : MonoBehaviour
             return;
         }
 
-        if (cnt < 3)
+        if (cnt_v1 < 3)
         {
             return;
         }
@@ -79,26 +91,23 @@ public class StageController : MonoBehaviour
 
             ApperEnemy();
 
-            apperNextTime = Random.Range(0.2f, 0.9f);
+            apperNextTime = Random.Range(0.2f, 0.3f);
         }
     }
 
     Vector3 GetRandomPosition()
     {
         float x = Random.Range(100f, -100f);
-        float y = Random.Range(20f, 75f);
-        float z = Random.Range(100, -100f);
+        float y = Random.Range(20f, 50f);
 
-        return new Vector3(x, y, z);
+        return new Vector3(x, y, -210);
     }
 
     Vector3 GetFieldPosition()
     {
-        float x = Random.Range(250f, -250f);
+        float x = Random.Range(200f, -200f);
         float y = Random.Range(100, 0f);
-        float z = Random.Range(250f, -250f);
-
-        return new Vector3(x, y, z);
+        return new Vector3(x, y, -190);
     }
 
     void ApperEnemy()
@@ -123,15 +132,6 @@ public class StageController : MonoBehaviour
         }
 
         return num;
-    }
-
-    void StageUp()
-    {
-        if (cnt <= 0.55f)
-        {
-            float y = Random.Range(250f, -250f);
-            GameObject.Instantiate(Field, GetFieldPosition(), Quaternion.Euler(0f, y, 0f));
-        }
     }
 
     void GotoBoss()

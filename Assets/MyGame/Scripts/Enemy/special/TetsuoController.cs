@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TetsuoController : MonoBehaviour
 {
+    SoundManager sound;
+
     [SerializeField]
     float interval = 5.0f;
     float time;
@@ -12,6 +14,11 @@ public class TetsuoController : MonoBehaviour
     float stopInterval = 3.0f;
     float stopTime;
     bool stopFlag = false;
+
+    void Start()
+    {
+        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+    }
 
     void Update()
     {
@@ -46,6 +53,7 @@ public class TetsuoController : MonoBehaviour
             {
                 stopFlag = true;
                 other.GetComponent<PlayerController>().SetAntiFlag(true);
+                sound.PlaySeByName("敵ユニット出現");
             }
         }
     }

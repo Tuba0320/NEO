@@ -29,19 +29,8 @@ public class ItemController : MonoBehaviour
         if (other.tag == "Player")
         {
             odd = Random.Range(1f, 100f);
-            if (odd > 50)
-            {
-                sound.PlaySeByName("ショット");
-                foreach(GameObject muzzle in other.GetComponent<PlayerController>().getMuzzles())
-                {
-                    muzzle.GetComponent<PlayerGeneralMuzzleController>().setInterval(-0.2f);
-                    muzzle.GetComponent<PlayerGeneralMuzzleController>().setIntevalFlag(true);
-                }
-            }
-            else
-            {
-                other.GetComponent<PlayerController>().setPlayerHp(5);
-            }
+            other.GetComponent<PlayerController>().setPlayerHp(5);
+            
             if (odd < 1)
             {
                 GameObject.Find("GameManager").GetComponent<RestManager>().addRest(1);
