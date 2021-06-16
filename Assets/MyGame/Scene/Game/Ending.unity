@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &65868874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 650, y: 450}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 650, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &65868875
 MonoBehaviour:
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25A0\u4F5C\u6226\u306F\u7279\u653B\u90E8\u968A\u306E\u5168\u6EC5\u306B\u3088\u3063\u3066\u3001\u5931\u6557\u306B\u7D42\u308F\u3063\u305F...\n\n\u25A0\u4F01\u696D\u3092\u6B62\u3081\u3089\u308C\u306A\u3044\u3002\u3059\u306A\u308F\u3061\u3001\u6280\u8853\u306E\u767A\u5C55\u306F\u8457\u3057\u3044\u3082\u306E\u3068\u306A\u308B\u3060\u308D\u3046\u3002\u305B\u3081\u3066\u3001\u6280\u8853\u306E\u5371\u967A\u6027\u3092\u5371\u60E7\u3057\u3066\u304F\u308C\u308C\u3070\u3001\u307E\u3060\u6551\u3044\u306F\u3042\u308B\u304C\n\n\u25A0\u4ECA\u56DE\u306E\u4F5C\u6226\u306F\u3001\u7D44\u7E54\u306E\u5168\u3066\u3092\u6367\u3052\u305F\u7269\u3060\u3063\u305F\u3002\u4EEE\u306B\u7121\u4E8B\u3060\u3063\u305F\u8005\u304C\u3044\u3066\u3082\u3001\u7D44\u7E54\u3092\u7DAD\u6301\u3059\u308B\u306E\u306F\u4E0D\u53EF\u80FD\u3060\u3002\u4FFA\u305F\u3061\u306E\u6226\u3044\u306F\u3053\u3053\u307E\u3067\u306E\u69D8\u3060"
+  m_Text: "\u7A81\u7136\u3001\u5927\u304D\u304F\u5730\u9762\u304C\u63FA\u308C\u305F\u3002\u307E\u305F\u3001\u8F5F\u97F3\u3082\u9CF4\u308A\u97FF\u304F\n\n\u300C\uFF01\u3046\u2026\u4E0A\u3060\uFF01\u4F50\u3005\u6728\uFF01\u300D\n\n\u305D\u3046\u8A00\u308F\u308C\u5F7C\u306F\u4E0A\u3092\u898B\u305F\n\n\u300C\u306A\u2026\u304A\u3001\u5927\u304D\u306A\u300C\u304D\u306E\u3053\u96F2\u300D\u2026\uFF01\u300D\n\n\u5F7C\u3089\u304C\u898B\u305F\u7A7A\u306B\u306F\u3001\u5168\u3066\u3092\u8986\u3044\u3064\u304F\u3059\u5927\u304D\u306A\u5BFE\u6D41\u96F2\u304C\u6D6E\u304B\u3093\u3067\u3044\u305F\u3002\u305D\u308C\u306F\u3001\u304B\u3064\u3066\u306E\u7B2C\u4E09\u6B21\u6838\u6226\u4E89\u306E\u6642\u3092\u9AE3\u9AF4\u3068\u3055\u305B\u305F\n-----------------------------------------------------------\n\u4ECA\u65E5\u306E\u30CB\u30E5\u30FC\u30B9\u30000010/3/28\n\u30BB\u30F3\u30BF\u30FC\u30DD\u30A4\u30F3\u30C8\u6B7B\u8005\u6570\u63A8\u5B9A\u300C125\u4E07\u4EBA\u300D"
 --- !u!222 &65868876
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &194349624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -410,8 +410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 650, y: 450}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: 650, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &194349625
 MonoBehaviour:
@@ -445,7 +445,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25A0\u4F5C\u6226\u6210\u529F\u3060\uFF01\u5927\u5909\u559C\u3070\u3057\u3044\u3053\u3068\u3060\n\n\u25A0\u7121\u8AD6\u3001\u7279\u653B\u90E8\u968A\u306E\u6D3B\u8E8D\u304C\u7121\u3051\u308C\u3070\u6210\u529F\u51FA\u6765\u306A\u304B\u3063\u305F\u3060\u308D\u3046\u3002\u5974\u3089\u306E\u9811\u5F35\u308A\u304C\u306A\u3051\u308C\u3070\u3001\u62E0\u70B9\u3054\u3068\u5439\u304D\u98DB\u3070\u3059\u6C34\u7D20\u7206\u5F3E\u304C\u4F7F\u3048\u306A\u304B\u3063\u305F\u304B\u3089\u306A\n\n\u25A0\u3084\u308A\u904E\u304E\u3060\u3063\u305F\u304C\u3001\u3053\u306E\u300C\u5E03\u544A\u300D\u306F\u3001\u5168\u4E16\u754C\u306E\u4F01\u696D\u3092\u30D3\u30D3\u3089\u305B\u4E0A\u3052\u305F\u3060\u308D\u3046\u306A\u3002\u305D\u3057\u3066\u3001\u4FFA\u305F\u3061\u306E\u4E3B\u5F35\u304C\u4F1D\u308F\u3063\u305F\u3053\u3068\u3092\u9858\u304A\u3046"
+  m_Text: "\u300C\u8857\u4E2D\u304C\u5175\u5668\u3060\u3089\u3051\u2026\u300D\n\n\u300C\u5F7C\u3089\u304C\u898B\u305F\u5149\u666F\u306F\u60B2\u60E8\u3055\u304C\u7269\u8A9E\u308B\u3002\u6570\u3005\u306E\u300CNecromancer\u300D\u3092\u5229\u7528\u3057\u305F\u5175\u5668\u305F\u3061\u304C\u305D\u306E\u5730\u3067\u7720\u3063\u3066\u3044\u305F\n\n\u30D8\u30B1\u30F3\u266A\n\u300C\u3046\u3045\u3093\uFF01\uFF1F\u901F\u5831\u304B\uFF1F\u300D\n-----------------------------------------------------------\n\u4ECA\u65E5\u306E\u30CB\u30E5\u30FC\u30B9\u30000010/3/28\n\u5929\u738B\u5BFA\u91CD\u5DE5\u300C\u30C9\u30FC\u30EB\u968A\u300D\u7121\u4E8B\u9670\u8B00\u3092\u963B\u6B62\uFF01\n\n\u25A0\u30C6\u30ED\u30EA\u30B9\u30C8\u306F\u4E0B\u5C64\u30A8\u30EA\u30A2\u5185\u306B\u3066\u79D8\u5BC6\u88CF\u306B\u4F5C\u6226\u3092\u884C\u3063\u3066\u3044\u305F\u69D8\u5B50\u3002\u305D\u308C\u3092TUME\u968A\u9577\u3092\u7B46\u982D\u3068\u3059\u308B\u300C\u30C9\u30FC\u30EB\u968A\u300D\u304C\u4E8B\u524D\u306B\u5BDF\u77E5\u3002\u30C6\u30ED\u30EA\u30B9\u30C8\u3068\u306E\u82DB\u70C8\u306A\u6B7B\u95D8\u3092\u7E70\u308A\u5E83\u3052\u3001\u7121\u4E8B\u9670\u8B00\u3092\u963B\u6B62\u3059\u308B\u4E8B\u306B\u6210\u529F\uFF01\u4F01\u696D\u9023\u5408\u3082\u5150\u7389\u30BF\u30EF\u30FC\u306E\u9632\u885B\u3092\u96E3\u306A\u304F\u3053\u306A\u3057\u3001\u30C6\u30ED\u30EA\u30B9\u30C8\u306E\u91CE\u671B\u3092\u6253\u3061\u7815\u3044\u305F"
 --- !u!222 &194349626
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ PrefabInstance:
     - target: {fileID: 3188282425843841566, guid: 5abff5fd5fb231d4a980d3d3700e8cb5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3188282425843841566, guid: 5abff5fd5fb231d4a980d3d3700e8cb5,
         type: 3}
@@ -585,7 +585,7 @@ PrefabInstance:
     - target: {fileID: 3188282425843841566, guid: 5abff5fd5fb231d4a980d3d3700e8cb5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -350
+      value: -425
       objectReference: {fileID: 0}
     - target: {fileID: 3188282425843841566, guid: 5abff5fd5fb231d4a980d3d3700e8cb5,
         type: 3}
@@ -660,12 +660,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 943147968}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 750, y: 500}
+  m_SizeDelta: {x: 750, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &284487977
 MonoBehaviour:
@@ -795,8 +795,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1608943228}
-  - {fileID: 202539411}
   - {fileID: 284487976}
+  - {fileID: 202539411}
   - {fileID: 1065630194}
   - {fileID: 65868874}
   - {fileID: 194349624}
@@ -823,7 +823,7 @@ PrefabInstance:
     - target: {fileID: 3084723973721303726, guid: 24aef43f3ac01084a9b51ccc7ee2b956,
         type: 3}
       propertyPath: m_Text
-      value: Ending
+      value: Epilogue
       objectReference: {fileID: 0}
     - target: {fileID: 3084723973721303726, guid: 24aef43f3ac01084a9b51ccc7ee2b956,
         type: 3}
@@ -868,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 8792759425947946884, guid: 24aef43f3ac01084a9b51ccc7ee2b956,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8792759425947946884, guid: 24aef43f3ac01084a9b51ccc7ee2b956,
         type: 3}
@@ -913,12 +913,12 @@ PrefabInstance:
     - target: {fileID: 8792759425947946884, guid: 24aef43f3ac01084a9b51ccc7ee2b956,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 8792759425947946884, guid: 24aef43f3ac01084a9b51ccc7ee2b956,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300
+      value: 390
       objectReference: {fileID: 0}
     - target: {fileID: 8792759425947946884, guid: 24aef43f3ac01084a9b51ccc7ee2b956,
         type: 3}
