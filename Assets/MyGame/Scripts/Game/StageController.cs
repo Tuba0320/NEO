@@ -8,6 +8,7 @@ public class StageController : MonoBehaviour
     [SerializeField]
     int stageNum;
 
+    int enemyNum = 0;
     [SerializeField]
     GameObject[] enemy;
     [SerializeField]
@@ -38,7 +39,17 @@ public class StageController : MonoBehaviour
 
     void Start()
     {
+        int cnt = 0;
+        enemyNum = 0;
         stageM = GameObject.Find("GameManager").GetComponent<StageManager>();
+        foreach(bool flag in stageM.GetisStageClear())
+        {
+            if (flag && cnt > 0)
+            {
+                enemyNum++;
+            }
+            cnt++;
+        }
         time = GameObject.Find("MainCanvas").transform.Find("Time").GetComponent<CountTime>();
         rest = GameObject.Find("GameManager").GetComponent<RestManager>();
         score = new Score();
@@ -123,7 +134,7 @@ public class StageController : MonoBehaviour
     {
         int num = 0;
         int rate = Random.Range(0, 100);
-        for (int i = 1;i < enemy.Length;i++)
+        for (int i = 1;i < enemyNum + 3;i++)
         {
             if (enemyRate[i] > rate)
             {
