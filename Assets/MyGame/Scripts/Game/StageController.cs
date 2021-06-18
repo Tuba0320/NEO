@@ -20,7 +20,7 @@ public class StageController : MonoBehaviour
     [SerializeField]
     GameObject boss;
     [SerializeField]
-    GameObject Field;
+    GameObject[] Field;
 
     private int numberOfEnemy = 0;
     private float elapsedTime = 0f;
@@ -30,7 +30,7 @@ public class StageController : MonoBehaviour
     bool isStage = false;
     bool isBoss = false;
 
-    float interval_bill = 0.5f;
+    float interval_bill = 2f;
     float cnt_bill = 0f;
 
     Score score;
@@ -77,7 +77,7 @@ public class StageController : MonoBehaviour
         if (cnt_bill >= interval_bill)
         {
             float y = Random.Range(250f, -250f);
-            GameObject.Instantiate(Field, GetFieldPosition(), Quaternion.Euler(0f, y, 0f));
+            GameObject.Instantiate(Field[Random.Range(0,Field.Length)], GetFieldPosition(), Quaternion.Euler(0f, y, 0f));
             cnt_bill = 0;
         }
 
@@ -95,7 +95,7 @@ public class StageController : MonoBehaviour
         if (elapsedTime > apperNextTime)
         {
             GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemy.Length >= 15)
+            if (enemy.Length >= 10)
             {
                 return;
             }
@@ -117,8 +117,7 @@ public class StageController : MonoBehaviour
     Vector3 GetFieldPosition()
     {
         float x = Random.Range(200f, -200f);
-        float y = Random.Range(100, 0f);
-        return new Vector3(x, y, -190);
+        return new Vector3(x, 25, -190);
     }
 
     void ApperEnemy()

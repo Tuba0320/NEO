@@ -47,7 +47,7 @@ public class Score : MonoBehaviour
 
     public void AddScore(int rest,float time) {
         this.score += ScoreConversion(rest, time);
-        s_score = this.score;
+        s_score += this.score;
     }
 
     int ScoreConversion(int rest, float time)

@@ -629,8 +629,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 449000529, guid: 3acc9e80e477bbf41bbd6e8d697cc438, type: 3}
       propertyPath: maxNumOfEnemys
-      value: 360
+      value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 449000529, guid: 3acc9e80e477bbf41bbd6e8d697cc438, type: 3}
+      propertyPath: Field.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 449000529, guid: 3acc9e80e477bbf41bbd6e8d697cc438, type: 3}
+      propertyPath: Field.Array.data[2]
+      value: 
+      objectReference: {fileID: 6304647055125851741, guid: e9a4e5d3825cc0b46a1330b4fc1cb440,
+        type: 3}
     - target: {fileID: 449000531, guid: 3acc9e80e477bbf41bbd6e8d697cc438, type: 3}
       propertyPath: sub
       value: 

@@ -27,9 +27,12 @@ MonoBehaviour:
   - {fileID: 6373681793018974745, guid: d05f143050430754b96880f06cfc3ead, type: 3}
   enemyRate: 64000000460000003200000028000000140000000a0000000500000004000000030000000200000001000000
   apperNextTime: 1
-  maxNumOfEnemys: 360
+  maxNumOfEnemys: 200
   boss: {fileID: 2257381573534847396, guid: 30b69b61dab897d448bc6a47463f99fd, type: 3}
-  Field: {fileID: 8653055515369087733, guid: 3e1a0f2c6a0e2d94e89bb1fcc0b3930a, type: 3}
+  Field:
+  - {fileID: 8653055515369087733, guid: 3e1a0f2c6a0e2d94e89bb1fcc0b3930a, type: 3}
+  - {fileID: 6304647055125851741, guid: 0d13cc8702627c84aa3438bcb5701b0a, type: 3}
+  - {fileID: 6304647055125851741, guid: e9a4e5d3825cc0b46a1330b4fc1cb440, type: 3}
 --- !u!114 &449000531
 MonoBehaviour:
   m_ObjectHideFlags: 0

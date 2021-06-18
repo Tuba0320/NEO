@@ -91,7 +91,7 @@ public class EnemyController : MonoBehaviour
         {
             Instantiate(particle, this.transform.position, Quaternion.identity);
             float odd = Random.Range(1f, 100f);
-            if (odd < 5 && Item != null)
+            if (odd < 12.5 && Item != null)
             {
                 Instantiate(Item, this.transform.position, Quaternion.identity);
             }

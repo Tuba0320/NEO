@@ -27,10 +27,8 @@ public class EndingController : MonoBehaviour
         {
             if (flag == false)
             {
-                Debug.Log("noooooooooooo");
                 gameClear = false;
             }
-            Debug.Log("yes");
         }
 
         if (gameClear)

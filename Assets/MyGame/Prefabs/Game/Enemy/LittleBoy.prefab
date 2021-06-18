@@ -46,7 +46,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.15
 --- !u!1 &175470461034768625
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.15
 --- !u!1 &708011467981369491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.15
 --- !u!1 &2492471415459812323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.15
 --- !u!1 &3924832292929937377
 GameObject:
   m_ObjectHideFlags: 0

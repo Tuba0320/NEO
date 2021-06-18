@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     bool moveXpermission;
     float mouseX, mouseY;
     float rotationXcamera;
+    float rotationYcamera;
     bool mouseXpermission, mouseYpermission;
 
     [SerializeField]
@@ -44,6 +45,9 @@ public class PlayerController : MonoBehaviour
     float interval_se = 28f;
     float cnt_se = 0f;
 
+    [SerializeField]
+    GameObject body;
+
     void Start()
     {
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
@@ -51,6 +55,7 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         camera = Camera.main.transform;
         rotationXcamera = camera.localEulerAngles.x;
+        rotationYcamera = camera.localEulerAngles.y;
         pos = camera.localPosition;
         sound.PlaySeByName("戦闘機内（飛行中）");
     }
@@ -139,9 +144,11 @@ public class PlayerController : MonoBehaviour
                 rigidbody.velocity = transform.rotation * vec3 * moveSpeed * Time.deltaTime * 100;
             }
 
-            rigidbody.MoveRotation(Quaternion.Euler(0.0f, rigidbody.rotation.eulerAngles.y + mouseX * Time.deltaTime * 100.0f * mouseSpeed, 0.0f));
+            //rigidbody.MoveRotation(Quaternion.Euler(0.0f, rigidbody.rotation.eulerAngles.y + mouseX * Time.deltaTime * 100.0f * mouseSpeed, 0.0f));
             rotationXcamera = Mathf.Clamp(rotationXcamera - mouseY * Time.deltaTime * 100.0f * mouseSpeed, -100, 5);
-            camera.localEulerAngles = new Vector3(rotationXcamera, 0, 0);
+            rotationYcamera = Mathf.Clamp(rotationYcamera - -mouseX * Time.deltaTime * 100.0f * mouseSpeed, -100, 100);
+            body.transform.localEulerAngles = new Vector3(rotationXcamera, rotationYcamera, 0);
+            camera.localEulerAngles = new Vector3(rotationXcamera, rotationYcamera, 0);
         }
         else
         {
