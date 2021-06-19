@@ -4222,8 +4222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beb79f14075c5b4bb796d1ad690d8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 30
-  stopInterval: 2
+  interval: 5
+  stopInterval: 3
 --- !u!135 &2511235852672623761
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -18,8 +18,6 @@ public class StageController : MonoBehaviour
     [SerializeField]
     int maxNumOfEnemys = 5;
     [SerializeField]
-    GameObject boss;
-    [SerializeField]
     GameObject[] Field;
 
     private int numberOfEnemy = 0;
@@ -28,7 +26,7 @@ public class StageController : MonoBehaviour
     float cnt_v1 = 0f;
     float cnt_v2 = 0f;
     bool isStage = false;
-    bool isBoss = false;
+    bool isClear = false;
 
     float interval_bill = 2f;
     float cnt_bill = 0f;
@@ -83,7 +81,7 @@ public class StageController : MonoBehaviour
 
         if (numberOfEnemy >= maxNumOfEnemys)
         {
-            GotoBoss();
+            GotoClear();
             return;
         }
 
@@ -111,13 +109,13 @@ public class StageController : MonoBehaviour
         float x = Random.Range(150f, -150f);
         float y = Random.Range(40f, 70f);
 
-        return new Vector3(x, y, -210);
+        return new Vector3(x, y, -250);
     }
 
     Vector3 GetFieldPosition()
     {
         float x = Random.Range(200f, -200f);
-        return new Vector3(x, 25, -190);
+        return new Vector3(x, 25, -250);
     }
 
     void ApperEnemy()
@@ -144,22 +142,20 @@ public class StageController : MonoBehaviour
         return num;
     }
 
-    void GotoBoss()
+    void GotoClear()
     {
         GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (enemy.Length == 0 && !isBoss)
+        if (enemy.Length == 0 && !isClear)
         {
-            GameObject.Instantiate(boss, GetRandomPosition(), Quaternion.Euler(0f, 0f, 0f));
-            isBoss = true;
+            isClear = true;
         }
 
     }
 
     void GameClear()
     {
-        GameObject[] boss = GameObject.FindGameObjectsWithTag("Boss");
-        if (isBoss && boss.Length == 0)
+        if (isClear)
         {
             time.TimeSave();
             Debug.Log(rest.getRest());
@@ -172,6 +168,6 @@ public class StageController : MonoBehaviour
 
     public bool getIsBoss()
     {
-        return isBoss;
+        return isClear;
     }
 }

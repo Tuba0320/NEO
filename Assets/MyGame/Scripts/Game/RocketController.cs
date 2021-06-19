@@ -25,7 +25,7 @@ public class RocketController : MonoBehaviour
             cl.gameObject.GetComponent<PlayerController>().ReceveDamage(5);
             Destroy(gameObject);
         }
-        else if (cl.gameObject.tag == "Enemy" || cl.gameObject.tag == "Boss")
+        else if (cl.gameObject.tag == "Enemy")
         {
             cl.gameObject.GetComponent<EnemyController>().ReceveDamage(3000);
             Destroy(gameObject);

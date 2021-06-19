@@ -37,9 +37,6 @@ public class PlayerController : MonoBehaviour
     public bool antiFlag = false;
 
     [SerializeField]
-    GameObject[] muzzles;
-
-    [SerializeField]
     float interval_damage = 0.2f;
     float cnt_damage = 0f;
     float interval_se = 28f;
@@ -332,11 +329,6 @@ public class PlayerController : MonoBehaviour
         {
             remainingHp.transform.Find("RemainingHp_1").gameObject.GetComponent<Image>().color = Color.yellow;
         }
-    }
-
-    public GameObject[] getMuzzles()
-    {
-        return muzzles;
     }
 
     public void setPlayerHp(int num)

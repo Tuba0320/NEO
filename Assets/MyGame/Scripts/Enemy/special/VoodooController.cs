@@ -17,11 +17,14 @@ public class VoodooController : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Start");
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     void Update()
     {
+        return;
+        Debug.Log("Update");
         if (stopFlag)
         {
             stopTime += Time.deltaTime;
@@ -34,6 +37,7 @@ public class VoodooController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        return;
         if (time <= interval)
         {
             stopFlag = false;
@@ -55,6 +59,15 @@ public class VoodooController : MonoBehaviour
                 other.GetComponent<PlayerController>().SetStopFlag(true);
                 sound.PlaySeByName("敵ユニット出現");
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        return;
+        if (other.tag == "Player")
+        {
+            other.GetComponent<PlayerController>().SetStopFlag(false);
         }
     }
 }

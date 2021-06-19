@@ -8,7 +8,6 @@ public class PlayerBullet : MonoBehaviour
     Rigidbody rb;
     GameObject terget;
     GameObject[] enemy;
-    StageController stageC;
 
     [SerializeField]
     float speed = 1;
@@ -24,21 +23,13 @@ public class PlayerBullet : MonoBehaviour
 
     void Start()
     {
-        if (isHorming)
-        {
-            stageC = GameObject.Find("GameSetManager").GetComponent<StageController>();
-        }
         rb = GetComponent<Rigidbody>();
         Destroy(gameObject, destroyInterval);
     }
 
     void Update()
     {
-        if (isHorming && stageC.getIsBoss())
-        {
-            terget = GameObject.FindGameObjectWithTag("Boss");
-        }
-        else if (isNavigation)
+        if (isNavigation)
         {
             terget = GameObject.FindGameObjectWithTag("Enemy");
         }

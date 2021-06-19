@@ -35,11 +35,11 @@ public class LaserBeam : MonoBehaviour
         Debug.DrawRay(transform.position + transform.rotation * new Vector3(0, 0, 0.01f), transform.forward * rayLength, Color.yellow);
         if (Physics.Raycast(ray, out hitObject, rayLength))
         {
-            if (hitObject.transform.gameObject.tag == "Enemy" || hitObject.transform.gameObject.tag == "BulletAtype" || hitObject.transform.gameObject.tag == "BulletBtype" || hitObject.transform.gameObject.tag == "Boss")
+            if (hitObject.transform.gameObject.tag == "Enemy" || hitObject.transform.gameObject.tag == "EnemyBullet")
             {
                 lr.enabled = true;
                 sight.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
-                if (hitObject.transform.gameObject.tag == "Enemy" || hitObject.transform.gameObject.tag == "Boss")
+                if (hitObject.transform.gameObject.tag == "Enemy")
                 {
                     hitObject.collider.GetComponent<EnemyController>().ReceveDamage(damageSorce);
                 }

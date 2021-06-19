@@ -120,7 +120,7 @@ public class MySceneManager : MonoBehaviour
 
     public void DataClear()
     {
-        restM.setRest(10);
+        restM.setRest(5);
         stage.ClearFlag();
         SceneManager.LoadScene("TitleScene");
     }
