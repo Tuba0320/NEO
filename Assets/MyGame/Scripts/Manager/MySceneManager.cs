@@ -12,7 +12,6 @@ public class MySceneManager : MonoBehaviour
     ScreenManager sm;
     float timeUp = 5.0f;
     float cnt = 0f;
-    bool flag = false;
     SoundManager sound;
     StageManager stage;
     RestManager restM;
@@ -36,7 +35,7 @@ public class MySceneManager : MonoBehaviour
     void Update()
     {
         GoMenuScene();
-        View();
+        Ending();
         cnt += Time.deltaTime;
 
         if (flag_t)
@@ -63,19 +62,20 @@ public class MySceneManager : MonoBehaviour
         }
     }
 
-    public void GoToStage(string num)
-    {
-        if (stage.GetClear(Regex.Replace(num, @"[^0-9]", "")))
-        {
-            Debug.Log("すでにそのステージはクリアしています");
-            return;
-        }
-        SceneManager.LoadScene(num);
-    }
-
     public void GetToScene(string num)
     {
         SceneManager.LoadScene(num);
+    }
+
+    public void GoToStage()
+    {
+        Time.timeScale = 1;
+        if (stage.GetisStageClear() >= 7)
+        {
+            SceneManager.LoadScene("GameClearScene");
+            return;
+        }
+        SceneManager.LoadScene("Stage1");
     }
 
     public void ToGameOverScene(bool isGameOver)
@@ -94,27 +94,14 @@ public class MySceneManager : MonoBehaviour
         
     }
 
-    public void ToGameClearScene()
-    {
-        sound.StopSe();
-        SceneManager.LoadScene("GameClearScene");
-    }
-
-    void View()
+    void Ending()
     {
         if (SceneManager.GetActiveScene().name == "GameClearScene" || SceneManager.GetActiveScene().name == "GameOverScene")
         {
-            flag = true;
-        }
-
-        if (cnt > timeUp && flag)
-        {
-            if (SceneManager.GetActiveScene().name == "GameOverScene")
+            if (cnt > timeUp)
             {
                 SceneManager.LoadScene("Ending");
-                return;
             }
-            SceneManager.LoadScene("ScoreView");
         }
     }
 
@@ -124,14 +111,5 @@ public class MySceneManager : MonoBehaviour
         stage.ClearFlag();
         SceneManager.LoadScene("TitleScene");
     }
-
-    public void GoEnding()
-    {
-        if (SceneManager.GetActiveScene().name == "MenuScene")
-        {
-            SceneManager.LoadScene("Ending");
-        }
-    }
-
 
 }

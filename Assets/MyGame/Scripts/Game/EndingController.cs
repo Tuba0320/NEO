@@ -12,9 +12,7 @@ public class EndingController : MonoBehaviour
     Text over;
 
     StageManager stM;
-    bool[] clearFlag = new bool[9];
-
-    bool gameClear = true;
+    bool gameClear = false;
 
     void Start()
     {
@@ -23,12 +21,9 @@ public class EndingController : MonoBehaviour
 
     void Update()
     {
-        foreach (bool flag in stM.GetisStageClear())
+        if (stM.GetisStageClear() >= 7)
         {
-            if (flag == false)
-            {
-                gameClear = false;
-            }
+            gameClear = true;
         }
 
         if (gameClear)

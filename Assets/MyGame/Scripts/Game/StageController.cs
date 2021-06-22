@@ -6,7 +6,8 @@ public class StageController : MonoBehaviour
 {
     StageManager stageM;
     [SerializeField]
-    int stageNum;
+    GameObject scoreView;
+    int viewCnt = 0;
 
     int enemyNum = 0;
     [SerializeField]
@@ -34,20 +35,18 @@ public class StageController : MonoBehaviour
     Score score;
     CountTime time;
     RestManager rest;
+    SoundManager sound;
 
     void Start()
     {
-        int cnt = 0;
         enemyNum = 0;
         stageM = GameObject.Find("GameManager").GetComponent<StageManager>();
-        foreach(bool flag in stageM.GetisStageClear())
+        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        for (int i = 0;i <  stageM.GetisStageClear();i++)
         {
-            if (flag && cnt > 0)
-            {
-                enemyNum++;
-            }
-            cnt++;
+            enemyNum++;
         }
+        Debug.Log(enemyNum);
         time = GameObject.Find("MainCanvas").transform.Find("Time").GetComponent<CountTime>();
         rest = GameObject.Find("GameManager").GetComponent<RestManager>();
         score = new Score();
@@ -155,14 +154,17 @@ public class StageController : MonoBehaviour
 
     void GameClear()
     {
-        if (isClear)
+        if (isClear && viewCnt < 1)
         {
             time.TimeSave();
-            Debug.Log(rest.getRest());
-            Debug.Log(time.getTime());
             score.AddScore(rest.getRest(), time.getTime());
-            stageM.isClear(stageNum);
-            GameObject.Find("GameManager").GetComponent<MySceneManager>().ToGameClearScene();
+            stageM.isClear();
+            sound.StopSe();
+            scoreView.SetActive(true);
+            viewCnt++;
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

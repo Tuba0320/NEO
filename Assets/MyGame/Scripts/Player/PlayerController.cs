@@ -140,10 +140,8 @@ public class PlayerController : MonoBehaviour
             {
                 rigidbody.velocity = transform.rotation * vec3 * moveSpeed * Time.deltaTime * 100;
             }
-
-            //rigidbody.MoveRotation(Quaternion.Euler(0.0f, rigidbody.rotation.eulerAngles.y + mouseX * Time.deltaTime * 100.0f * mouseSpeed, 0.0f));
             rotationXcamera = Mathf.Clamp(rotationXcamera - mouseY * Time.deltaTime * 100.0f * mouseSpeed, -100, 5);
-            rotationYcamera = Mathf.Clamp(rotationYcamera - -mouseX * Time.deltaTime * 100.0f * mouseSpeed, -100, 100);
+            rotationYcamera = Mathf.Clamp(rotationYcamera - -mouseX * Time.deltaTime * 100.0f * mouseSpeed, -35, 35);
             body.transform.localEulerAngles = new Vector3(rotationXcamera, rotationYcamera, 0);
             camera.localEulerAngles = new Vector3(rotationXcamera, rotationYcamera, 0);
         }

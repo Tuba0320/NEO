@@ -24,7 +24,7 @@ public class LaserBeam : MonoBehaviour
         pc = transform.root.GetComponent<PlayerController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (pc.GetStopFlag())

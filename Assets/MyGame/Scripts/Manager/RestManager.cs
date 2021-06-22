@@ -10,7 +10,7 @@ public class RestManager : MonoBehaviour
     public static int restNum = 5;
 
     [SerializeField]
-    private Text restText = null;
+    private Text[] restText = null;
 
 
     void Start()
@@ -20,12 +20,14 @@ public class RestManager : MonoBehaviour
 
     void Update()
     {
-        if (restText == null)
+        for (int i = 0;i < restText.Length;i++)
         {
-            return;
+            if (restText[i] == null)
+            {
+                return;
+            }
+            restText[i].text = restNum.ToString("0");
         }
-
-        restText.text = restNum.ToString("0");
     }
 
     public void subRest()
