@@ -801,8 +801,11 @@ MonoBehaviour:
   magnitude: 0.5
   stopFlag: 0
   antiFlag: 0
-  muzzles: []
   interval_damage: 0.5
+  slider: {fileID: 0}
+  interval_deadly: 15
+  deadlyRange: {fileID: 171561318263721848, guid: ead900ec0a8e8574c9fbedd0268418ce,
+    type: 3}
   body: {fileID: 7730255212331273732}
 --- !u!114 &7000730510308987982
 MonoBehaviour:

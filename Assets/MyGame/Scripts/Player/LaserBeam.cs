@@ -38,7 +38,7 @@ public class LaserBeam : MonoBehaviour
             if (hitObject.transform.gameObject.tag == "Enemy" || hitObject.transform.gameObject.tag == "EnemyBullet")
             {
                 lr.enabled = true;
-                sight.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+                sight.color = new Color(1f, 0f, 0f, 1.0f);
                 if (hitObject.transform.gameObject.tag == "Enemy")
                 {
                     hitObject.collider.GetComponent<EnemyController>().ReceveDamage(damageSorce);
@@ -50,13 +50,13 @@ public class LaserBeam : MonoBehaviour
             }
             else
             {
-                sight.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+                sight.color = new Color(0f, 0f, 0f, 1f);
             }
         }
         else
         {
             lr.enabled = false;
-            sight.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+            sight.color = new Color(0f, 0f, 0f, 1f);
         }
     }
 }

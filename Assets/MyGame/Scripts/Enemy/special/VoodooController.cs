@@ -17,14 +17,12 @@ public class VoodooController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Start");
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     void Update()
     {
         return;
-        Debug.Log("Update");
         if (stopFlag)
         {
             stopTime += Time.deltaTime;

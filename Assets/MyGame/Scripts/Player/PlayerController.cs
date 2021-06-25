@@ -27,8 +27,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     int playerHp = 5;
+    [SerializeField]
+    Slider hpSlider;
     public Image damageBoard;
-    public GameObject remainingHp;
 
     [SerializeField]
     float duration = 1.0f, magnitude = 1.0f;
@@ -43,10 +44,25 @@ public class PlayerController : MonoBehaviour
     float cnt_se = 0f;
 
     [SerializeField]
+    Slider slider;
+    [SerializeField]
+    float interval_deadly = 15f;
+    float cnt_deadly = 0f;
+    public float deadly
+    {
+        get { return cnt_deadly; }
+        set { cnt_deadly = value; }
+    }
+    [SerializeField]
+    GameObject deadlyRange;
+
+    [SerializeField]
     GameObject body;
 
     void Start()
     {
+        hpSlider.maxValue = playerHp;
+        slider.maxValue = interval_deadly;
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         damageBoard.color = Color.clear;
         rigidbody = GetComponent<Rigidbody>();
@@ -62,15 +78,13 @@ public class PlayerController : MonoBehaviour
     {
         cnt_se += Time.deltaTime;
         cnt_damage += Time.deltaTime;
+        cnt_deadly += Time.deltaTime;
         movePermission();
         if (transform.position.z <= -150)
         {
             transform.position = new Vector3(transform.position.x, 0.5f, 150);
         }
-        else  if (transform.position.z >= 150)
-        {
-            transform.position = new Vector3(transform.position.x, 0.5f, -150);
-        }
+        
         if (interval_se >= cnt_se)
         {
             return;
@@ -85,7 +99,15 @@ public class PlayerController : MonoBehaviour
     
     void FixedUpdate()
     {
-        Hpbar();
+        slider.value = cnt_deadly;
+        hpSlider.value = playerHp;
+        
+        if (cnt_deadly >= interval_deadly && Input.GetMouseButton(2))
+        {
+            sound.PlaySeByName("オーラ2");
+            Instantiate(deadlyRange, transform.position, Quaternion.identity,transform);
+            cnt_deadly = 0;
+        }
         if (stopFlag)
         {
             rigidbody.velocity = Vector3.zero;
@@ -161,171 +183,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine("damageFlashing");
             StartCoroutine(shakeCamera(duration, magnitude));
         }
-    }
-
-    void Hpbar()
-    {
-        if (playerHp <= 19)
-        {
-            remainingHp.transform.Find("RemainingHp_20").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_20").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 18)
-        {
-            remainingHp.transform.Find("RemainingHp_19").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_19").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 17)
-        {
-            remainingHp.transform.Find("RemainingHp_18").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_18").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 16)
-        {
-            remainingHp.transform.Find("RemainingHp_17").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_17").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 15)
-        {
-            remainingHp.transform.Find("RemainingHp_16").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_16").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 14)
-        {
-            remainingHp.transform.Find("RemainingHp_15").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_15").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 13)
-        {
-            remainingHp.transform.Find("RemainingHp_14").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_14").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 12)
-        {
-            remainingHp.transform.Find("RemainingHp_13").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_13").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 11)
-        {
-            remainingHp.transform.Find("RemainingHp_12").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_12").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 10)
-        {
-            remainingHp.transform.Find("RemainingHp_11").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_11").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 9)
-        {
-            remainingHp.transform.Find("RemainingHp_10").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_10").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 8)
-        {
-            remainingHp.transform.Find("RemainingHp_9").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_9").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 7)
-        {
-            remainingHp.transform.Find("RemainingHp_8").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_8").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 6)
-        {
-            remainingHp.transform.Find("RemainingHp_7").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_7").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 5)
-        {
-            remainingHp.transform.Find("RemainingHp_6").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_6").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 4)
-        {
-            remainingHp.transform.Find("RemainingHp_5").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_5").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 3)
-        {
-            remainingHp.transform.Find("RemainingHp_4").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_4").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 2)
-        {
-            remainingHp.transform.Find("RemainingHp_3").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_3").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
-        if (playerHp <= 1)
-        {
-            remainingHp.transform.Find("RemainingHp_2").gameObject.GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_2").gameObject.GetComponent<Image>().color = Color.yellow;
-        }
         if (playerHp <= 0)
         {
-            remainingHp.transform.Find("RemainingHp_1").gameObject.GetComponent<Image>().color = Color.black;
             GameObject.Find("GameManager").GetComponent<RestManager>().subRest();
             playerHp = 20;
-        }
-        else
-        {
-            remainingHp.transform.Find("RemainingHp_1").gameObject.GetComponent<Image>().color = Color.yellow;
         }
     }
 

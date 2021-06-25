@@ -46,7 +46,6 @@ public class StageController : MonoBehaviour
         {
             enemyNum++;
         }
-        Debug.Log(enemyNum);
         time = GameObject.Find("MainCanvas").transform.Find("Time").GetComponent<CountTime>();
         rest = GameObject.Find("GameManager").GetComponent<RestManager>();
         score = new Score();

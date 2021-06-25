@@ -154,12 +154,12 @@ RectTransform:
   - {fileID: 203542951}
   - {fileID: 1135757952}
   - {fileID: 26346260}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 14
+  m_Father: {fileID: 156324214}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 604.5, y: 452.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &20018653
@@ -1088,7 +1088,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u300C\u541B\u305F\u3061\u304C\u601D\u60F3\u306B\u8CDB\u6210\u3057\u3001\u3064\u3044\u3066\u304D\u3066\u304F\u308C\u308B\u4E8B\u306B\u79C1\u306F\u611F\u8B1D\u3057\u3066\u3044\u308B\u3002\u541B\u305F\u3061\u306E\u6C17\u6301\u3061\u3092\u8E0F\u307F\u306B\u3058\u308B\u4E8B\u304C\u7121\u3044\u3088\u3046\u306B\u3001\u4ECA\u56DE\u306E\u4F5C\u6226\u306F\u5FC5\u305A\u6210\u529F\u3055\u305B\u306A\u304F\u3066\u306F\u306A\u3089\u306A\u3044\u300D\n\n\u300C\u4E0B\u5C64\u30A8\u30EA\u30A2\u3001\u30BB\u30F3\u30BF\u30FC\u30DD\u30A4\u30F3\u30C8\u3067\u306E\u653F\u306F\u3069\u3046\u3084\u3089\u9806\u8ABF\u306E\u3088\u3046\u3060\u3002\u3053\u306E\u8857\u304B\u3089\u300CNecromancer\u300D\u304C\u306A\u304F\u306A\u308B\u65E5\u306F\u3059\u3050\u305D\u3053\u306B\u3042\u308B\u300D\n\n\u300C\u4ECA\u56DE\u306E\u4F5C\u6226\u306F\u7121\u95A2\u4FC2\u306E\u8005\u305F\u3061\u3092\u50B7\u3064\u3051\u308B\u3053\u3068\u3068\u306A\u308B\u3002\u3060\u304C\u305D\u308C\u3092\u6050\u308C\u308B\u306A\uFF01\u72A0\u7272\u306A\u304F\u3057\u3066\u6211\u3005\u306E\u546A\u3044\u306F\u89E3\u304B\u308C\u308B\u4E8B\u306F\u306A\u3044\u306E\u3060\u304B\u3089\u300D\n\n\u305D\u3057\u3066\u3001\u4ECA\u300CMajestyProject\u300D\u304C\u59CB\u307E\u308D\u3046\u3068\u3057\u3066\u3044\u308B\n\n"
+  m_Text: "\u25A0\u30B7\u30E3\u30D5\u30C8\u793E\u306E\u4F01\u753B\u8AB2\u8AB2\u9577\u306E\u7537\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u25A0\u5F7C\u3082\u305D\u306E\u6210\u7E3E\u304B\u3089\u6570\u3005\u306E\u4EBA\u7269\u304B\u3089\u597D\u611F\u3092\u5F97\u3066\u3044\u308B\u3002\u30AB\u30EA\u30B9\u30DE\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\n\n\u25A0\u307E\u305F\u81EA\u8EAB\u304C\u5E2B\u3092\u52E4\u3081\u308B\u30BB\u30E9\u30D4\u30FC\u3092\u7D4C\u55B6\u3057\u3066\u3044\u308B\u3002\u305D\u306E\u8A55\u5224\u306F\u5927\u5909\u3088\u304F\u3001\u591A\u304F\u306E\u8005\u304C\u53C2\u52A0\u3059\u308B\n\n\u25A0\u307E\u305F\u300CNecromancer\u300D\u306E\u5371\u967A\u6027\u306B\u3064\u3044\u3066\u3082\u8A9E\u3063\u3066\u3044\u308B"
 --- !u!222 &131881192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1175,6 +1175,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145798338}
   m_CullTransparentMesh: 0
+--- !u!1 &156324213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 156324214}
+  m_Layer: 0
+  m_Name: Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &156324214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156324213}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -604.5, y: -452.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 957147863}
+  - {fileID: 284330922}
+  - {fileID: 1267271543}
+  - {fileID: 1564359807}
+  - {fileID: 211976524}
+  - {fileID: 570781793}
+  - {fileID: 1733145390}
+  - {fileID: 5239829}
+  m_Father: {fileID: 1426698710}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &163505459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,8 +1244,8 @@ RectTransform:
   - {fileID: 1805084301}
   - {fileID: 730990203}
   - {fileID: 1513452258}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 18
+  m_Father: {fileID: 1793994595}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1315,7 +1353,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198722718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1323,8 +1361,8 @@ RectTransform:
   - {fileID: 1613159093}
   - {fileID: 1748443540}
   - {fileID: 1354923245}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 16
+  m_Father: {fileID: 1793994595}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1558,7 +1596,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211976523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1569,12 +1607,12 @@ RectTransform:
   - {fileID: 567349986}
   - {fileID: 1640698227}
   - {fileID: 1857363811}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 11
+  m_Father: {fileID: 156324214}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 604.5, y: 452.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &235800324
@@ -1846,7 +1884,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284330921}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1857,12 +1895,12 @@ RectTransform:
   - {fileID: 2117454687}
   - {fileID: 807342985}
   - {fileID: 1220070195}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 8
+  m_Father: {fileID: 156324214}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 604.5, y: 452.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &307916659
@@ -2307,7 +2345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: 65}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337856162
@@ -3007,7 +3045,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465006851}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3015,8 +3053,8 @@ RectTransform:
   - {fileID: 1938941497}
   - {fileID: 1261028748}
   - {fileID: 1327270626}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 19
+  m_Father: {fileID: 1793994595}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3206,7 +3244,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542242653}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3214,8 +3252,8 @@ RectTransform:
   - {fileID: 1993912892}
   - {fileID: 1199589346}
   - {fileID: 753400064}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 17
+  m_Father: {fileID: 1793994595}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3319,7 +3357,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570781792}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3330,12 +3368,12 @@ RectTransform:
   - {fileID: 1712540075}
   - {fileID: 619149422}
   - {fileID: 1101469762}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 12
+  m_Father: {fileID: 156324214}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 604.5, y: 452.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &602075425
@@ -3882,7 +3920,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662088691}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3890,8 +3928,8 @@ RectTransform:
   - {fileID: 131881189}
   - {fileID: 240000358}
   - {fileID: 1091080341}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 21
+  m_Father: {fileID: 1793994595}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4445,7 +4483,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761874611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4454,8 +4492,8 @@ RectTransform:
   - {fileID: 460165979}
   - {fileID: 329929714}
   - {fileID: 808452245}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 20
+  m_Father: {fileID: 1793994595}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5716,7 +5754,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957147862}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5727,12 +5765,12 @@ RectTransform:
   - {fileID: 1804663676}
   - {fileID: 720984600}
   - {fileID: 1624589688}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 7
+  m_Father: {fileID: 156324214}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 604.5, y: 452.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &963752877
@@ -5770,7 +5808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 225, y: 350}
+  m_AnchoredPosition: {x: 225, y: 400}
   m_SizeDelta: {x: 645, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963752879
@@ -6744,7 +6782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 350}
+  m_AnchoredPosition: {x: 25, y: 350}
   m_SizeDelta: {x: 645, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1261028749
@@ -6794,7 +6832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[SASAKI]'
+  m_Text: '[Necromancer]'
 --- !u!222 &1261028751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6826,7 +6864,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267271542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6837,12 +6875,12 @@ RectTransform:
   - {fileID: 281683159}
   - {fileID: 1934480110}
   - {fileID: 2078287116}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 9
+  m_Father: {fileID: 156324214}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 604.5, y: 452.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1268434056
@@ -7258,7 +7296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -125}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302006118
@@ -7906,7 +7944,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\u300C\u6575\u306E\u6570\u304C\u60F3\u50CF\u4EE5\u4E0A\u3060\uFF01\u968A\u9577\uFF01\u3053\u3053\u306F\u3044\u3063\u305F\u3093\u5897\u63F4\u3092\u5F85\u3064\u3079\u304D\u3058\u3083\u306A\u3044\u304B\uFF01\uFF1F\u300D\n\n\u300C\u5974\u3089\u306E\u4F5C\u6226\u304C\u9032\u884C\u3059\u308C\u3070\u3001\u3053\u3061\u3089\u306E\u6226\u529B\u304C\u5168\u3066\u53D6\u3089\u308C\u307E\u3059\u3002\u305D\u3046\u306A\u308C\u3070\u3001\u6211\u3005\u306E\u5168\u6EC5\u306F\u5FC5\u6B7B\u3067\u3059\u300D\n\n\u300C\u3042\u3041\u795E\u3088\u2026\u6211\u304C\u90E8\u968A\u3092\u304A\u5B88\u308A\u304F\u3060\u3055\u3044\u300D\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u516C\u5B892\u8AB2\u306E\u540D\u306B\u61F8\u3051\u3001\u30C6\u30ED\u30EA\u30B9\u30C8\u3092\u6BB2\u6EC5\u3057\u307E\u3059\u3000\u3000\u3000\u3000"
+  m_Text: "\u25A0\u5929\u738B\u5BFA\u91CD\u5DE5\u306E\u76F4\u5C5E\u306E\u7279\u6B8A\u90E8\u968A\u300C\u30C9\u30FC\u30EB\u968A\u300D\u306E\u968A\u9577\u3000\u3000\u3000\u3000\n\n\u25A0\u8AB0\u306B\u5BFE\u3057\u3066\u3082\u7269\u8170\u304C\u67D4\u3089\u304B\u3044\u4EBA\u7269\u3002\u307E\u305F\u6570\u3005\u306E\u529F\u7E3E\u3082\u6B8B\u3057\u3066\u304A\u308A\u4E16\u9593\u304B\u3089\u4EBA\u671B\u3092\u5F97\u3066\u3044\u308B\n\n\u25A0\u30AB\u30F3\u304C\u92ED\u3044\u306E\u3082\u7279\u5FB4\u306E\u4E00\u3064\u3002\u6570\u3005\u306E\u4E8B\u4EF6\u3092\u89E3\u6C7A\u3057\u305F\u7D4C\u9A13\u3068\u3001\u305D\u306E\u624B\u8155\u304B\u3089\u3001\u3042\u3089\u3086\u308B\u8857\u306E\u554F\u984C\u3092\u89E3\u6C7A\u3057\u3066\u3044\u308B"
 --- !u!222 &1363928268
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8340,21 +8378,8 @@ RectTransform:
   - {fileID: 1302006117}
   - {fileID: 1286842149}
   - {fileID: 963752878}
-  - {fileID: 957147863}
-  - {fileID: 284330922}
-  - {fileID: 1267271543}
-  - {fileID: 1564359807}
-  - {fileID: 211976524}
-  - {fileID: 570781793}
-  - {fileID: 1733145390}
-  - {fileID: 5239829}
-  - {fileID: 1972515283}
-  - {fileID: 198722719}
-  - {fileID: 542242654}
-  - {fileID: 163505460}
-  - {fileID: 465006852}
-  - {fileID: 761874612}
-  - {fileID: 662088692}
+  - {fileID: 156324214}
+  - {fileID: 1793994595}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9300,7 +9325,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564359806}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9311,12 +9336,12 @@ RectTransform:
   - {fileID: 1922765753}
   - {fileID: 2095756847}
   - {fileID: 126327919}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 10
+  m_Father: {fileID: 156324214}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 604.5, y: 452.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1595197608
@@ -9576,8 +9601,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u300C\u4F01\u696D\u9023\u5408\u306F\u79C1\u305F\u3061\u3092\u6EC5\u307C\u3059\u6C7A\u65AD\u3092\u4E0B\u3057\u305F\u3002\u6211\u3005\u3092\u6D88\u3057\u53BB\u308D\u3046\u3068\u3059\u308B\u4E16\u754C\u304C\u618E\u3044\u300D\n\n\u300C...\u7686\u306F\u77E5\u3063\u3066\u3044\u308B\u3060\u308D\u3046\u304C\u300CNecromancer\u300D\u306F\u4EBA\u306E\u5A01\u53B3\u3092\u596A\u3046\u6280\u8853\u3002\u8AD6\u7406\u7684\u306B\u8003\u3048\u3001\u300C\u4EBA\u300D\u304C\u6271\u3046\u3082\u306E\u3067\u306F\u306A\u3044\u3002\u4F55\u6545\u304B\u300D\r\n\n\u300C\u305D\u308C\u306F\u4EBA\u3092\u4EBA\u3068\u3057\u3066\u81F3\u3089\u305B\u306A\u3044\u3082\u306E\u3068\u3059\u308B\u305F\u3081\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\r\r\n\u300C\u305D\u308C\u306F\u4EBA\u306B\u81EA\u7531\u3092\u5931\u308F\u305B\u308B\u305F\u3081\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\r\n\u3000\u3000\u3000\u3000\u3000\r\n\u300C\u305D\u308C\u306F\u4EBA\u306E\u56E0\u679C\u95A2\u4FC2\u3092\u7834\u58CA\u3055\u305B\u308B\u305F\u3081...\u300D\u3000\u3000   
-    \u3000\u3000     \n\r\n\u300C\u5B9F\u969B\u79C1\u306F\u300CNecromancer\u300D\u304C\u9F4E\u3057\u305F\u3001\u6570\u591A\u304F\u60B2\u5287\u3092\u3053\u306E\u76EE\u3068\u4F53\u3067\u898B\u3066\u304D\u305F\u300D\r\n\r\n\u300C\u3053\u306E\u6280\u8853\u306F\u64A4\u5EC3\u3059\u308B\u3079\u304D\u3060\u3002\u305D\u308C\u3082\u3001\u5FB9\u5E95\u7684\u306B\u3002\u305D\u3053\u3067\u3042\u308B\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u7ACB\u3061\u4E0A\u3052\u305F\u300D\r\n\r\n\u300C\u305D\u306E\u540D\u3082\u300CMajestyProject\u300D\u3002\u305D\u3057\u3066\u3001\u6700\u521D\u306E\u6A19\u7684\u306F\u3053\u306E\u300CNEOCITY\u300D\u3060\u300D"
+  m_Text: "\u300C\u3093\u309B...\u7686\u306F\u77E5\u3063\u3066\u3044\u308B\u3060\u308D\u3046\u304C\u300CNecromancer\u300D\u306F\u4EBA\u306E\u5A01\u53B3\u3092\u596A\u3046\u6280\u8853\u3002\u8AD6\u7406\u7684\u306B\u8003\u3048\u3001\u300C\u4EBA\u300D\u304C\u6271\u3046\u3082\u306E\u3067\u306F\u306A\u3044\u3002\u4F55\u6545\u304B\u300D\r\n\n\u300C\u305D\u308C\u306F\u4EBA\u3092\u4EBA\u3068\u3057\u3066\u81F3\u3089\u305B\u306A\u3044\u3082\u306E\u3068\u3059\u308B\u305F\u3081\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\r\r\n\u300C\u305D\u308C\u306F\u4EBA\u306B\u81EA\u7531\u3092\u5931\u308F\u305B\u308B\u305F\u3081\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\r\n\u3000\u3000\u3000\u3000\u3000\r\n\u300C\u305D\u308C\u306F\u4EBA\u306E\u56E0\u679C\u95A2\u4FC2\u3092\u7834\u58CA\u3055\u305B\u308B\u305F\u3081...\u300D\u3000\u3000   
+    \u3000\u3000     \n\r\n\u300C\u4EBA\u9593\u3068\u3057\u3066\u306E\u4FA1\u5024\u3092\u306A\u304F\u3059\u3002\u305D\u3057\u3066\u3001\u30B4\u30DF\u540C\u7136\u3068\u5316\u3057\u305F\u3082\u306E\u306F\u4E16\u9593\u304B\u3089\u898B\u6368\u3066\u3089\u308C\u308B\u300D\n\n\u300C\u3093\u309B\u307E\u3041\u305D\u308C\u306F\u826F\u304F\u306A\u3044\u306F\u305A\u3060\u3002\u3053\u306E\u69D8\u306A\u4E8B\u614B\u3092\u8D77\u3053\u3059\u306E\u306F\u3001\u4E3B\u4F53\u7684\u884C\u52D5\u3060\u3051\u3067\u306F\u8D77\u3053\u308A\u3048\u306A\u3044\u300D\n\n\u300C\u305D\u306E\u4E8B\u67C4\u3092\u61F8\u5FF5\u306B\u7F6E\u3051\u3070\u3001\u79C1\u305F\u3061\u306E\u8A08\u753B\u306B\u306F\u6B63\u5F53\u6027\u304C\u5B58\u5728\u3059\u308B\u300D\n\r\n"
 --- !u!222 &1613159096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9753,7 +9778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 200}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620640669
@@ -10545,7 +10570,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733145389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10555,12 +10580,12 @@ RectTransform:
   - {fileID: 1544934693}
   - {fileID: 1003492876}
   - {fileID: 1488515535}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 13
+  m_Father: {fileID: 156324214}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 604.5, y: 452.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1748443539
@@ -10829,6 +10854,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756214216}
   m_CullTransparentMesh: 0
+--- !u!1 &1793994594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793994595}
+  m_Layer: 5
+  m_Name: Story
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1793994595
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793994594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1972515283}
+  - {fileID: 198722719}
+  - {fileID: 542242654}
+  - {fileID: 163505460}
+  - {fileID: 465006852}
+  - {fileID: 761874612}
+  - {fileID: 662088692}
+  m_Father: {fileID: 1426698710}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1796285492
 GameObject:
   m_ObjectHideFlags: 0
@@ -11102,7 +11169,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\\\\\u4E0B\u5C64\u30A8\u30EA\u30A2\u3042\u308B\u30B9\u30E9\u30E0\u8857\\\\0010\\2\\11---------------------\n\n\u300C\u304A\u3044\u3001\u30DF\u30C4\u30EB\uFF01\u4ECA\u3055\u3063\u304D\u30C6\u30ED\u30EA\u30B9\u30C8\u304C\u3001\u30BB\u30F3\u30BF\u30FC\u30DD\u30A4\u30F3\u30C8\u306E\u5150\u7389\u30BF\u30EF\u30FC\u3092\u7206\u7834\u3059\u308B\u3063\u3066\u58F0\u660E\u3092\uFF01\u300D\n\n\u300C\u8857\u306E\u4E2D\u5FC3\u3067\u5927\u66B4\u308C\u3059\u308B\u6C17\u304B\u3002\u307E\u3041\u3001\u5C11\u306A\u304F\u3068\u3082\u9000\u5C48\u306F\u3057\u306A\u3044\u3093\u3058\u3083\u306A\u3044\u304B\u300D\n\n\u300C\u3055\u3059\u304C\u306B\u3001\u4F01\u696D\u306E\u3042\u306E\u5BFE\u5FDC\u306B\u3082\u300C\u30D0\u30B0\u30BE\u30F3\u30D3\u300D\u9054\u3082\u7B54\u3048\u305F\u3088\u3046\u3060\u306A\u300D\n\n\u300C\u4F01\u696D\u9023\u5408\u3082\u8ECD\u968A\u3092\u6D3E\u9063\u3057\u305F\u69D8\u3060\u3002\u8ECD\u4E8BVessel\u3092\u898B\u308C\u308B\u30C1\u30E3\u30F3\u30B9\uFF01\u300D\n\n\u300C\u3042\u3041\u305D\u3046\u3060\u306A\uFF01\u3058\u3083\u3042\u307F\u3093\u306A\u306B\u4F1D\u3048\u308D\uFF01\u96C6\u5408\u5834\u6240\u306F\u5150\u7389\u30BF\u30EF\u30FC\u8FD1\u304F\u306E\u30B3\u30F3\u30D3\u30CB\u3060\uFF01\u300D\n\n\u7A81\u7136\u3001\u5927\u304D\u306A\u9A12\u97F3\u304C\u9CF4\u308A\u97FF\u304F\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\uFF01\uFF1F\u4F55\u3060\uFF01\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\u305F\u3001\u5927\u5909\u3060\u30DF\u30C4\u30EB\uFF01\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000"
+  m_Text: "0011\\2\\11\n\n\u300C\u5927\u5909\u3060\uFF01\u30DE\u30C4\u30C0\u5730\u533A\u3067\u6297\u4E89\u304C\u52C3\u767A\u3057\u3066\u308B\uFF01\u300D\u3000\u3000\u3000\u3000\n\n\u300C\u66B4\u8D70\u30B0\u30EB\u30FC\u30D7\u306E\u9023\u4E2D\u304B\uFF1F\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\u3044\u3001\u3044\u3084\u3082\u3063\u3068\u898F\u6A21\u304C\u5927\u304D\u3044...\u3002\u4F01\u696D\u3068\u8ECD\u968A\u304C\u6226\u3063\u3066\u3044\u308B\u3093\u3060\u300D\n\n\u300C\u7206\u7834\u4E88\u544A\u304B\u3089\u5150\u7389\u30BF\u30EF\u30FC\u3092\u5B8C\u5168\u306B\u8B66\u6212\u3057\u3066\u308B\u3093\u3060\u3068\u601D\u3063\u3066\u305F\u3002\u306A\u306B\u304B\u3042\u3063\u305F\u306E\u304B\u306A\u300D\n\n\u300C\u308F\u3001\u5206\u304B\u3089\u306A\u3044\u3051\u3069\u898B\u306B\u884C\u3053\u3046\u305C\uFF01\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000"
 --- !u!222 &1805084304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11725,7 +11792,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 650, y: 500}
+  m_SizeDelta: {x: 650, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938941498
 MonoBehaviour:
@@ -11774,7 +11841,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u300C\u8ECD\u4E8B\u5175\u5668\u3068Vessel\u304C\u3053\u3053\u4E0B\u5C64\u30A8\u30EA\u30A2\u3067\u6226\u3063\u3066\u308B\u3060\u3068\uFF01\uFF1F\u300D\n\n\u300C\u3053\u3053\u3067\u3053\u3093\u306A\u6226\u3044\u304C\u8D77\u304D\u308B\u306E\u306F\u4ECA\u307E\u3067\u306B\u306A\u3044\uFF01\u304D\u3063\u3068\u4F55\u304B\u3042\u3063\u305F\u3093\u3060\u300D\n\n\u300C\u3088\u3057\uFF01\u4E88\u5B9A\u5909\u66F4\uFF01\u305D\u306E\u76EE\u6483\u3055\u308C\u305F\u5834\u6240\u3078\u5411\u304B\u3046\u305E\uFF01\u300D"
+  m_Text: "\u25A0\u4EBA\u9593\u306E\u8133\u3092\u30C7\u30B8\u30BF\u30EB\u30C7\u30FC\u30BF\u3068\u3057\u3066\u66F8\u304D\u5199\u3059\u6280\u8853\u3002\u65B0\u4E16\u7D00\u3092\u4EE3\u8868\u3059\u308B\u6280\u8853\u306E\u4E00\u3064\n\n\u25A0\u30C7\u30FC\u30BF\u5316\u3057\u305F\u4EBA\u9593\u306F\u6C4E\u7528\u7684\u306B\u5229\u7528\u3067\u304D\u308B\u3002\u4EE3\u8868\u7684\u306A\u5229\u7528\u65B9\u6CD5\u306F\u3001\u30C7\u30FC\u30BF\u3092\u6A5F\u68B0\u306B\u79FB\u3057\u3066\u305D\u306E\u4F53\u3067\u751F\u6D3B\u3092\u55B6\u3080\u3053\u3068\u3067\u3042\u308B\u3002\u4EBA\u9593\u306E\u5BFF\u547D\u3092\u534A\u6C38\u4E45\u7684\u306B\u3057\u3001\u4E14\u3064\u77E5\u80FD\u3001\u8EAB\u4F53\u80FD\u529B\u5411\u4E0A\u306B\u3082\u7E4B\u3050\u4E8B\u304C\u51FA\u6765\u305F\n\n\u25A0\u5229\u7528\u3057\u305F\u7D50\u679C\u3001\u91CD\u3044\u5F8C\u907A\u75C7\u304C\u898B\u3089\u308C\u308B\u30B1\u30FC\u30B9\u304C\u591A\u767A\u3057\u3066\u3044\u308B\u3002\u8089\u4F53\u304C\u3042\u3063\u305F\u9803\u306B\u6BD4\u3079\u308B\u3068\u3001\u74B0\u5883\u304C\u5927\u304D\u304F\u7570\u306A\u308B\u305F\u3081\u3067\u3042\u308B\n\n\u25A0\u307E\u305F\u5B8C\u5168\u306B\u8A18\u61B6\u304C\u8607\u3063\u3066\u3057\u307E\u3046\u4E8B\u4F8B\u304C\u5B58\u5728\u3059\u308B\u3002\u305D\u306E\u8005\u9054\u306F\u904E\u53BB\u306E\u5168\u3066\u306E\u30C8\u30E9\u30A6\u30DE\u304C\u8972\u3044\u639B\u304B\u308A\u3001\u7D50\u679C\u51F6\u66B4\u306A\u4EBA\u683C\u3068\u306A\u3063\u3066\u3057\u307E\u3046\u3002\u305D\u3057\u3066\u3001\u305D\u306E\u8005\u305F\u3061\u306F\u300C\u30D0\u30B0\u30BE\u30F3\u30D3\u300D\u3068\u547C\u3070\u308C\u308B"
 --- !u!222 &1938941500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12025,7 +12092,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972515282}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12033,8 +12100,8 @@ RectTransform:
   - {fileID: 1996101925}
   - {fileID: 365997972}
   - {fileID: 1958882705}
-  m_Father: {fileID: 1426698710}
-  m_RootOrder: 15
+  m_Father: {fileID: 1793994595}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12200,7 +12267,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\\\\\u4E0A\u5C64\u30A8\u30EA\u30A2\u51FA\u5165\u53E3\u5468\u8FBA\\\\0010\\2\\10-----------------------\n\n\u300C\u4E0D\u5BE9\u306A\u52D5\u304D\u3092\u767A\u898B\u3057\u307E\u3057\u305F\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\u72B6\u6CC1\u306F\uFF1F\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\u5206\u539A\u304F\u9AD8\u30552\uFF4D\u307B\u3069\u306E\u30B5\u30FC\u30D0\u3092\u30D0\u30F3\u3078\u904B\u3093\u3067\u307E\u3059\u300D\u3000\u3000\n\n\u300C\u305D\u306E\u30B5\u30FC\u30D0\u898B\u899A\u3048\u304C\u3042\u308A\u307E\u305B\u3093\u304B\uFF1F\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\u3048\u3047\u3001\u3042\u308C\u306F\u300Chypnosis\u300D\u3067\u3059\u306D\u3002\u300CNecromancer\u300D\u578B\u5175\u5668\u306E\u5F37\u5236\u64CD\u4F5C\u3092\u884C\u3046\u30B3\u30F3\u30D4\u30E5\u30FC\u30BF\u30FC\u300D\n\n\u300C\u4E00\u822C\u4EBA\u304C\u6301\u3064\u3082\u306E\u3067\u306F\u306A\u3044\u3002\u65AD\u5B9A\u7684\u306B\u30C6\u30ED\u30EA\u30B9\u30C8\u3068\u4EEE\u5B9A\u3059\u308B\u306A\u3089\u3001\u3053\u3061\u3089\u306E\u5175\u5668\u3092\u4E57\u3063\u53D6\u308B\u3064\u3082\u308A\u3067\u3057\u3087\u3046\u3002\u3064\u307E\u308A\u3001\u5185\u90E8\u304B\u3089\u653B\u6483\u3092\u884C\u3046\u3068\u3002\u30D0\u30F3\u306E\u884C\u5148\u306F\uFF1F\u300D\n\n\u300C\u30D0\u30F3\u306F\u8857\u3092\u306F\u305A\u308C\u3001\u4E0B\u5C64\u30A8\u30EA\u30A2\u3078\u3068\u5411\u304B\u3063\u3066\u307E\u3059\u300D\u3000\u3000\n\n\u300C\u308F\u304B\u308A\u307E\u3057\u305F\u3002\u3067\u306F\u6025\u3044\u3067\u5974\u3089\u3092\u8FFD\u3044\u304B\u3051\u307E\u3059\u3002\u7121\u8AD6\u3001\u5404\u968A\u54E1\u306F\u300CVessel\u300D\u306E\u6E96\u5099\u3092\u5FD8\u308C\u305A\u306B\u300D"
+  m_Text: "0011\\2\\10\n\n\u300C\u4E0D\u5BE9\u306A\u52D5\u304D\u3092\u767A\u898B\u3057\u305F\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\u306F\u3044\u3001\u78BA\u8A8D\u3067\u304D\u307E\u3059\u300D\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\u5206\u539A\u304F\u9AD8\u30552\uFF4D\u307B\u3069\u306E\u30B5\u30FC\u30D0\u3092\u30D0\u30F3\u3078\u904B\u3093\u3067\u3044\u308B\u300D\u3000\u3000\n\n\u300C...\u3053\u306E\u30B5\u30FC\u30D0\u898B\u899A\u3048\u304C\u3042\u308A\u307E\u305B\u3093\u304B\uFF1F\u300D\u3000\u3000\u3000\u3000\u3000\u3000\n\n\u300C\u3042\u3041\u3001\u3042\u308C\u306F\u300Chypnosis\u300D\u3060\u306A\u3002\u300CNecromancer\u300D\u578B\u5175\u5668\u306E\u5F37\u5236\u64CD\u4F5C\u3092\u884C\u3046\u30CF\u30C3\u30AF\u30C6\u30C3\u30AF\u300D\n\n\u300C\u4E00\u822C\u4EBA\u304C\u6301\u3064\u3082\u306E\u3067\u306F\u306A\u3044\u3002\u65AD\u5B9A\u7684\u306B\u30C6\u30ED\u30EA\u30B9\u30C8\u3068\u4EEE\u5B9A\u3059\u308B\u306A\u3089\u3001\u3053\u3061\u3089\u306E\u5175\u5668\u3092\u4E57\u3063\u53D6\u308B\u3064\u3082\u308A\u3067\u3057\u3087\u3046\u306D\u3002\u3064\u307E\u308A\u3001\u5185\u90E8\u304B\u3089\u653B\u6483\u3092\u884C\u3046...\u3002\u5974\u3089\u306E\u884C\u5148\u306F\uFF1F\u300D\n\n\u300C\u30D0\u30F3\u306F\u8857\u3092\u306F\u305A\u308C\u3001\u4E0B\u5C64\u30A8\u30EA\u30A2\u3078\u3068\u5411\u304B\u3063\u3066\u3044\u308B\u300D\u3000\u3000\n\n\u300C\u308F\u304B\u308A\u307E\u3057\u305F\u3002\u3067\u306F\u6025\u3044\u3067\u5974\u3089\u3092\u8FFD\u3044\u304B\u3051\u307E\u3057\u3087\u3046\u300D\u3000"
 --- !u!222 &1993912895
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12372,7 +12439,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25A0\u6642\u306F\u4E8C\u5341\u4E00\u4E16\u7D00\u3001\u4E16\u754C\u306F\u7B2C\u4E8C\u6B21\u8CC7\u6E90\u6226\u4E89\u3001\u7B2C\u4E09\u6B21\u6838\u6226\u4E89\u3092\u5F97\u3066\u3001\u56FD\u3068\u3044\u3046\u5883\u754C\u7DDA\u3092\u5931\u3046\u3002\u305D\u3057\u3066\u3001\u65B0\u4E16\u7D00\u306E\u5E55\u958B\u3051\u3068\u5171\u306B\u3001\u5927\u4F01\u696D\u3092\u4E2D\u5FC3\u3068\u3059\u308B\u300C\u4F01\u696D\u9023\u5408\u300D\u304C\u305D\u306E\u65B0\u4E16\u754C\u306E\u6307\u63EE\u3092\u884C\u3063\u3066\u3044\u305F\n\n\u25A0\u65B0\u4E16\u7D00\u304B\u3089\u79D1\u5B66\u6280\u8853\u304C\u98DB\u8E8D\u7684\u306B\u9AD8\u5EA6\u5316\u3002\u307E\u305F\u3001\u4EBA\u9593\u306E\u8133\u3092\u30C7\u30B8\u30BF\u30EB\u30C7\u30FC\u30BF\u3068\u3059\u308B\u6280\u8853\u300CNecromancer\u300D\u304C\u6CE8\u76EE\u3092\u96C6\u3081\u305F\u3002\u3053\u306E\u6280\u8853\u306E\u6D3B\u7528\u306B\u3088\u3063\u3066\u3001\u4E0D\u8001\u4E0D\u6B7B\u3001\u4EBA\u306E\u4E00\u62EC\u7BA1\u7406\u306A\u3069\u3001\u30D5\u30A3\u30AF\u30B7\u30E7\u30F3\u67D3\u307F\u305F\u767A\u60F3\u306E\u6570\u3005\u3092\u5B9F\u73FE\u3055\u305B\u305F\n\n\u25A0\u307E\u305F\u305D\u306E\u6280\u8853\u3092\u5FDC\u7528\u3057\u305F\u300CVessel\u300D\u3082\u6CE8\u76EE\u3092\u96C6\u3081\u305F\u3002\u3053\u308C\u306F\u3001\u4EBA\u306E\u8133\u30C7\u30FC\u30BF\u3092\u6A5F\u68B0\u306E\u4F53\u3078\u79FB\u3057\u3001\u8089\u4F53\u3068\u306F\u5225\u306B\u6A5F\u68B0\u3067\u884C\u52D5\u3092\u3059\u308B\u7269\u3002\u751F\u8EAB\u3067\u884C\u3046\u6D3B\u52D5\u306B\u6BD4\u3079\u52B9\u7387\u7684\u3067\u3042\u308A\u3001\u4E14\u3064\u6C4E\u7528\u7684\u3067\u3042\u3063\u305F\u3002\u305D\u306E\u5229\u7528\u6027\u306E\u9AD8\u3055\u304B\u3089\u5E45\u5E83\u3044\u5206\u91CE\u3067\u6D3B\u8E8D\u3059\u308B\n\n\u25A0\u3057\u304B\u3057\u300CNecromancer\u300D\u3092\u5229\u7528\u3059\u308B\u3053\u3068\u306F\u3001\u7CBE\u795E\u969C\u5BB3\u3092\u60A3\u3046\u30EA\u30B9\u30AF\u304C\u4F34\u3063\u305F\u3002\u307E\u305F\u3001\u305D\u308C\u306B\u3088\u308A\u91CD\u304F\u7CBE\u795E\u3092\u304D\u305F\u3057\u305F\u8005\u306F\u3001\u51F6\u60AA\u306A\u66B4\u5F92\u3068\u5316\u3057\u6570\u591A\u304F\u306E\u60B2\u5287\u3092\u751F\u3093\u3067\u3044\u3063\u305F\u3002\u3053\u306E\u66B4\u5F92\u3068\u5316\u3057\u305F\u8005\u305F\u3061\u3092\u4EBA\u306F\u300C\u30D0\u30B0\u30BE\u30F3\u30D3\u300D\u3068\u547C\u3076\n\n\u25A0\u65B0\u4E16\u7D000010\u5E74\u3001\u4E16\u754C\u306F\u300C\u30D0\u30B0\u30BE\u30F3\u30D3\u300D\u304C\u9F4E\u3059\u793E\u4F1A\u554F\u984C\u3092\u8AB2\u984C\u3068\u3057\u3066\u3044\u305F\u3002\u305D\u306E\u72B6\u6CC1\u306B\u5BFE\u3057\u5404\u90FD\u5E02\u3092\u652F\u914D\u3059\u308B\u4F01\u696D\u306F\u3001\u6B66\u529B\u884C\u4F7F\u3092\u884C\u3046\u6226\u95D8\u90E8\u968A\u3092\u914D\u5099\u3002\u554F\u984C\u306E\u7A2E\u306F\u300C\u6B66\u300D\u3092\u6301\u3063\u3066\u6392\u9664\u3092\u884C\u3063\u305F\n"
+  m_Text: "\u25A0\u6642\u306B\u4E16\u754C\u306F\u7B2C\u4E8C\u6B21\u8CC7\u6E90\u6226\u4E89\u3001\u7B2C\u4E09\u6B21\u6838\u6226\u4E89\u3092\u5F97\u3066\u3001\u56FD\u3068\u3044\u3046\u5883\u754C\u7DDA\u3092\u5931\u3046\u3002\u305D\u3057\u3066\u3001\u65B0\u4E16\u7D00\u306E\u5E55\u958B\u3051\u3068\u5171\u306B\u3001\u5927\u4F01\u696D\u3092\u4E2D\u5FC3\u3068\u3059\u308B\u300C\u4F01\u696D\u9023\u5408\u300D\u304C\u65B0\u305F\u306A\u4E16\u754C\u306E\u6307\u63EE\u3092\u884C\u3046\n\n\u25A0\u65B0\u4E16\u7D00\u304B\u3089\u79D1\u5B66\u6280\u8853\u304C\u98DB\u8E8D\u7684\u306B\u9AD8\u5EA6\u5316\u3002\u305D\u3057\u3066\u3001\u4EBA\u9593\u306E\u8133\u3092\u30C7\u30B8\u30BF\u30EB\u30C7\u30FC\u30BF\u5316\u3059\u308B\u6280\u8853\u300CNecromancer\u300D\u304C\u6CE8\u76EE\u3092\u96C6\u3081\u308B\u3002\u4EBA\u985E\u306F\u305D\u306E\u6280\u8853\u3092\u5229\u7528\u3057\u3001\u304B\u3064\u3066\u306E\u8089\u4F53\u306E\u675F\u7E1B\u304B\u3089\u9003\u308C\u6A5F\u68B0\u306E\u4F53\u3067\u751F\u6D3B\u3059\u308B\u69D8\u306B\u306A\u3063\u305F\n\n\u25A0\u3060\u304C\u305D\u306E\u4EE3\u511F\u3068\u3057\u3066\u3001\u7CBE\u795E\u969C\u5BB3\u30EA\u30B9\u30AF\u3092\u4F34\u3063\u305F\u3002\u305D\u308C\u3092\u91CD\u304F\u60A3\u3063\u305F\u8005\u306F\u66B4\u5F92\u3068\u5316\u3057\u3001\u6570\u3005\u306E\u60B2\u5287\u3092\u751F\u3093\u3067\u3044\u308B\u3002\u307E\u305F\u3001\u305D\u306E\u8005\u9054\u3092\u300C\u30D0\u30B0\u30BE\u30F3\u30D3\u300D\u3068\u547C\u3076\u3002\u65B0\u4E16\u7D000010\u5E74\u3001\u4E16\u754C\u306F\u305D\u306E\u30EA\u30B9\u30AF\u3078\u306E\u5BFE\u51E6\u3092\u8AB2\u984C\u3068\u3057\u3066\u3044\u308B"
 --- !u!222 &1996101928
 CanvasRenderer:
   m_ObjectHideFlags: 0

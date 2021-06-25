@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     GameObject Item = null;
 
+    [SerializeField]
+    Slider slider = null;
+
     float cnt_se;
 
     void Start()
@@ -34,6 +38,11 @@ public class EnemyController : MonoBehaviour
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
+        if (hp == 1)
+        {
+            return;
+        }
+        slider.maxValue = hp;
     }
 
     void Update()
@@ -50,6 +59,12 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        if (hp == 1)
+        {
+            return;
+        }
+        slider.value = hp;
+        slider.transform.LookAt(GameObject.FindWithTag("Player").transform);
     }
 
     void OnTriggerEnter(Collider cl)
