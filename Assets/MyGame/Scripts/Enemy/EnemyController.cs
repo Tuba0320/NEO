@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class EnemyController : MonoBehaviour
 {
     SoundManager sm;
+    StageController stageC;
     Rigidbody rb;
     GameObject target;
+    Score score;
+
+    int scorePoint = 10;
 
     [SerializeField]
     int hp = 3;
@@ -34,8 +38,11 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        score = new Score();
         Destroy(gameObject, 10);
+        scorePoint = scorePoint * (int)hp;
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        stageC = GameObject.Find("GameSetManager").GetComponent<StageController>();
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
         if (hp == 1)
@@ -104,14 +111,20 @@ public class EnemyController : MonoBehaviour
         hp -= damage;
         if (hp <= 0)
         {
-            Instantiate(particle, this.transform.position, Quaternion.identity);
-            float odd = Random.Range(1f, 100f);
-            if (odd < 12.5 && Item != null)
-            {
-                Instantiate(Item, this.transform.position, Quaternion.identity);
-            }
-            sm.PlaySeByName("爆発2");
-            Destroy(this.gameObject);
+            EnemyDestory();
         }
+    }
+
+    public void EnemyDestory()
+    {
+        Instantiate(particle, this.transform.position, Quaternion.identity);
+        if (Item != null)
+        {
+            Instantiate(Item, this.transform.position, Quaternion.identity);
+        }
+        score.EnemyDefeatAddScore(scorePoint);
+        stageC.EnemyPoint = stageC.EnemyPoint + scorePoint;
+        sm.PlaySeByName("爆発2");
+        Destroy(this.gameObject);
     }
 }

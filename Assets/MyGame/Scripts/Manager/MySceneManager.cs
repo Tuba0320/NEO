@@ -15,6 +15,7 @@ public class MySceneManager : MonoBehaviour
     SoundManager sound;
     StageManager stage;
     RestManager restM;
+    Score score;
 
     float cnt_t = 0f;
     bool flag_t = false;
@@ -22,6 +23,7 @@ public class MySceneManager : MonoBehaviour
 
     void Start()
     {
+        score = new Score();
         stage = GetComponent<StageManager>();
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         sm = GetComponent<ScreenManager>();
@@ -109,6 +111,7 @@ public class MySceneManager : MonoBehaviour
     {
         restM.setRest(5);
         stage.ClearFlag();
+        score.Initialize();
         SceneManager.LoadScene("TitleScene");
     }
 

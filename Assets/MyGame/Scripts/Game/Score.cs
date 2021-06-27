@@ -38,47 +38,22 @@ public class Score : MonoBehaviour
         Initialize();
     }
 
-    private void Initialize()
+    public void Initialize()
     {
         score = 0;
-
+        s_score = 0;
         isNewRecoad = false;
     }
 
-    public void AddScore(int rest,float time) {
-        this.score += ScoreConversion(rest, time);
+    public void AddScore(int rest,float time,int enemyPoint) {
+        this.score += (int)(enemyPoint * (rest * 0.1f));
         s_score += this.score;
     }
 
-    int ScoreConversion(int rest, float time)
+    public void EnemyDefeatAddScore(int add)
     {
-        int add = 0;
-        if (time < 100f)
-        {
-            add += 300;
-        }
-        else if (time < 200f)
-        {
-            add += 100;
-        }
-        else 
-        {
-            add += 50;
-        }
-
-        if (rest >= 30)
-        {
-            add += 500;
-        }
-        else if (rest >= 20)
-        {
-            add += 300;
-        }
-        else if (rest >= 10)
-        {
-            add += 100;
-        }
-        return add;
+        this.score += add;
+        s_score += this.score;
     }
 
     public int getScore()

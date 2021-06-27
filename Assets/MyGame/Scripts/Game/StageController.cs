@@ -32,6 +32,13 @@ public class StageController : MonoBehaviour
     float interval_bill = 2f;
     float cnt_bill = 0f;
 
+    int enemyPoint = 0;
+    public int EnemyPoint
+    {
+        get { return enemyPoint; }
+        set { enemyPoint = value; }
+    }
+
     Score score;
     CountTime time;
     RestManager rest;
@@ -156,7 +163,7 @@ public class StageController : MonoBehaviour
         if (isClear && viewCnt < 1)
         {
             time.TimeSave();
-            score.AddScore(rest.getRest(), time.getTime());
+            score.AddScore(rest.getRest(), time.getTime(),enemyPoint);
             stageM.isClear();
             sound.StopSe();
             scoreView.SetActive(true);

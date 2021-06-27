@@ -20,7 +20,11 @@ public class deadlyRange : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bill" || other.gameObject.tag == "EnemyBullet")
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.GetComponent<EnemyController>().EnemyDestory();
+        }
+        else if (other.gameObject.tag == "Bill" || other.gameObject.tag == "EnemyBullet")
         {        
             Destroy(other.gameObject);
         }

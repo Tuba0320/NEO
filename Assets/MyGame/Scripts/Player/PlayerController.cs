@@ -42,19 +42,7 @@ public class PlayerController : MonoBehaviour
     float cnt_damage = 0f;
     float interval_se = 28f;
     float cnt_se = 0f;
-
-    [SerializeField]
-    Slider slider;
-    [SerializeField]
-    float interval_deadly = 15f;
-    float cnt_deadly = 0f;
-    public float deadly
-    {
-        get { return cnt_deadly; }
-        set { cnt_deadly = value; }
-    }
-    [SerializeField]
-    GameObject deadlyRange;
+    
 
     [SerializeField]
     GameObject body;
@@ -62,7 +50,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         hpSlider.maxValue = playerHp;
-        slider.maxValue = interval_deadly;
         sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         damageBoard.color = Color.clear;
         rigidbody = GetComponent<Rigidbody>();
@@ -78,7 +65,6 @@ public class PlayerController : MonoBehaviour
     {
         cnt_se += Time.deltaTime;
         cnt_damage += Time.deltaTime;
-        cnt_deadly += Time.deltaTime;
         movePermission();
         if (transform.position.z <= -150)
         {
@@ -99,15 +85,8 @@ public class PlayerController : MonoBehaviour
     
     void FixedUpdate()
     {
-        slider.value = cnt_deadly;
         hpSlider.value = playerHp;
-        
-        if (cnt_deadly >= interval_deadly && Input.GetMouseButton(2))
-        {
-            sound.PlaySeByName("オーラ2");
-            Instantiate(deadlyRange, transform.position, Quaternion.identity,transform);
-            cnt_deadly = 0;
-        }
+
         if (stopFlag)
         {
             rigidbody.velocity = Vector3.zero;

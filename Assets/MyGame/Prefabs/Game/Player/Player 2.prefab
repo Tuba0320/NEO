@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 98861926232971173}
   - component: {fileID: 98861926232971174}
   - component: {fileID: 7000730510308987982}
+  - component: {fileID: 7305005371877744959}
   m_Layer: 9
   m_Name: Player 2
   m_TagString: Player
@@ -699,6 +700,7 @@ Transform:
   - {fileID: 5738124933573396686}
   - {fileID: 1586877135402186725}
   - {fileID: 6486151613794502073}
+  - {fileID: 3248648553731178640}
   - {fileID: 2168029066817057254}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -795,17 +797,13 @@ MonoBehaviour:
   mouseSpeed: 1
   AlwaysMoveSpeed: 0.25
   playerHp: 20
+  hpSlider: {fileID: 0}
   damageBoard: {fileID: 0}
-  remainingHp: {fileID: 0}
   duration: 0.1
   magnitude: 0.5
   stopFlag: 0
   antiFlag: 0
   interval_damage: 0.5
-  slider: {fileID: 0}
-  interval_deadly: 15
-  deadlyRange: {fileID: 171561318263721848, guid: ead900ec0a8e8574c9fbedd0268418ce,
-    type: 3}
   body: {fileID: 7730255212331273732}
 --- !u!114 &7000730510308987982
 MonoBehaviour:
@@ -821,6 +819,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftWarn: {fileID: 0}
   rigitWarn: {fileID: 0}
+--- !u!114 &7305005371877744959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98861926232971176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739fb91bcfa67b948920709dc61ad8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval_deadly: 500
+  deadlyRange: {fileID: 171561318263721848, guid: ead900ec0a8e8574c9fbedd0268418ce,
+    type: 3}
+  slider: {fileID: 0}
+  point: {fileID: 0}
 --- !u!1 &98861926376104568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1247,7 @@ GameObject:
   - component: {fileID: 5738124933573396686}
   - component: {fileID: 2107772907171599360}
   m_Layer: 0
-  m_Name: HomingMuzzleB
+  m_Name: HomingMuzzle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1268,8 +1283,7 @@ MonoBehaviour:
   - {fileID: 1708259551735715449, guid: 50a3ee000e5fd5e458798c7920cddf50, type: 3}
   shotInterval:
   - 0.15
-  bulletLimit: 20030000
-  isGeneral: 0
+  seName: "\u72D9\u6483\u9283\u767A\u5C04"
 --- !u!1 &607945867743366227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3572,7 +3586,7 @@ GameObject:
   - component: {fileID: 2632392176041169952}
   - component: {fileID: 7296394015393349796}
   m_Layer: 0
-  m_Name: HomingMuzzleA
+  m_Name: HomingMuzzle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3608,8 +3622,7 @@ MonoBehaviour:
   - {fileID: 1708259551735715449, guid: 50a3ee000e5fd5e458798c7920cddf50, type: 3}
   shotInterval:
   - 0.15
-  bulletLimit: 20030000
-  isGeneral: 0
+  seName: "\u72D9\u6483\u9283\u767A\u5C04"
 --- !u!1 &3353664358269719511
 GameObject:
   m_ObjectHideFlags: 0
@@ -3970,13 +3983,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab:
-  - {fileID: 1708259551735715449, guid: 71b277e44ea8fd54d9ba9d838d82b0fc, type: 3}
   - {fileID: 5155108318593857298, guid: c9019509d98e1f04c90dd7fdfe982b6a, type: 3}
   shotInterval:
-  - 0.5
   - 0.25
-  bulletLimit: 50000000
-  isGeneral: 1
+  seName: "\u30ED\u30B1\u30C3\u30C8\u30E9\u30F3\u30C1\u30E3\u30FC"
 --- !u!1 &3843497050900548081
 GameObject:
   m_ObjectHideFlags: 0
@@ -4530,6 +4540,51 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &4230121184347221220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3248648553731178640}
+  - component: {fileID: 5723904506345522645}
+  m_Layer: 0
+  m_Name: ChageMuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3248648553731178640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4230121184347221220}
+  m_LocalRotation: {x: -0.08715579, y: -0, z: -0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 14.733282, z: -0.71624124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 98861926232971175}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5723904506345522645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4230121184347221220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77d53f3efc128342b2968a1d5135024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1708259551735715449, guid: f9db85347efc6cd4ca48a08bd82fd49c, type: 3}
+  slider: {fileID: 0}
 --- !u!1 &4382139586818171724
 GameObject:
   m_ObjectHideFlags: 0
@@ -5173,7 +5228,7 @@ GameObject:
   - component: {fileID: 6486151613794502073}
   - component: {fileID: 299405013958918143}
   m_Layer: 0
-  m_Name: HomingMuzzleB (1)
+  m_Name: HomingMuzzle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5209,8 +5264,7 @@ MonoBehaviour:
   - {fileID: 1708259551735715449, guid: 50a3ee000e5fd5e458798c7920cddf50, type: 3}
   shotInterval:
   - 0.15
-  bulletLimit: 20030000
-  isGeneral: 0
+  seName: "\u72D9\u6483\u9283\u767A\u5C04"
 --- !u!1 &5072054811717405430
 GameObject:
   m_ObjectHideFlags: 0
@@ -7705,7 +7759,7 @@ Transform:
   - {fileID: 4528313807235473003}
   - {fileID: 8281180149517726007}
   m_Father: {fileID: 98861926232971175}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7730605718370275884
 GameObject:
@@ -8271,7 +8325,7 @@ GameObject:
   - component: {fileID: 1586877135402186725}
   - component: {fileID: 1759865422213470230}
   m_Layer: 0
-  m_Name: HomingMuzzleA (1)
+  m_Name: HomingMuzzle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8307,8 +8361,7 @@ MonoBehaviour:
   - {fileID: 1708259551735715449, guid: 50a3ee000e5fd5e458798c7920cddf50, type: 3}
   shotInterval:
   - 0.15
-  bulletLimit: 20030000
-  isGeneral: 0
+  seName: "\u72D9\u6483\u9283\u767A\u5C04"
 --- !u!1 &8670294582533054364
 GameObject:
   m_ObjectHideFlags: 0

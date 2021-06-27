@@ -29,9 +29,12 @@ public class ItemController : MonoBehaviour
         if (other.tag == "Player")
         {
             odd = Random.Range(0f, 100f);
-            other.GetComponent<PlayerController>().setPlayerHp(5);
-            other.GetComponent<PlayerController>().deadly = other.GetComponent<PlayerController>().deadly + 5f;
-            if (odd < 1)
+            other.GetComponent<DeadlyContorller>().deadly = other.GetComponent<DeadlyContorller>().deadly + 5f;
+            if (odd < 12.5)
+            {
+                other.GetComponent<PlayerController>().setPlayerHp(5);
+            }
+            if (odd < 0.1)
             {
                 GameObject.Find("GameManager").GetComponent<RestManager>().addRest(1);
             }

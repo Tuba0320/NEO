@@ -7,7 +7,7 @@ public class RestManager : MonoBehaviour
 {
     private GameObject GMnager;
 
-    public static int restNum = 5;
+    public static int restNum = 3;
 
     [SerializeField]
     private Text[] restText = null;

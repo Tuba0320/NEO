@@ -20,6 +20,8 @@ public class PlayerBullet : MonoBehaviour
     bool isHorming = false;
     [SerializeField]
     bool isNavigation = false;
+    [SerializeField]
+    bool isChage = false;
 
     void Start()
     {
@@ -57,6 +59,10 @@ public class PlayerBullet : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<EnemyController>().ReceveDamage(damageSorce);
+            if (isChage)
+            {
+                return;
+            }
             Destroy(gameObject);
         }
 
@@ -73,14 +79,26 @@ public class PlayerBullet : MonoBehaviour
             if (other.gameObject.tag == "Enemy")
             {
                 other.gameObject.GetComponent<EnemyController>().ReceveDamage(damageSorce);
+                if (isChage)
+                {
+                    return;
+                }
                 Destroy(gameObject);
             }
 
             if (other.gameObject.tag == "Stage" || other.gameObject.tag == "Bill")
             {
+                if (isChage && other.gameObject.tag == "Bill")
+                {
+                    Destroy(other.gameObject);
+                    return;
+                }
+                else if(isChage && other.gameObject.tag == "Stage")
+                {
+                    return;
+                }
                 Destroy(gameObject);
             }
-            return;
         }
         else if (other.tag == "Enemy" && isHorming)
         {
