@@ -9,13 +9,14 @@ using System.Linq;
 public class MySceneManager : MonoBehaviour
 {
     public string bgmName;
-    ScreenManager sm;
     float timeUp = 5.0f;
     float cnt = 0f;
-    SoundManager sound;
-    StageManager stage;
-    RestManager restM;
-    Score score;
+    static ScreenManager sm;
+    static SoundManager sound;
+    static StageManager stage;
+    static RestManager restM;
+    static Score score = new Score();
+    static int cnt_find = 0;
 
     float cnt_t = 0f;
     bool flag_t = false;
@@ -23,9 +24,12 @@ public class MySceneManager : MonoBehaviour
 
     void Start()
     {
-        score = new Score();
+        if (cnt_find < 1)
+        {
+            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            cnt_find++;
+        }
         stage = GetComponent<StageManager>();
-        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         sm = GetComponent<ScreenManager>();
         restM = GetComponent<RestManager>();
         if (!bgmName.Equals("no"))

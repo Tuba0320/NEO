@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class StageController : MonoBehaviour
 {
-    StageManager stageM;
     [SerializeField]
     GameObject scoreView;
     int viewCnt = 0;
@@ -25,8 +24,6 @@ public class StageController : MonoBehaviour
     private float elapsedTime = 0f;
 
     float cnt_v1 = 0f;
-    float cnt_v2 = 0f;
-    bool isStage = false;
     bool isClear = false;
 
     float interval_bill = 2f;
@@ -39,23 +36,28 @@ public class StageController : MonoBehaviour
         set { enemyPoint = value; }
     }
 
-    Score score;
+    static Score score = new Score();
     CountTime time;
-    RestManager rest;
-    SoundManager sound;
+    static RestManager rest;
+    static SoundManager sound;
+    static StageManager stageM;
+    static int cnt_find = 0;
 
     void Start()
     {
+        if (cnt_find < 1)
+        {
+            stageM = GameObject.Find("GameManager").GetComponent<StageManager>();
+            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            rest = GameObject.Find("GameManager").GetComponent<RestManager>();
+            cnt_find++;
+        }
         enemyNum = 0;
-        stageM = GameObject.Find("GameManager").GetComponent<StageManager>();
-        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         for (int i = 0;i <  stageM.GetisStageClear();i++)
         {
             enemyNum++;
         }
         time = GameObject.Find("MainCanvas").transform.Find("Time").GetComponent<CountTime>();
-        rest = GameObject.Find("GameManager").GetComponent<RestManager>();
-        score = new Score();
     }
 
     void Update()

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TetsuoController : MonoBehaviour
 {
-    SoundManager sound;
+    static SoundManager sound;
+    static int cnt_find = 0;
 
     [SerializeField]
     float interval = 5.0f;
@@ -17,7 +18,11 @@ public class TetsuoController : MonoBehaviour
 
     void Start()
     {
-        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        if (cnt_find < 1)
+        {
+            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            cnt_find++;
+        }
     }
 
     void Update()

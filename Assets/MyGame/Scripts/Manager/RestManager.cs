@@ -5,18 +5,10 @@ using UnityEngine.UI;
 
 public class RestManager : MonoBehaviour
 {
-    private GameObject GMnager;
-
     public static int restNum = 3;
 
     [SerializeField]
     private Text[] restText = null;
-
-
-    void Start()
-    {
-        GMnager = GameObject.Find("GameManager");
-    }
 
     void Update()
     {
@@ -36,7 +28,7 @@ public class RestManager : MonoBehaviour
         restNum--;
         if (restNum < 0)
         {
-            GMnager.GetComponent <MySceneManager>().ToGameOverScene(true);
+            GetComponent <MySceneManager>().ToGameOverScene(true);
         }
     }
 

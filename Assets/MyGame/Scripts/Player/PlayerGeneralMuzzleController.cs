@@ -15,11 +15,16 @@ public class PlayerGeneralMuzzleController : MonoBehaviour
 
     PlayerController pc;
 
-    SoundManager soundM;
+    static SoundManager soundM;
+    static int cnt_find = 0;
 
     void Start()
     {
-        soundM = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        if (cnt_find < 1)
+        {
+            soundM = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            cnt_find++;
+        }
         pc = transform.root.GetComponent<PlayerController>();
     }
 

@@ -10,11 +10,8 @@ public class ItemController : MonoBehaviour
 
     float odd = 0f;
 
-    SoundManager sound;
-
     void Start()
     {
-        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         target = GameObject.FindGameObjectWithTag("Player");
     }
 

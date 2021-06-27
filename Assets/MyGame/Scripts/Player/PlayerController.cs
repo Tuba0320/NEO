@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    SoundManager sound;
+    static SoundManager sound;
+    static int cnt_find = 0;
     Vector3 pos;
     Rigidbody rigidbody;
     Transform camera;
@@ -49,8 +50,12 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        if (cnt_find < 1)
+        {
+            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            cnt_find++;
+        }
         hpSlider.maxValue = playerHp;
-        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         damageBoard.color = Color.clear;
         rigidbody = GetComponent<Rigidbody>();
         camera = Camera.main.transform;

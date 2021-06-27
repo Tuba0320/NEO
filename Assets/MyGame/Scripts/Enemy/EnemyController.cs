@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    SoundManager sm;
-    StageController stageC;
+    static SoundManager sm;
+    static StageController stageC;
     Rigidbody rb;
     GameObject target;
-    Score score;
+    static Score score = new Score();
+    static int cnt_find = 0;
 
-    int scorePoint = 10;
+    float scorePoint = 0.1f;
 
     [SerializeField]
     int hp = 3;
@@ -38,12 +39,15 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        score = new Score();
-        Destroy(gameObject, 10);
-        scorePoint = scorePoint * (int)hp;
-        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-        stageC = GameObject.Find("GameSetManager").GetComponent<StageController>();
+        if (cnt_find < 1)
+        {
+            sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            stageC = GameObject.Find("GameSetManager").GetComponent<StageController>();
+            cnt_find++;
+        }
         target = GameObject.FindGameObjectWithTag("Player");
+        Destroy(gameObject, 10);
+        scorePoint = scorePoint * hp;
         rb = GetComponent<Rigidbody>();
         if (hp == 1)
         {
@@ -66,7 +70,7 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        if (hp == 1)
+        if (hp <= 1)
         {
             return;
         }
@@ -122,8 +126,8 @@ public class EnemyController : MonoBehaviour
         {
             Instantiate(Item, this.transform.position, Quaternion.identity);
         }
-        score.EnemyDefeatAddScore(scorePoint);
-        stageC.EnemyPoint = stageC.EnemyPoint + scorePoint;
+        score.EnemyDefeatAddScore((int)scorePoint);
+        stageC.EnemyPoint = stageC.EnemyPoint + (int)scorePoint;
         sm.PlaySeByName("爆発2");
         Destroy(this.gameObject);
     }

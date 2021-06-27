@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class ResultView : MonoBehaviour
 {
-    Score score;
+    static Score score = new Score();
     Text text;
     
     void Start()
     {
-        score = new Score();
         text = GetComponentInChildren<Text>();
     }
 

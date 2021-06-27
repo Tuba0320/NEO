@@ -13,12 +13,17 @@ public class PlayerChageMazzle : MonoBehaviour
     float interval_chage = 3f;
     float cnt_chage = 0f;
 
-    SoundManager sound;
+    static SoundManager sound;
+    static int cnt_find = 0;
 
     void Start()
     {
         slider.maxValue = interval_chage;
-        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        if (cnt_find < 1)
+        {
+            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            cnt_find++;
+        }
     }
 
     void Update()

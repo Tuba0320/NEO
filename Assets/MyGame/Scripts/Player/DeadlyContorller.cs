@@ -23,12 +23,18 @@ public class DeadlyContorller : MonoBehaviour
     Slider slider;
     [SerializeField]
     GameObject point;
-    SoundManager sound;
+
+    static SoundManager sound;
+    static int cnt_find = 0;
 
     void Start()
     {
         slider.maxValue = interval_deadly;
-        sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        if (cnt_find < 1)
+        {
+            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            cnt_find++;
+        }
     }
 
     void Update()
