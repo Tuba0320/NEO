@@ -691,7 +691,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "NEOCITY \n0011/2/11"
+  m_Text: 'NEONOMIYA
+
+    N11/2/11'
 --- !u!222 &1040108746
 CanvasRenderer:
   m_ObjectHideFlags: 0
