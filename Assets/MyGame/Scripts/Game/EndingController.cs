@@ -7,9 +7,9 @@ using System;
 public class EndingController : MonoBehaviour
 {
     [SerializeField]
-    Text clear;
+    GameObject clear;
     [SerializeField]
-    Text over;
+    GameObject over;
 
     StageManager stM;
     bool gameClear = false;
@@ -28,13 +28,13 @@ public class EndingController : MonoBehaviour
 
         if (gameClear)
         {
-            clear.enabled = true;
-            over.enabled = false;
+            clear.SetActive(true);
+            over.SetActive(false);
         }
         else
         {
-            clear.enabled = false;
-            over.enabled = true;
+            clear.SetActive(false);
+            over.SetActive(true);
         }
     }
 }

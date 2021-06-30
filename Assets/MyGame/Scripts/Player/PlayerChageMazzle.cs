@@ -10,7 +10,7 @@ public class PlayerChageMazzle : MonoBehaviour
     [SerializeField]
     Slider slider;
 
-    float interval_chage = 3f;
+    float interval_chage = 2f;
     float cnt_chage = 0f;
 
     static SoundManager sound;

@@ -27,7 +27,7 @@ public class ItemController : MonoBehaviour
         {
             odd = Random.Range(0f, 100f);
             other.GetComponent<DeadlyContorller>().deadly = other.GetComponent<DeadlyContorller>().deadly + 5f;
-            if (odd < 12.5)
+            if (odd < 10)
             {
                 other.GetComponent<PlayerController>().setPlayerHp(5);
             }

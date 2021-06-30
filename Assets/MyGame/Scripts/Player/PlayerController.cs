@@ -97,7 +97,15 @@ public class PlayerController : MonoBehaviour
             rigidbody.velocity = Vector3.zero;
             return;
         }
-        transform.position += transform.TransformDirection(Vector3.forward * AlwaysMoveSpeed);
+
+        if (Input.GetAxis("Vertical") < 0)
+        {
+            transform.position += transform.TransformDirection(Vector3.forward * AlwaysMoveSpeed * 0.25f);
+        }
+        else
+        {
+            transform.position += transform.TransformDirection(Vector3.forward * AlwaysMoveSpeed);
+        }
         moveExcution();
     }
     
