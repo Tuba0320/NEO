@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResultView : MonoBehaviour
 {
-    static Score score = new Score();
+    Score score = new Score();
     Text text;
     
     void Start()

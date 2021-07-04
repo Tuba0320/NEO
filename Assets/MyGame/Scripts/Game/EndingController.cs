@@ -11,17 +11,17 @@ public class EndingController : MonoBehaviour
     [SerializeField]
     GameObject over;
 
-    StageManager stM;
+    GameObject gameManager;
     bool gameClear = false;
 
     void Start()
     {
-        stM = GetComponent<StageManager>();
+        gameManager = GameObject.Find("GameManager");
     }
 
     void Update()
     {
-        if (stM.GetisStageClear() >= 7)
+        if (gameManager.GetComponent<StageManager>().IsStageClear >= 7)
         {
             gameClear = true;
         }

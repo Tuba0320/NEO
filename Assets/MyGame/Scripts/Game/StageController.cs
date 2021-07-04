@@ -5,26 +5,19 @@ using UnityEngine;
 public class StageController : MonoBehaviour
 {
     [SerializeField]
+    GameObject[] spawners;
+    GameObject currentSpawner = null;
+    int spawnerNum = 0;
+    int spawner_cnt = 0;
+
+    [SerializeField]
     GameObject scoreView;
     int viewCnt = 0;
 
-    int enemyNum = 0;
-    [SerializeField]
-    GameObject[] enemy;
-    [SerializeField]
-    int[] enemyRate = {100,100,60 };
-    [SerializeField]
-    float apperNextTime = 5;
-    [SerializeField]
-    int maxNumOfEnemys = 5;
     [SerializeField]
     GameObject[] Field;
 
-    private int numberOfEnemy = 0;
-    private float elapsedTime = 0f;
-
     float cnt_v1 = 0f;
-    bool isClear = false;
 
     float interval_bill = 2f;
     float cnt_bill = 0f;
@@ -36,26 +29,18 @@ public class StageController : MonoBehaviour
         set { enemyPoint = value; }
     }
 
-    static Score score = new Score();
+    static Score score;
+    static GameObject gameManager;
     CountTime time;
-    static RestManager rest;
-    static SoundManager sound;
-    static StageManager stageM;
     static int cnt_find = 0;
 
     void Start()
     {
         if (cnt_find < 1)
         {
-            stageM = GameObject.Find("GameManager").GetComponent<StageManager>();
-            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-            rest = GameObject.Find("GameManager").GetComponent<RestManager>();
+            gameManager = GameObject.Find("GameManager");
+            score = new Score();
             cnt_find++;
-        }
-        enemyNum = 0;
-        for (int i = 0;i <  stageM.GetisStageClear();i++)
-        {
-            enemyNum++;
         }
         time = GameObject.Find("MainCanvas").transform.Find("Time").GetComponent<CountTime>();
     }
@@ -66,19 +51,10 @@ public class StageController : MonoBehaviour
         cnt_v1 += Time.deltaTime;
         cnt_bill += Time.deltaTime;
 
-        if (cnt_v1 < 3)
-        {
-            return;
-        }
-
-        elapsedTime += Time.deltaTime;
-
     }
 
     void FixedUpdate()
     {
-        GameClear();
-
         if (cnt_bill >= interval_bill)
         {
             float y = Random.Range(250f, -250f);
@@ -86,37 +62,39 @@ public class StageController : MonoBehaviour
             cnt_bill = 0;
         }
 
-        if (numberOfEnemy >= maxNumOfEnemys)
-        {
-            GotoClear();
-            return;
-        }
-
         if (cnt_v1 < 3)
         {
             return;
         }
 
-        if (elapsedTime > apperNextTime)
-        {
-            GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemy.Length >= 15)
-            {
-                return;
-            }
-
-            ApperEnemy();
-
-            apperNextTime = Random.Range(0.2f, 0.3f);
-        }
+        SpwanersControl();
     }
 
-    Vector3 GetRandomPosition()
+    void SpwanersControl()
     {
-        float x = Random.Range(150f, -150f);
-        float y = Random.Range(40f, 70f);
+        if (spawnerNum > spawners.Length - 1)
+        {
+            GameClear();
+            return;
+        }
 
-        return new Vector3(x, y, -250);
+        if (spawner_cnt < 1)
+        {
+            currentSpawner = Instantiate(spawners[spawnerNum], new Vector3(0, 0, 0), Quaternion.Euler(0f, 0f, 0f));
+            spawner_cnt++;
+        }
+
+        if (currentSpawner == null)
+        {
+            return;
+        }
+        else if (currentSpawner.GetComponent<SpawnController>().GetIsClear())
+        {
+            Destroy(currentSpawner);
+            spawner_cnt = 0;
+            spawnerNum++;
+        }
+        
     }
 
     Vector3 GetFieldPosition()
@@ -125,59 +103,19 @@ public class StageController : MonoBehaviour
         return new Vector3(x, 25, -250);
     }
 
-    void ApperEnemy()
-    {
-        float randomRotationY = Random.value * 360f;
-
-        GameObject.Instantiate(enemy[EnemySelect()], GetRandomPosition(), Quaternion.Euler(0f, randomRotationY, 0f));
-        numberOfEnemy++;
-        elapsedTime = 0f;
-    }
-
-    int EnemySelect()
-    {
-        int num = 0;
-        int rate = Random.Range(0, 100);
-        for (int i = 1;i < enemyNum + 3;i++)
-        {
-            if (enemyRate[i] > rate)
-            {
-                num = i;
-            }
-        }
-
-        return num;
-    }
-
-    void GotoClear()
-    {
-        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-
-        if (enemy.Length == 0 && !isClear)
-        {
-            isClear = true;
-        }
-
-    }
-
     void GameClear()
     {
-        if (isClear && viewCnt < 1)
+        if (viewCnt < 1)
         {
             time.TimeSave();
-            score.AddScore(rest.getRest(), time.getTime(),enemyPoint);
-            stageM.isClear();
-            sound.StopSe();
+            score.AddScore(gameManager.GetComponent<RestManager>().Rest, time.getTime(),enemyPoint);
+            gameManager.GetComponent<StageManager>().IsStageClear++;
+            gameManager.GetComponent<SoundManager>().StopSe();
             scoreView.SetActive(true);
             viewCnt++;
             Time.timeScale = 0;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
-    }
-
-    public bool getIsBoss()
-    {
-        return isClear;
     }
 }

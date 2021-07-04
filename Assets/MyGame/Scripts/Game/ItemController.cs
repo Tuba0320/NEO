@@ -33,7 +33,7 @@ public class ItemController : MonoBehaviour
             }
             if (odd < 0.1)
             {
-                GameObject.Find("GameManager").GetComponent<RestManager>().addRest(1);
+                GameObject.Find("GameManager").GetComponent<RestManager>().Rest += 1;
             }
             Destroy(this.gameObject);
         }

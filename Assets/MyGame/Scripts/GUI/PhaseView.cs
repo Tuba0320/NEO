@@ -21,6 +21,6 @@ public class PhaseView : MonoBehaviour
 
     void Update()
     {
-        text.text = stageM.GetisStageClear().ToString();
+        text.text = stageM.IsStageClear.ToString();
     }
 }

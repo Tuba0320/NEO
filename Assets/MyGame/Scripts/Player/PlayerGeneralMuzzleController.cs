@@ -11,7 +11,6 @@ public class PlayerGeneralMuzzleController : MonoBehaviour
     float cnt_fire;
     [SerializeField]
     string seName = null;
-    int num = 1;
 
     PlayerController pc;
 
@@ -22,7 +21,7 @@ public class PlayerGeneralMuzzleController : MonoBehaviour
     {
         if (cnt_find < 1)
         {
-            soundM = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            soundM = GameObject.Find("GameManager").GetComponent<SoundManager>();
             cnt_find++;
         }
         pc = transform.root.GetComponent<PlayerController>();

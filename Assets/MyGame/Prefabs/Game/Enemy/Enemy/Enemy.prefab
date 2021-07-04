@@ -1167,6 +1167,7 @@ GameObject:
   - component: {fileID: 4555406299345060501}
   - component: {fileID: 4555406299345060502}
   - component: {fileID: 8201070405161086290}
+  - component: {fileID: 4268132076293853520}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -1267,9 +1268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 250
-  speed: 10
-  isRotate: 0
-  isHoming: 1
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
   Item: {fileID: 803124592413104650, guid: 1b09b85d20109434dbae9f9246623506, type: 3}
@@ -1290,6 +1288,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4268132076293853520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4555406299345060503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc79ddd1680cfc4a90a115eab587b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  isHoming: 1
+  MovePattern: 0100
+  RotationPattern: 0100
 --- !u!1 &4680041042278475544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,6 +2926,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433627561480314519, guid: 5c395f6fb3cfc9c478b97b536000278f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7433627561480314519, guid: 5c395f6fb3cfc9c478b97b536000278f,
         type: 3}

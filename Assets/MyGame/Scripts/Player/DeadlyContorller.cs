@@ -24,7 +24,7 @@ public class DeadlyContorller : MonoBehaviour
     [SerializeField]
     GameObject point;
 
-    static SoundManager sound;
+    static GameObject gameManager;
     static int cnt_find = 0;
 
     void Start()
@@ -32,7 +32,7 @@ public class DeadlyContorller : MonoBehaviour
         slider.maxValue = interval_deadly;
         if (cnt_find < 1)
         {
-            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            gameManager = GameObject.Find("GameManager");
             cnt_find++;
         }
     }
@@ -82,7 +82,7 @@ public class DeadlyContorller : MonoBehaviour
     {
         if (deadlyNum > 0 && Input.GetMouseButton(1) && cnt_deadly2 >= interval_deadly2)
         {
-            sound.PlaySeByName("オーラ2");
+            gameManager.GetComponent<SoundManager>().PlaySeByName("オーラ2");
             Instantiate(deadlyRange, transform.position, Quaternion.identity, transform);
             deadlyNum--;
             cnt_deadly2 = 0;

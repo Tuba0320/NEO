@@ -8,34 +8,17 @@ using System.Linq;
 
 public class MySceneManager : MonoBehaviour
 {
-    public string bgmName;
     float timeUp = 5.0f;
     float cnt = 0f;
-    static ScreenManager sm;
-    static SoundManager sound;
-    static StageManager stage;
-    static RestManager restM;
-    static Score score = new Score();
-    static int cnt_find = 0;
+    ScreenManager sm;
 
     float cnt_t = 0f;
-    bool flag_t = false;
     int cnt_s = 0;
+    bool flag_t = false;
 
     void Start()
     {
-        if (cnt_find < 1)
-        {
-            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-            cnt_find++;
-        }
-        stage = GetComponent<StageManager>();
-        sm = GetComponent<ScreenManager>();
-        restM = GetComponent<RestManager>();
-        if (!bgmName.Equals("no"))
-        {
-            sound.PlayBgmName(bgmName);
-        }
+        sm = GameObject.Find("SceneManager").GetComponent<ScreenManager>();
     }
 
     void Update()
@@ -43,16 +26,22 @@ public class MySceneManager : MonoBehaviour
         GoMenuScene();
         Ending();
         cnt += Time.deltaTime;
-
         if (flag_t)
         {
             cnt_t += Time.deltaTime;
         }
     }
 
+    void OnLevelWasLoaded()
+    {
+        cnt_t = 0f;
+        cnt_s = 0;
+        cnt = 0f;
+    }
+
     public void GoMenuScene()
     {
-        if (Input.GetMouseButton(0) && SceneManager.GetActiveScene().name == "TitleScene" || flag_t)
+        if (SceneManager.GetActiveScene().name == "TitleScene" && Input.GetMouseButton(0)|| flag_t)
         {
             flag_t = true;
             if (cnt_s == 0)
@@ -65,6 +54,7 @@ public class MySceneManager : MonoBehaviour
                 return;
             }
             SceneManager.LoadScene("MenuScene");
+            flag_t = false;
         }
     }
 
@@ -76,7 +66,7 @@ public class MySceneManager : MonoBehaviour
     public void GoToStage()
     {
         Time.timeScale = 1;
-        if (stage.GetisStageClear() >= 8)
+        if (GetComponent<StageManager>().IsStageClear >= 8)
         {
             SceneManager.LoadScene("GameClearScene");
             return;
@@ -88,12 +78,12 @@ public class MySceneManager : MonoBehaviour
     {
         if (isGameOver)
         {
-            sound.StopSe();
+            GetComponent<SoundManager>().StopSe();
             SceneManager.LoadScene("GameOverScene");
         }
         else
         {
-            sound.StopSe();
+            GetComponent<SoundManager>().StopSe();
             Scene load = SceneManager.GetActiveScene();
             SceneManager.LoadScene(load.name);
         }
@@ -113,8 +103,9 @@ public class MySceneManager : MonoBehaviour
 
     public void DataClear()
     {
-        restM.setRest(5);
-        stage.ClearFlag();
+        Score score = new Score();
+        GetComponent<RestManager>().Rest = 3;
+        GetComponent<StageManager>().IsStageClear = 0;
         score.Initialize();
         SceneManager.LoadScene("TitleScene");
     }

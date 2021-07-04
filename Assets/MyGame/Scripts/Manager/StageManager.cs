@@ -6,21 +6,12 @@ using System;
 
 public class StageManager : MonoBehaviour
 {
-    static int isStageClear = 0;
-
-    public int GetisStageClear()
+    int isStageClear = 0;
+    public int IsStageClear
     {
-        return isStageClear;
+        get { return isStageClear; }
+        set { isStageClear = value; }
     }
 
-    public void isClear()
-    {
-        isStageClear++;
-    }
-
-    public void ClearFlag()
-    {
-        isStageClear = 0;
-    }
 
 }

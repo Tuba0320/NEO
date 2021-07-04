@@ -10,7 +10,7 @@ public class PlayerChageMazzle : MonoBehaviour
     [SerializeField]
     Slider slider;
 
-    float interval_chage = 2f;
+    float interval_chage = 1.25f;
     float cnt_chage = 0f;
 
     static SoundManager sound;
@@ -21,7 +21,7 @@ public class PlayerChageMazzle : MonoBehaviour
         slider.maxValue = interval_chage;
         if (cnt_find < 1)
         {
-            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            sound = GameObject.Find("GameManager").GetComponent<SoundManager>();
             cnt_find++;
         }
     }

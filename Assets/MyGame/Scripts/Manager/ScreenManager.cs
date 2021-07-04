@@ -7,30 +7,59 @@ using UnityEngine.SceneManagement;
 public class ScreenManager : MonoBehaviour
 {
     [SerializeField]
-    Image fadeBoat;
+    string bgmName;
     [SerializeField]
-    Text text;
-
+    Image fadeBoat = null;
+    [SerializeField]
+    bool cursorView = false;
     float duration;
+
+    static GameObject gameManager;
+    int cnt_find = 0;
 
     void Start()
     {
+        if (cnt_find < 1)
+        {
+            gameManager = GameObject.Find("GameManager");
+            cnt_find++;
+        }
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        if (SceneManager.GetActiveScene().name == "MenuScene" || SceneManager.GetActiveScene().name == "Config" || SceneManager.GetActiveScene().name == "Extra" || SceneManager.GetActiveScene().name == "ScoreView" || SceneManager.GetActiveScene().name == "LogIn" || SceneManager.GetActiveScene().name == "Score" || SceneManager.GetActiveScene().name == "Ending" || SceneManager.GetActiveScene().name == "Extra 1")
+        if (cursorView)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
+
+        if (!bgmName.Equals("none"))
+        {
+            gameManager.GetComponent<SoundManager>().PlayBgmName(bgmName);
+        }
     }
 
-    void Update()
+    public void selectStage()
     {
-        textFlashing();
+        gameManager.GetComponent<MySceneManager>().GoToStage();
+    }
+
+    public void selectScene(string name)
+    {
+        if (name == "TitleScene")
+        {
+            gameManager.GetComponent<MySceneManager>().DataClear();
+        }
+        gameManager.GetComponent<MySceneManager>().GetToScene(name);
     }
 
     public void StartFade()
     {
+        if (fadeBoat == null)
+        {
+            return;
+        }
+
         StartCoroutine("Fadeout");
     }
 
@@ -54,7 +83,7 @@ public class ScreenManager : MonoBehaviour
         }
     }
 
-    void textFlashing()
+    /*void textFlashing()
     {
         float textAlfa = 1f;
         bool alphaAdditionFlag = true;
@@ -80,5 +109,5 @@ public class ScreenManager : MonoBehaviour
                 alphaAdditionFlag = false;
             }
         }
-    }
+    }*/
 }

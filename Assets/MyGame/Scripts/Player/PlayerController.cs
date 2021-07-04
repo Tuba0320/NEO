@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         if (cnt_find < 1)
         {
-            sound = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+            sound = GameObject.Find("GameManager").GetComponent<SoundManager>();
             cnt_find++;
         }
         hpSlider.maxValue = playerHp;
@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
         }
         if (playerHp <= 0)
         {
-            GameObject.Find("GameManager").GetComponent<RestManager>().subRest();
+            GameObject.Find("GameManager").GetComponent<RestManager>().Rest--;
             playerHp = 20;
         }
     }
