@@ -71,9 +71,9 @@ public class PlayerController : MonoBehaviour
         cnt_se += Time.deltaTime;
         cnt_damage += Time.deltaTime;
         movePermission();
-        if (transform.position.z <= -150)
+        if (transform.position.z <= -400)
         {
-            transform.position = new Vector3(transform.position.x, 0.5f, 150);
+            transform.position = new Vector3(transform.position.x, 0.5f, 400);
         }
         
         if (interval_se >= cnt_se)

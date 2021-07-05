@@ -1272,6 +1272,7 @@ MonoBehaviour:
     type: 3}
   Item: {fileID: 803124592413104650, guid: 1b09b85d20109434dbae9f9246623506, type: 3}
   slider: {fileID: 2115267354334869954}
+  destroyCnt: 20
 --- !u!54 &8201070405161086290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1300,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc79ddd1680cfc4a90a115eab587b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 25
   isHoming: 1
   MovePattern: 0100
   RotationPattern: 0100

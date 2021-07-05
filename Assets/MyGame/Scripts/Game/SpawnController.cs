@@ -9,9 +9,12 @@ public class SpawnController : MonoBehaviour
     [SerializeField]
     bool[] patternFlags = new bool[1];
 
-    float interval_spawn = 3f;
+    [SerializeField]
+    float interval_spawn = 1f;
     float cnt_spawn = 0f;
-    int spawnCnt = 0;
+    float interval_slowSpawn = 2f;
+    float cnt_slowSpawn = 0f;
+    int mainCnt = 0;
 
     bool isClear = false;
 
@@ -19,11 +22,12 @@ public class SpawnController : MonoBehaviour
     int posX = 0;
     int posY = 50;
     [SerializeField]
-    int posZ = -250;
+    int posZ = -450;
 
     void Update()
     {
         cnt_spawn += Time.deltaTime;
+        cnt_slowSpawn += Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -35,18 +39,21 @@ public class SpawnController : MonoBehaviour
                 switch (i)
                 {
                     case 0:
-                        SpwanPattern0();
+                        SpwanPattern01();
+                        break;
+                    case 1:
+                        SpwanPattern02();
                         break;
                 }
             }
         }
     }
 
-    void SpwanPattern0()
+    void SpwanPattern01()
     {
-        if (spawnCnt < 1)
+        if (mainCnt < 1)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 GameObject.Instantiate(enemys[0], new Vector3(posX, posY, posZ), Quaternion.Euler(0f, 0f, 0f));
                 posX += 40;
@@ -55,7 +62,7 @@ public class SpawnController : MonoBehaviour
             }
 
             posY = 50;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 GameObject.Instantiate(enemys[0], new Vector3(posX,posY, posZ), Quaternion.Euler(0f, 0f, 0f));
                 posX -= 40;
@@ -65,8 +72,8 @@ public class SpawnController : MonoBehaviour
 
             posX = 250;
             posY = 50;
-            posZ = -350;
-            for (int i = 0; i < 5; i++)
+            posZ = -550;
+            for (int i = 0; i < 10; i++)
             {
                 GameObject.Instantiate(enemys[0], new Vector3(posX, posY, posZ), Quaternion.Euler(0f, 0f, 0f));
                 posX -= 40;
@@ -75,7 +82,7 @@ public class SpawnController : MonoBehaviour
             }
 
             posY = 50;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 GameObject.Instantiate(enemys[0], new Vector3(posX, posY, posZ), Quaternion.Euler(0f, 0f, 0f));
                 posX += 40;
@@ -83,16 +90,36 @@ public class SpawnController : MonoBehaviour
                 posZ -= 10;
             }
 
-            spawnCnt++;
+            mainCnt++;
         }
 
         if (interval_spawn <= cnt_spawn)
         {
-            GameObject.Instantiate(enemys[1], new Vector3(Random.Range(250, -250), 50, -250), Quaternion.Euler(0f, 0f, 0f));
+            GameObject.Instantiate(enemys[1], new Vector3(Random.Range(250, -250), 50, -450), Quaternion.Euler(0f, 0f, 0f));
             cnt_spawn = 0;
         }
 
-        if (spawnCnt >= 1)
+        if (interval_slowSpawn <= cnt_slowSpawn)
+        {
+            GameObject.Instantiate(enemys[2], new Vector3(-250, 50, Random.Range(-350, -250)), Quaternion.Euler(0f, 0f, 0f));
+            cnt_slowSpawn = 0;
+        }
+
+        if (mainCnt >= 1)
+        {
+            ClearDecision();
+        }
+    }
+
+    void SpwanPattern02()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            GameObject.Instantiate(enemys[0], new Vector3(Random.Range(250, -250), 50, -450), Quaternion.Euler(0f, 0f, 0f));
+            cnt_spawn = 0f;
+        }
+
+        if (cnt_slowSpawn >= 15)
         {
             ClearDecision();
         }
@@ -104,6 +131,11 @@ public class SpawnController : MonoBehaviour
         if (enemys.Length == 0 && !isClear)
         {
             isClear = true;
+        }
+        else if (enemys.Length <= 10)
+        {
+            interval_spawn = 15f;
+            interval_slowSpawn = 25f;
         }
     }
 

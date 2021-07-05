@@ -4039,6 +4039,7 @@ GameObject:
   - component: {fileID: 8691203390391785543}
   - component: {fileID: 8691203390391785542}
   - component: {fileID: 8691203390391785541}
+  - component: {fileID: -6158710071736962625}
   m_Layer: 10
   m_Name: LittleBoy
   m_TagString: Enemy
@@ -4142,13 +4143,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5000
-  speed: 0
-  isRotate: 0
-  isHoming: 0
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
   Item: {fileID: 803124592413104650, guid: 1b09b85d20109434dbae9f9246623506, type: 3}
   slider: {fileID: 3281587453254543873}
+  destroyCnt: 20
+--- !u!114 &-6158710071736962625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691203390391785540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc79ddd1680cfc4a90a115eab587b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  isHoming: 0
+  MovePattern: 00000001
+  RotationPattern: 000001
 --- !u!1 &8704824918742935255
 GameObject:
   m_ObjectHideFlags: 0

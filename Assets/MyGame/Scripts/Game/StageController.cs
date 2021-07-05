@@ -100,7 +100,7 @@ public class StageController : MonoBehaviour
     Vector3 GetFieldPosition()
     {
         float x = Random.Range(200f, -200f);
-        return new Vector3(x, 25, -250);
+        return new Vector3(x, 25, -450);
     }
 
     void GameClear()

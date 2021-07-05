@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2034301262337182058}
   - component: {fileID: 2034301262337182059}
   m_Layer: 0
-  m_Name: Spawner01
+  m_Name: Spawner02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,9 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemys:
-  - {fileID: 4555406299345060503, guid: 9aef37678e557aa4987e1bd6b5a0cab9, type: 3}
   - {fileID: 5069194559423976771, guid: 47c9c69256fb3eb4aa3d8d3d06822bab, type: 3}
-  - {fileID: 8691203390391785540, guid: 193ebcaab8d2a3b43806730e19ae62f4, type: 3}
-  patternFlags: 01
+  patternFlags: 0001
+  interval_spawn: 0.5
   posX: -250
   posZ: -450
