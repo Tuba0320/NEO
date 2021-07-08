@@ -66,7 +66,7 @@ public class MySceneManager : MonoBehaviour
     public void GoToStage()
     {
         Time.timeScale = 1;
-        if (GetComponent<StageManager>().IsStageClear >= 8)
+        if (GetComponent<StageManager>().IsStageClear >= 6)
         {
             SceneManager.LoadScene("GameClearScene");
             return;

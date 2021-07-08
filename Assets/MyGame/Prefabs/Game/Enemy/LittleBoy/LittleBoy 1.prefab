@@ -4041,7 +4041,7 @@ GameObject:
   - component: {fileID: 8691203390391785541}
   - component: {fileID: -6158710071736962625}
   m_Layer: 10
-  m_Name: LittleBoy
+  m_Name: LittleBoy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4162,7 +4162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   isHoming: 0
-  MovePattern: 00000001
+  MovePattern: 00010000
   RotationPattern: 000000
 --- !u!1 &8704824918742935255
 GameObject:

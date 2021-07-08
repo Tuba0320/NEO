@@ -47,6 +47,11 @@ MonoBehaviour:
   - {fileID: 4555406299345060503, guid: 9aef37678e557aa4987e1bd6b5a0cab9, type: 3}
   - {fileID: 5069194559423976771, guid: 47c9c69256fb3eb4aa3d8d3d06822bab, type: 3}
   - {fileID: 8691203390391785540, guid: 193ebcaab8d2a3b43806730e19ae62f4, type: 3}
+  - {fileID: 3659745696416815947, guid: 08c3c596ac1716045a1a1e8514c5d30a, type: 3}
   patternFlags: 01
+  interval_spawn: 0.75
+  interval_spawn01: 2
+  interval_spawn02: 2
   posX: -250
-  posZ: -450
+  posY: 50
+  posZ: -400

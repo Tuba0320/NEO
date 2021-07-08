@@ -59,7 +59,6 @@ public class EnemyController : MonoBehaviour
             return;
         }
         slider.value = hp;
-        slider.transform.LookAt(GameObject.FindWithTag("Player").transform);
     }
 
     void OnTriggerEnter(Collider cl)

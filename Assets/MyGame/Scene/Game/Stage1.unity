@@ -629,6 +629,10 @@ MonoBehaviour:
   spawners:
   - {fileID: 2034301262337182052, guid: b3bdb5c7540ea034a804de520146b2f8, type: 3}
   - {fileID: 2034301262337182052, guid: f17551ab33c83884d9cf0491f699354f, type: 3}
+  - {fileID: 2034301262337182052, guid: c3f6446ab6ffa2b40afa316da8f92139, type: 3}
+  - {fileID: 2034301262337182052, guid: 106d419e1c4819141b048b45e83e59c4, type: 3}
+  - {fileID: 2034301262337182052, guid: a11e9a34182262241b61e5bf9c271ae1, type: 3}
+  - {fileID: 2034301262337182052, guid: 8cf7643d8f5558e4097c60c099a71f90, type: 3}
   scoreView: {fileID: 1211401515}
   Field:
   - {fileID: 8653055515369087733, guid: 3e1a0f2c6a0e2d94e89bb1fcc0b3930a, type: 3}
@@ -1132,7 +1136,7 @@ PrefabInstance:
     - target: {fileID: 7301268626427315594, guid: 533c45e61f64b0f4e9102c850a8b5983,
         type: 3}
       propertyPath: bgmName
-      value: none
+      value: PonPon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 533c45e61f64b0f4e9102c850a8b5983, type: 3}

@@ -21,7 +21,7 @@ public class EndingController : MonoBehaviour
 
     void Update()
     {
-        if (gameManager.GetComponent<StageManager>().IsStageClear >= 7)
+        if (gameManager.GetComponent<StageManager>().IsStageClear >= 5)
         {
             gameClear = true;
         }

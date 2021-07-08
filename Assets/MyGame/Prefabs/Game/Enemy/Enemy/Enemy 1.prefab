@@ -1122,7 +1122,7 @@ GameObject:
   - component: {fileID: 8201070405161086290}
   - component: {fileID: 4268132076293853520}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: Enemy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1140,7 +1140,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2862066278536605475}
-  - {fileID: 5281829940355829542}
   - {fileID: 8536380519151884623}
   - {fileID: 2533875077954008272}
   - {fileID: 7960967711969362670}
@@ -1254,9 +1253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  isHoming: 1
-  MovePattern: 0100
+  MovePattern: 0000000001
   RotationPattern: 0100
+  interval: 9
 --- !u!1 &4680041042278475544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1287,7 @@ Transform:
   - {fileID: 4095543517211502767}
   - {fileID: 912512900447546888}
   m_Father: {fileID: 4555406299345060498}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4698262271625589915
 GameObject:
@@ -1717,53 +1716,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &6409900728855122826
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5281829940355829542}
-  - component: {fileID: 5922429986699991678}
-  m_Layer: 10
-  m_Name: EnemyMuzzleAtype (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5281829940355829542
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409900728855122826}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4555406299345060498}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5922429986699991678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409900728855122826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30764c85a2cb77b408e1eba26ca96a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bflag: 0
-  enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
-    type: 3}
-  shotInterval: 0.3
 --- !u!1 &6500740650536701682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,10 +1759,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30764c85a2cb77b408e1eba26ca96a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bflag: 0
-  enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
+  Bflag: 1
+  enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.1
 --- !u!1 &6554088669913138610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,7 +2655,7 @@ PrefabInstance:
     - target: {fileID: 7295226703936195590, guid: 4ec83af1eaa041348aba794b276a33c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7295226703936195590, guid: 4ec83af1eaa041348aba794b276a33c3,
         type: 3}
@@ -2783,7 +2735,7 @@ PrefabInstance:
     - target: {fileID: 1355246686672922183, guid: 5c395f6fb3cfc9c478b97b536000278f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1355246686672922183, guid: 5c395f6fb3cfc9c478b97b536000278f,
         type: 3}

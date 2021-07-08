@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2034301262337182058}
   - component: {fileID: 2034301262337182059}
   m_Layer: 0
-  m_Name: Spawner02
+  m_Name: MiniSpawner01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,8 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemys:
+  - {fileID: 4555406299345060503, guid: e0159d3e902a88c42b8ef9412f747557, type: 3}
   - {fileID: 5069194559423976771, guid: 47c9c69256fb3eb4aa3d8d3d06822bab, type: 3}
-  patternFlags: 0001
-  interval_spawn: 0.5
-  posX: -250
+  patternFlags: 000000000001
+  interval_spawn: 0.75
+  interval_spawn01: 0.75
+  interval_spawn02: 0.5
+  interval_spawn03: 1
+  posX: 0
+  posY: 25
   posZ: -450

@@ -1122,7 +1122,7 @@ GameObject:
   - component: {fileID: 8201070405161086290}
   - component: {fileID: 4268132076293853520}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: Enemy 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1254,9 +1254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  isHoming: 1
-  MovePattern: 0100
+  MovePattern: 000000000001
   RotationPattern: 0100
+  interval: 18
 --- !u!1 &4680041042278475544
 GameObject:
   m_ObjectHideFlags: 0

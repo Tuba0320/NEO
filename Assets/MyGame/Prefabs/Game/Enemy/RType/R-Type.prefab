@@ -204,7 +204,7 @@ MonoBehaviour:
   Bflag: 1
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: ef7ae92c610989a41842dd6f58307dd2,
     type: 3}
-  shotInterval: 100
+  shotInterval: 0.1
 --- !u!1 &715016784308860915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1373,7 @@ GameObject:
   - component: {fileID: 3659745696416815944}
   - component: {fileID: 3659745696416815945}
   - component: {fileID: 3659745696416815946}
+  - component: {fileID: 7048928108870833802}
   m_Layer: 10
   m_Name: R-Type
   m_TagString: Enemy
@@ -1475,13 +1476,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
-  speed: 10
-  isRotate: 0
-  isHoming: 1
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
   Item: {fileID: 803124592413104650, guid: 1b09b85d20109434dbae9f9246623506, type: 3}
   slider: {fileID: 7971892906450100074}
+  destroyCnt: 20
+--- !u!114 &7048928108870833802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659745696416815947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc79ddd1680cfc4a90a115eab587b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  isHoming: 0
+  MovePattern: 0001
+  RotationPattern: 
 --- !u!1 &3882218016264966740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2254,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.1
 --- !u!1 &5850697118218111122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,7 +2617,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.1
 --- !u!1 &6126725590194522710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,7 +2664,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.1
 --- !u!1 &6286920840209296184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2854,7 +2869,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.1
 --- !u!1 &6341458784485603544
 GameObject:
   m_ObjectHideFlags: 0

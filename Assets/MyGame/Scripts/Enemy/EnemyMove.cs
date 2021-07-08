@@ -10,9 +10,7 @@ public class EnemyMove : MonoBehaviour
 
     [SerializeField]
     float speed = 1f;
-    
-    [SerializeField]
-    bool isHoming = false;
+
     [SerializeField]
     bool[] MovePattern;
     [SerializeField]
@@ -23,7 +21,9 @@ public class EnemyMove : MonoBehaviour
     float posZ;
 
     bool isReturn = false;
+    bool antiFlag = false;
 
+    [SerializeField]
     float interval = 9f;
     float cnt = 0f;
 
@@ -45,23 +45,23 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         posY = transform.position.y;
+        posX = transform.position.x;
+        if (transform.position.x >= 0)
+        {
+            antiFlag = true;
+        }
     }
 
     void Update()
     {
         cnt += Time.deltaTime;
-        if (transform.position.z >= 450)
-        {
-            float x = Random.Range(100f, -100f);
-            float y = Random.Range(75, 25f);
-            transform.position = new Vector3(x, y, -450);
-        }
     }
 
     void FixedUpdate()
     {
         Move();
         Rotation();
+        EnemyDestroy();
     }
 
     void Move()
@@ -84,12 +84,18 @@ public class EnemyMove : MonoBehaviour
                     case 3:
                         MovePattern04();
                         break;
+                    case 4:
+                        MovePattern05();
+                        break;
+                    case 5:
+                        MovePattern06();
+                        break;
                 }
             }
         }
     }
 
-    void MovePattern01()//isHoming
+    void MovePattern01()
     {
         if (cnt >= interval)
         {
@@ -99,11 +105,6 @@ public class EnemyMove : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         transform.position = new Vector3(transform.position.x, posY, transform.position.z + -0.05f);
-
-        if (target.transform.position.z < transform.position.z)
-        {
-            Destroy(gameObject);
-        }
 
         if (isReturn)
         {
@@ -126,18 +127,68 @@ public class EnemyMove : MonoBehaviour
 
     void MovePattern02()
     {
-        transform.Translate(0, 0, 1.5f, Space.World);
+        transform.Translate(0, 0, 1.5f * speed, Space.World);
     }
 
-    void MovePattern03()//isHoming
+    void MovePattern03()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     void MovePattern04()
     {
-        transform.Translate(1.5f, 0, 0, Space.World);
-        if (transform.position.x >= 250)
+        if (antiFlag)
+        {
+            transform.Translate(-1.5f * speed, 0, 0, Space.World);
+        }
+        else
+        {
+            transform.Translate(1.5f * speed, 0, 0, Space.World);
+        }
+
+        if (transform.position.x >= 250 || transform.position.x <= -250)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void MovePattern05()
+    {
+        if (target.transform.position.z - transform.position.z <= 50)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime * -1);
+            return;
+        }
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime * 10);
+    }
+
+    void MovePattern06()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        transform.position = new Vector3(posX, transform.position.y, transform.position.z + -0.1f);
+
+        if (isReturn)
+        {
+            posX += 1f;
+            if (posX + 10 > 150)
+            {
+                isReturn = false;
+            }
+        }
+        else
+        {
+            posX -= 1f;
+            if (posX - 10 < -150)
+            {
+                isReturn = true;
+            }
+        }
+    }
+
+
+    void EnemyDestroy()
+    {
+        if (target.transform.position.z < transform.position.z)
         {
             Destroy(gameObject);
         }
@@ -154,10 +205,7 @@ public class EnemyMove : MonoBehaviour
             transform.position = new Vector3(transform.position.x + -5f, posY + 1f, transform.position.z + 7.5f);
         }
 
-        if (target.transform.position.z < transform.position.z)
-        {
-            Destroy(gameObject);
-        }
+        EnemyDestroy();
     }
 
     void Rotation()
@@ -174,9 +222,6 @@ public class EnemyMove : MonoBehaviour
                     case 1:
                         RotationPattern02();
                         break;
-                    case 2:
-                        RotationPattern03();
-                        break;
                 }
             }
         }
@@ -190,10 +235,5 @@ public class EnemyMove : MonoBehaviour
     void RotationPattern02()
     {
         transform.Rotate(new Vector3(0, 1, 0), 25);
-    }
-
-    void RotationPattern03()
-    {
-        transform.rotation = Quaternion.Euler(0, 90f, 0);
     }
 }
