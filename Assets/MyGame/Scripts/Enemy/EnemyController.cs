@@ -29,6 +29,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     int destroyCnt;
 
+    int itemNum = 0;
+
     void Start()
     {
         if (cnt_find < 1)
@@ -45,6 +47,13 @@ public class EnemyController : MonoBehaviour
             return;
         }
         slider.maxValue = hp;
+
+        itemNum = hp / 100;
+        if (itemNum > 50)
+        {
+            itemNum = 50;
+        }
+
     }
 
     void Update()
@@ -90,6 +99,10 @@ public class EnemyController : MonoBehaviour
         if (Item != null)
         {
             Instantiate(Item, this.transform.position, Quaternion.identity);
+            for (int i = 1;i < itemNum;i++)
+            {
+                Instantiate(Item, new Vector3(transform.position.x + Random.Range(50,-50), transform.position.y + Random.Range(50, -50), transform.position.z + Random.Range(50, -50)), Quaternion.identity);
+            }
         }
         score.EnemyDefeatAddScore((int)scorePoint);
         stageC.EnemyPoint = stageC.EnemyPoint + (int)scorePoint;

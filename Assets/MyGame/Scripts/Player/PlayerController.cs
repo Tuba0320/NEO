@@ -41,8 +41,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float interval_damage = 0.2f;
     float cnt_damage = 0f;
+
     float interval_se = 28f;
     float cnt_se = 0f;
+    /*float interval_se1 = 11.5f;
+    float cnt_se1 = 0f;*/
     
 
     [SerializeField]
@@ -69,23 +72,28 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         cnt_se += Time.deltaTime;
+        //cnt_se1 += Time.deltaTime;
         cnt_damage += Time.deltaTime;
+        if (stopFlag)
+        {
+            sound.StopSe();
+        }
         movePermission();
         if (transform.position.z <= -400)
         {
             transform.position = new Vector3(transform.position.x, 0.5f, 400);
         }
-        
-        if (interval_se >= cnt_se)
+        if (interval_se < cnt_se)
         {
-            return;
+            sound.PlaySeByName("戦闘機内（飛行中）");
+            cnt_se = 0;
         }
-        if (stopFlag)
+
+        /*if (interval_se1 < cnt_se1)
         {
-            sound.StopSe();
-        }
-        cnt_se = 0;
-        sound.PlaySeByName("戦闘機内（飛行中）");
+            sound.PlaySeByName("宇宙基地サイレン");
+            cnt_se1 = 0;
+        }*/
     }
     
     void FixedUpdate()

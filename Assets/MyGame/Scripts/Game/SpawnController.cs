@@ -238,7 +238,7 @@ public class SpawnController : MonoBehaviour
             {
                 posX = -250;
                 posY += 30;
-                posZ = -450;
+                posZ = -250;
                 for (int j = 0; j < 10; j++)
                 {
                     GameObject.Instantiate(enemys[0], new Vector3(posX, posY, posZ), Quaternion.Euler(0f, 0f, 0f));
@@ -302,6 +302,8 @@ public class SpawnController : MonoBehaviour
             ClearDecision();
         }
     }
+
+    //スポーンする際y座標は50を基本とする
 
     void MiniSpwanPattern01(int num)//最奥からPositionX250~-250の範囲で出現するパターン
     {

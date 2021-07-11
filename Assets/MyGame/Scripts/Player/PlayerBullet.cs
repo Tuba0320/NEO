@@ -19,8 +19,6 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField]
     bool isHorming = false;
     [SerializeField]
-    bool isNavigation = false;
-    [SerializeField]
     bool isChage = false;
 
     void Start()
@@ -31,17 +29,12 @@ public class PlayerBullet : MonoBehaviour
 
     void Update()
     {
-        if (isNavigation)
-        {
-            terget = GameObject.FindGameObjectWithTag("Enemy");
-        }
-
         if (terget == null || !isHorming)
         {
             rb.velocity = transform.forward * speed;
             return;
         }
-        else if (terget != null && isHorming || isNavigation)
+        else if (terget != null && isHorming)
         {
             transform.LookAt(Vector3.Lerp(transform.forward + transform.position, terget.transform.position, 10f));
             rb.AddForce(transform.forward * speed);

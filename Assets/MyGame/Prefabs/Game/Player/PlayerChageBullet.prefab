@@ -79,7 +79,6 @@ MonoBehaviour:
   damageSorce: 3000
   destroyInterval: 5
   isHorming: 0
-  isNavigation: 0
   isChage: 1
 --- !u!1001 &3028224282329313022
 PrefabInstance:
@@ -231,12 +230,12 @@ PrefabInstance:
     - target: {fileID: 6961349097169520267, guid: 65b45f472da50244599ff84f56750973,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
+      value: 0.18758488
       objectReference: {fileID: 0}
     - target: {fileID: 6961349097169520267, guid: 65b45f472da50244599ff84f56750973,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.009791803
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6961349097169520267, guid: 65b45f472da50244599ff84f56750973,
         type: 3}

@@ -42,7 +42,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 300
+  m_Radius: 100
   m_Center: {x: -0.99937844, y: 40, z: -0.000000059604645}
 --- !u!1 &1708259551735715449
 GameObject:
@@ -72,10 +72,10 @@ Transform:
   m_GameObject: {fileID: 1708259551735715449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526935217816156737}
-  - {fileID: 1811400350029939563}
+  - {fileID: 5140533662850470901}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -90,7 +90,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3344076629224047480
 Rigidbody:
@@ -124,8 +124,8 @@ MonoBehaviour:
   damageSorce: 500
   destroyInterval: 2
   isHorming: 1
-  isNavigation: 0
---- !u!1001 &3028224282329313022
+  isChage: 0
+--- !u!1001 &8391282342250757728
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -140,6 +140,21 @@ PrefabInstance:
     - target: {fileID: 3685363920173723029, guid: 65b45f472da50244599ff84f56750973,
         type: 3}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685363920173723029, guid: 65b45f472da50244599ff84f56750973,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685363920173723029, guid: 65b45f472da50244599ff84f56750973,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685363920173723029, guid: 65b45f472da50244599ff84f56750973,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3685363920173723029, guid: 65b45f472da50244599ff84f56750973,
@@ -192,11 +207,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6961349097169520267, guid: 65b45f472da50244599ff84f56750973,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961349097169520267, guid: 65b45f472da50244599ff84f56750973,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b45f472da50244599ff84f56750973, type: 3}
---- !u!4 &1811400350029939563 stripped
+--- !u!4 &5140533662850470901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3685363920173723029, guid: 65b45f472da50244599ff84f56750973,
     type: 3}
-  m_PrefabInstance: {fileID: 3028224282329313022}
+  m_PrefabInstance: {fileID: 8391282342250757728}
   m_PrefabAsset: {fileID: 0}

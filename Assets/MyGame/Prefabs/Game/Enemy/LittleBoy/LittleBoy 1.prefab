@@ -4161,9 +4161,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  isHoming: 0
   MovePattern: 00010000
   RotationPattern: 000000
+  interval: 9
 --- !u!1 &8704824918742935255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4606,7 +4606,7 @@ PrefabInstance:
     - target: {fileID: 7967878921607242495, guid: 5c395f6fb3cfc9c478b97b536000278f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 75
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c395f6fb3cfc9c478b97b536000278f, type: 3}

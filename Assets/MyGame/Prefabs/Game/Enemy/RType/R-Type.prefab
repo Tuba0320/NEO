@@ -1494,9 +1494,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  isHoming: 0
   MovePattern: 0001
   RotationPattern: 
+  interval: 9
 --- !u!1 &3882218016264966740
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,7 +4798,7 @@ PrefabInstance:
     - target: {fileID: 7967878921607242495, guid: 5c395f6fb3cfc9c478b97b536000278f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 75
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7967878921607242495, guid: 5c395f6fb3cfc9c478b97b536000278f,
         type: 3}
