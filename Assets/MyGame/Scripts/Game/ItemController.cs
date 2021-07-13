@@ -49,7 +49,7 @@ public class ItemController : MonoBehaviour
             other.GetComponent<DeadlyContorller>().deadly = other.GetComponent<DeadlyContorller>().deadly + 1f;
             if (odd < 5)
             {
-                other.GetComponent<PlayerController>().setPlayerHp(5);
+                other.GetComponent<PlayerController>().HP += 5;
             }
             if (odd < 0.01)
             {

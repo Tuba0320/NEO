@@ -303,11 +303,11 @@ public class SpawnController : MonoBehaviour
         }
     }
 
-    //スポーンする際y座標は50を基本とする
+    //スポーンする際y座標は100くらい
 
     void MiniSpwanPattern01(int num)//最奥からPositionX250~-250の範囲で出現するパターン
     {
-        GameObject.Instantiate(enemys[num], new Vector3(Random.Range(250, -250), 50, -450), Quaternion.Euler(0f, 0f, 0f));
+        GameObject.Instantiate(enemys[num], new Vector3(Random.Range(250, -250), Random.Range(100, 50), -450), Quaternion.Euler(0f, 0f, 0f));
     }
 
     void MiniSpwanPattern02(int num,int direction)//PositionZ450~-450の範囲で最も右または最も左に出現するパターン(引数のdirectionは1か-1のみを渡す)
@@ -316,7 +316,7 @@ public class SpawnController : MonoBehaviour
         {
             return;
         }
-        GameObject.Instantiate(enemys[num], new Vector3(250 * direction, 50, Random.Range(450, -450)), Quaternion.Euler(0f, 90f * -direction, 0f));
+        GameObject.Instantiate(enemys[num], new Vector3(250 * direction, Random.Range(100, 50), Random.Range(450, -450)), Quaternion.Euler(0f, 90f * -direction, 0f));
     }
 
     void ClearDecision()

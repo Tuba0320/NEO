@@ -682,7 +682,7 @@ MonoBehaviour:
   moveSpeed: 100
   mouseSpeed: 1
   AlwaysMoveSpeed: 0.25
-  playerHp: 20
+  hp: 10
   hpSlider: {fileID: 0}
   damageBoard: {fileID: 0}
   duration: 0.1

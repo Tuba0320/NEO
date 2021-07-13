@@ -22,7 +22,7 @@ public class FalloutController : MonoBehaviour
         if (other.tag == "Player")
         {
             time = 0;
-            other.GetComponent<PlayerController>().ReceveDamage(1);
+            other.GetComponent<PlayerController>().HP += -1;
         }
     }
 }

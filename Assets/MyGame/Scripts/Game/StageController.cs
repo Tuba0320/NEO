@@ -5,6 +5,9 @@ using UnityEngine;
 public class StageController : MonoBehaviour
 {
     [SerializeField]
+    GameObject player;
+
+    [SerializeField]
     GameObject[] spawners;
     GameObject currentSpawner = null;
     int spawnerNum = 0;
@@ -27,6 +30,13 @@ public class StageController : MonoBehaviour
     {
         get { return enemyPoint; }
         set { enemyPoint = value; }
+    }
+
+    static int enemyCnt;
+    public int EnemyCnt
+    {
+        get { return enemyCnt; }
+        set { enemyCnt = value; }
     }
 
     static Score score;
@@ -111,6 +121,7 @@ public class StageController : MonoBehaviour
             score.AddScore(gameManager.GetComponent<RestManager>().Rest, time.getTime(),enemyPoint);
             gameManager.GetComponent<StageManager>().IsStageClear++;
             gameManager.GetComponent<SoundManager>().StopSe();
+            player.GetComponent<PlayerController>().EnemyHits = enemyCnt;
             scoreView.SetActive(true);
             viewCnt++;
             Time.timeScale = 0;

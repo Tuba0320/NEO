@@ -75,11 +75,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34e10dfee0db3b41ab24ac659746c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 250
+  speed: 500
   damageSorce: 3000
   destroyInterval: 5
-  isHorming: 0
   isChage: 1
+  isHoming: 0
 --- !u!1001 &3028224282329313022
 PrefabInstance:
   m_ObjectHideFlags: 0

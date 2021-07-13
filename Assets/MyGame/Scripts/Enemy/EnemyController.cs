@@ -74,7 +74,7 @@ public class EnemyController : MonoBehaviour
     {
         if (cl.gameObject.tag == "Player")
         {
-            cl.GetComponent<PlayerController>().ReceveDamage(3);
+            cl.GetComponent<PlayerController>().HP += -3;
             Destroy(gameObject);
         }
     }
@@ -106,6 +106,7 @@ public class EnemyController : MonoBehaviour
         }
         score.EnemyDefeatAddScore((int)scorePoint);
         stageC.EnemyPoint = stageC.EnemyPoint + (int)scorePoint;
+        stageC.EnemyCnt++;
         gameManager.GetComponent<SoundManager>().PlaySeByName("爆発2");
         Destroy(this.gameObject);
     }

@@ -41,7 +41,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<PlayerController>().ReceveDamage(damageSorce);
+            other.GetComponent<PlayerController>().HP += -damageSorce;
             Destroy(gameObject);
         }
 

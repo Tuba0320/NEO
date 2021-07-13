@@ -5,6 +5,15 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    int[] levelNum = { 1, 1, 1 };
+    int enemyHits;
+    public int EnemyHits
+    {
+        get { return enemyHits; }
+        set { enemyHits = value; }
+    }
+    static int level = 1;
+
     static SoundManager sound;
     static int cnt_find = 0;
     Vector3 pos;
@@ -27,7 +36,33 @@ public class PlayerController : MonoBehaviour
     bool mouseXpermission, mouseYpermission;
 
     [SerializeField]
-    int playerHp = 5;
+    int hp = 5;
+    public int HP
+    {
+        get { return hp; }
+        set 
+        {
+            if (hp > value)
+            {
+                if (cnt_damage >= interval_damage)
+                {
+                    hp = value;
+                    ReceveDamage();
+                }
+            }
+            else
+            {
+                if (value > 10)
+                {
+                    return;
+                }
+                else
+                {
+                    hp = value;
+                }
+            }
+        }
+    }
     [SerializeField]
     Slider hpSlider;
     public Image damageBoard;
@@ -44,8 +79,6 @@ public class PlayerController : MonoBehaviour
 
     float interval_se = 28f;
     float cnt_se = 0f;
-    /*float interval_se1 = 11.5f;
-    float cnt_se1 = 0f;*/
     
 
     [SerializeField]
@@ -58,7 +91,8 @@ public class PlayerController : MonoBehaviour
             sound = GameObject.Find("GameManager").GetComponent<SoundManager>();
             cnt_find++;
         }
-        hpSlider.maxValue = playerHp;
+
+        hpSlider.maxValue = hp;
         damageBoard.color = Color.clear;
         rigidbody = GetComponent<Rigidbody>();
         camera = Camera.main.transform;
@@ -72,38 +106,34 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         cnt_se += Time.deltaTime;
-        //cnt_se1 += Time.deltaTime;
         cnt_damage += Time.deltaTime;
         if (stopFlag)
         {
             sound.StopSe();
         }
         movePermission();
-        if (transform.position.z <= -400)
-        {
-            transform.position = new Vector3(transform.position.x, 0.5f, 400);
-        }
-        if (interval_se < cnt_se)
-        {
-            sound.PlaySeByName("戦闘機内（飛行中）");
-            cnt_se = 0;
-        }
-
-        /*if (interval_se1 < cnt_se1)
-        {
-            sound.PlaySeByName("宇宙基地サイレン");
-            cnt_se1 = 0;
-        }*/
+        Debug.Log(level);
     }
     
     void FixedUpdate()
     {
-        hpSlider.value = playerHp;
+        hpSlider.value = hp;
 
         if (stopFlag)
         {
             rigidbody.velocity = Vector3.zero;
             return;
+        }
+
+        if (transform.position.z <= -400)
+        {
+            transform.position = new Vector3(transform.position.x, 0.5f, 400);
+        }
+
+        if (interval_se < cnt_se)
+        {
+            sound.PlaySeByName("戦闘機内（飛行中）");
+            cnt_se = 0;
         }
 
         if (Input.GetAxis("Vertical") < 0)
@@ -114,7 +144,19 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += transform.TransformDirection(Vector3.forward * AlwaysMoveSpeed);
         }
+        LevelDecision();
         moveExcution();
+    }
+
+    void LevelDecision()
+    {
+        for (int i = 0;i < levelNum.Length;i++)
+        {
+            if (enemyHits >= levelNum[i])
+            {
+                level = i + 1;
+            }
+        }
     }
     
     void movePermission()
@@ -173,30 +215,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ReceveDamage(int damageSorce)
+    void ReceveDamage()
     {
-        if (cnt_damage >= interval_damage)
-        {
-            sound.PlaySeByName("パソコンの電源を切る");
-            cnt_damage = 0;
-            playerHp -= damageSorce;
-            StartCoroutine("damageFlashing");
-            StartCoroutine(shakeCamera(duration, magnitude));
-        }
-        if (playerHp <= 0)
+        if (hp <= 0)
         {
             GameObject.Find("GameManager").GetComponent<RestManager>().Rest--;
-            playerHp = 20;
+            hp = (int)hpSlider.maxValue;
         }
-    }
-
-    public void setPlayerHp(int num)
-    {
-        if (playerHp + num > 20)
-        {
-            return;
-        }
-        playerHp += num;
+        cnt_damage = 0;
+        sound.PlaySeByName("パソコンの電源を切る");
+        StartCoroutine("damageFlashing");
+        StartCoroutine(shakeCamera(duration, magnitude));
     }
 
     IEnumerator damageFlashing()

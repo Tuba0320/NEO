@@ -22,7 +22,7 @@ public class RocketController : MonoBehaviour
     {
         if (cl.gameObject.tag == "Player")
         {
-            cl.gameObject.GetComponent<PlayerController>().ReceveDamage(5);
+            cl.gameObject.GetComponent<PlayerController>().HP += -5;
             Destroy(gameObject);
         }
         else if (cl.gameObject.tag == "Enemy")

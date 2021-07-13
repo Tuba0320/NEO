@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoming: 1
   speed: 100
-  damageSorce: 1
+  damageSorce: 2
   destroyInterval: 3
 --- !u!1001 &8377817516984010981
 PrefabInstance:
