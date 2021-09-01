@@ -28,6 +28,9 @@ public class EquipmentController : MonoBehaviour
         {
             if (num + 1 > equipments.Length - 1)
             {
+                equipments[num].SetActive(false);
+                num = 0;
+                equipments[num].SetActive(true);
                 return;
             }
             equipments[num].SetActive(false);
@@ -38,6 +41,9 @@ public class EquipmentController : MonoBehaviour
         {
             if (num - 1 < 0)
             {
+                equipments[num].SetActive(false);
+                num = equipments.Length - 1;
+                equipments[num].SetActive(true);
                 return;
             }
             equipments[num].SetActive(false);

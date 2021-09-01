@@ -10217,6 +10217,7 @@ GameObject:
   - component: {fileID: 8415227260368476929}
   - component: {fileID: 8415227260368476928}
   - component: {fileID: 1326185604568418800}
+  - component: {fileID: -8248885461435185210}
   m_Layer: 10
   m_Name: Fallout
   m_TagString: Enemy
@@ -10315,14 +10316,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47f560bd696b264aa0f4b72a5799b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 500
-  speed: 0
-  isRotate: 0
-  isHoming: 0
+  hp: 5000
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
   Item: {fileID: 803124592413104650, guid: 1b09b85d20109434dbae9f9246623506, type: 3}
   slider: {fileID: 5491701615256906408}
+--- !u!114 &-8248885461435185210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415227260368476930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc79ddd1680cfc4a90a115eab587b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 25
+  MovePattern: 0000000001
+  RotationPattern: 0001
+  interval: 9
 --- !u!1 &8641231750547289171
 GameObject:
   m_ObjectHideFlags: 0

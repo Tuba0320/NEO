@@ -21,7 +21,7 @@ public class SpawnController : MonoBehaviour
     [SerializeField]
     float interval_spawn03 = 0f;
     float cnt_spawn03 = 0f;
-    int mainSpawnCnt = 0;
+    int oneSpawnCnt = 0;
 
     float cnt_time = 0f;
 
@@ -74,6 +74,30 @@ public class SpawnController : MonoBehaviour
                     case 5:
                         SpawnPattern06();
                         break;
+                    case 6:
+                        SpawnPattern07();
+                        break;
+                    case 7:
+                        SpawnPattern08();
+                        break;
+                    case 8:
+                        SpawnPattern09();
+                        break;
+                    case 9:
+                        SpawnPattern10();
+                        break;
+                    case 10:
+                        SpawnPattern11();
+                        break;
+                    case 11:
+                        SpawnPattern12();
+                        break;
+                    case 12:
+                        SpawnPattern13();
+                        break;
+                    case 13:
+                        SpawnPattern14();
+                        break;
                 }
             }
         }
@@ -81,7 +105,7 @@ public class SpawnController : MonoBehaviour
 
     void SpwanPattern01()
     {
-        if (mainSpawnCnt < 1)
+        if (oneSpawnCnt < 1)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -120,7 +144,7 @@ public class SpawnController : MonoBehaviour
                 posZ -= 10;
             }
 
-            mainSpawnCnt++;
+            oneSpawnCnt++;
         }
         else
         {
@@ -228,11 +252,11 @@ public class SpawnController : MonoBehaviour
 
     void SpwanPattern05()
     {
-        if (mainSpawnCnt >= 1 && cnt_time >= 20)
+        if (oneSpawnCnt >= 1 && cnt_time >= 20)
         {
             ClearDecision();
         }
-        else if (mainSpawnCnt < 1)
+        else if (oneSpawnCnt < 1)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -246,7 +270,7 @@ public class SpawnController : MonoBehaviour
                     posZ -= 50;
                 }
             }
-            mainSpawnCnt++;
+            oneSpawnCnt++;
         }
 
         if (interval_spawn <= cnt_spawn)
@@ -303,7 +327,245 @@ public class SpawnController : MonoBehaviour
         }
     }
 
-    //スポーンする際y座標は100くらい
+    void SpawnPattern07()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            MiniSpwanPattern01(0);
+            cnt_spawn = 0f;
+        }
+
+        if (interval_spawn01 <= cnt_spawn01)
+        {
+            MiniSpwanPattern01(1);
+            cnt_spawn01 = 0f;
+        }
+
+        if (interval_spawn02 <= cnt_spawn02)
+        {
+            MiniSpwanPattern01(2);
+            cnt_spawn02 = 0f;
+        }
+
+        if (cnt_time >= 20)
+        {
+            ClearDecision();
+        }
+    }
+
+    void SpawnPattern08()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            MiniSpwanPattern01(0);
+            cnt_spawn = 0f;
+        }
+
+        if (interval_spawn01 <= cnt_spawn01)
+        {
+            MiniSpwanPattern01(1);
+            cnt_spawn01 = 0f;
+        }
+
+        if (interval_spawn02 <= cnt_spawn02)
+        {
+            MiniSpwanPattern01(2);
+            cnt_spawn02 = 0f;
+        }
+
+        if (cnt_time >= 20)
+        {
+            ClearDecision();
+        }
+    }
+
+    void SpawnPattern09()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            MiniSpwanPattern01(0);
+            cnt_spawn = 0f;
+        }
+
+        if (interval_spawn01 <= cnt_spawn01)
+        {
+            MiniSpwanPattern01(1);
+            cnt_spawn01 = 0f;
+        }
+
+        if (interval_spawn02 <= cnt_spawn02)
+        {
+            int num = Random.Range(250, -250);
+            if (num >= 0)
+            {
+                MiniSpwanPattern02(2, 1);
+            }
+            else
+            {
+                MiniSpwanPattern02(2, -1);
+            }
+            cnt_spawn02 = 0f;
+        }
+
+        if (cnt_time >= 20)
+        {
+            ClearDecision();
+        }
+    }
+
+    void SpawnPattern10()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            MiniSpwanPattern01(0);
+            cnt_spawn = 0f;
+        }
+
+        if (interval_spawn01 <= cnt_spawn01)
+        {
+            MiniSpwanPattern01(1);
+            cnt_spawn01 = 0f;
+        }
+
+        if (interval_spawn02 <= cnt_spawn02)
+        {
+            int num = Random.Range(250, -250);
+            if (num >= 0)
+            {
+                MiniSpwanPattern02(2, 1);
+            }
+            else
+            {
+                MiniSpwanPattern02(2, -1);
+            }
+            cnt_spawn02 = 0f;
+        }
+
+        if (cnt_time >= 20)
+        {
+            ClearDecision();
+        }
+    }
+
+    void SpawnPattern11()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            int num = Random.Range(250, -250);
+            if (num >= 0)
+            {
+                MiniSpwanPattern02(0, 1);
+            }
+            else
+            {
+                MiniSpwanPattern02(0, -1);
+            }
+            cnt_spawn = 0f;
+        }
+
+        if (interval_spawn01 <= cnt_spawn01)
+        {
+            MiniSpwanPattern01(1);
+            cnt_spawn01 = 0f;
+        }
+
+        if (interval_spawn02 <= cnt_spawn02)
+        {
+            MiniSpwanPattern01(2);
+            cnt_spawn02 = 0f;
+        }
+
+        if (cnt_time >= 20)
+        {
+            ClearDecision();
+        }
+    }
+
+    void SpawnPattern12()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            MiniSpwanPattern01(0);
+            cnt_spawn = 0f;
+        }
+
+        if (interval_spawn01 <= cnt_spawn01)
+        {
+            MiniSpwanPattern01(1);
+            cnt_spawn01 = 0f;
+        }
+
+        if (interval_spawn02 <= cnt_spawn02)
+        {
+            MiniSpwanPattern01(2);
+            cnt_spawn02 = 0f;
+        }
+
+        if (cnt_time >= 20)
+        {
+            ClearDecision();
+        }
+    }
+
+    void SpawnPattern13()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            MiniSpwanPattern01(0);
+            cnt_spawn = 0f;
+        }
+
+        if (interval_spawn01 <= cnt_spawn01)
+        {
+            MiniSpwanPattern01(1);
+            cnt_spawn01 = 0f;
+        }
+
+        if (interval_spawn02 <= cnt_spawn02)
+        {
+            MiniSpwanPattern01(2);
+            cnt_spawn02 = 0f;
+        }
+
+        if (cnt_time >= 20)
+        {
+            ClearDecision();
+        }
+    }
+
+    void SpawnPattern14()
+    {
+        if (interval_spawn <= cnt_spawn)
+        {
+            MiniSpwanPattern01(0);
+            cnt_spawn = 0f;
+        }
+
+        if (interval_spawn01 <= cnt_spawn01)
+        {
+            MiniSpwanPattern01(1);
+            cnt_spawn01 = 0f;
+        }
+
+        if (interval_spawn02 <= cnt_spawn02)
+        {
+            int num = Random.Range(250, -250);
+            if (num >= 0)
+            {
+                MiniSpwanPattern02(2, 1);
+            }
+            else
+            {
+                MiniSpwanPattern02(2, -1);
+            }
+            cnt_spawn02 = 0f;
+        }
+
+        if (cnt_time >= 20)
+        {
+            ClearDecision();
+        }
+    }
 
     void MiniSpwanPattern01(int num)//最奥からPositionX250~-250の範囲で出現するパターン
     {

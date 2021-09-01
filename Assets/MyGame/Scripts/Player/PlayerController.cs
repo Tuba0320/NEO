@@ -5,15 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    int[] levelNum = { 1, 1, 1 };
-    int enemyHits;
-    public int EnemyHits
-    {
-        get { return enemyHits; }
-        set { enemyHits = value; }
-    }
-    static int level = 1;
-
     static SoundManager sound;
     static int cnt_find = 0;
     Vector3 pos;
@@ -112,7 +103,6 @@ public class PlayerController : MonoBehaviour
             sound.StopSe();
         }
         movePermission();
-        Debug.Log(level);
     }
     
     void FixedUpdate()
@@ -144,19 +134,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += transform.TransformDirection(Vector3.forward * AlwaysMoveSpeed);
         }
-        LevelDecision();
         moveExcution();
-    }
-
-    void LevelDecision()
-    {
-        for (int i = 0;i < levelNum.Length;i++)
-        {
-            if (enemyHits >= levelNum[i])
-            {
-                level = i + 1;
-            }
-        }
     }
     
     void movePermission()

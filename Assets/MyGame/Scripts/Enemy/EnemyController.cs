@@ -26,9 +26,6 @@ public class EnemyController : MonoBehaviour
 
     float cnt_se;
 
-    [SerializeField]
-    int destroyCnt;
-
     int itemNum = 0;
 
     void Start()
@@ -40,7 +37,6 @@ public class EnemyController : MonoBehaviour
             score = new Score();
             cnt_find++;
         }
-        Destroy(gameObject, destroyCnt);
         scorePoint = scorePoint * hp;
         if (hp == 1)
         {

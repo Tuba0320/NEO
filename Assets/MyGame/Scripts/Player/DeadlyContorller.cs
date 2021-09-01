@@ -54,7 +54,7 @@ public class DeadlyContorller : MonoBehaviour
     {
         if (deadlyNum >= 3)
         {
-            point.transform.Find("Point03").gameObject.GetComponent<Image>().color = Color.yellow;
+            point.transform.Find("Point03").gameObject.GetComponent<Image>().color = Color.red;
         }
         else
         {
@@ -62,7 +62,7 @@ public class DeadlyContorller : MonoBehaviour
         }
         if (deadlyNum >= 2)
         {
-            point.transform.Find("Point02").gameObject.GetComponent<Image>().color = Color.yellow;
+            point.transform.Find("Point02").gameObject.GetComponent<Image>().color = Color.red;
         }
         else
         {
@@ -70,7 +70,7 @@ public class DeadlyContorller : MonoBehaviour
         }
         if (deadlyNum >= 1)
         {
-            point.transform.Find("Point01").gameObject.GetComponent<Image>().color = Color.yellow;
+            point.transform.Find("Point01").gameObject.GetComponent<Image>().color = Color.red;
         }
         else
         {

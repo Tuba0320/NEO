@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
-    static GameObject target;
+    static GameObject player;
     static int cnt_find = 0;
 
     [SerializeField]
@@ -32,14 +32,14 @@ public class EnemyMove : MonoBehaviour
         SceneManager.sceneLoaded += TargetFind;
         if (cnt_find < 1)
         {
-            target = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindGameObjectWithTag("Player");
             cnt_find++;
         }
     }
 
     void TargetFind(Scene sneneName, LoadSceneMode sceneMode)
     {
-        target = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()
@@ -95,6 +95,7 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
+    //cnt変数（Update関数で値が増加中）がinterval変数より下回っている間は、プレイヤーに近づきながらy座標の0~100までの間を上下に動く。そして値が上回ったらEscape関数を呼び出し続ける
     void MovePattern01()
     {
         if (cnt >= interval)
@@ -103,7 +104,7 @@ public class EnemyMove : MonoBehaviour
             return;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         transform.position = new Vector3(transform.position.x, posY, transform.position.z + -0.05f);
 
         if (isReturn)
@@ -125,16 +126,19 @@ public class EnemyMove : MonoBehaviour
 
     }
 
+    //プレイヤーから見て奥からまっすぐ飛ぶ
     void MovePattern02()
     {
         transform.Translate(0, 0, 1.5f * speed, Space.World);
     }
 
+    //プレイヤーに体当たりする
     void MovePattern03()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
+    //antiFlagがtrueの場合、オブジェクトはプレイヤーから見て左方向に、Falseであれば右方向に進む。true,falseの両方も指定した値からはみ出た場合そのオブジェクトは消滅する
     void MovePattern04()
     {
         if (antiFlag)
@@ -152,20 +156,21 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
+    //プレイヤーとの距離の差が50より上回る場合はプレイヤーに接近する。下回った場合は接近をやめ、差を50より上回る様に動く。これらが繰り替えされ、プレイヤーの目の前にいる状態になる
     void MovePattern05()
     {
-        if (target.transform.position.z - transform.position.z <= 50)
+        if (player.transform.position.z - transform.position.z <= 50)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime * -1);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime * -1);
             return;
         }
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime * 10);
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime * 10);
     }
 
+    //x座標の150~-150の間を左右に動く
     void MovePattern06()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        transform.position = new Vector3(posX, transform.position.y, transform.position.z + -0.1f);
+        transform.position = new Vector3(posX, transform.position.y, transform.position.z);
 
         if (isReturn)
         {
@@ -188,7 +193,7 @@ public class EnemyMove : MonoBehaviour
 
     void EnemyDestroy()
     {
-        if (target.transform.position.z < transform.position.z)
+        if (player.transform.position.z < transform.position.z)
         {
             Destroy(gameObject);
         }
@@ -227,11 +232,13 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
+    //プレイヤーに向く
     void RotationPattern01()
     {
-        transform.LookAt(target.transform);
+        transform.LookAt(player.transform);
     }
 
+    //回転する
     void RotationPattern02()
     {
         transform.Rotate(new Vector3(0, 1, 0), 25);

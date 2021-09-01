@@ -420,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 2185788596783466596}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1381687213645913694}
   - {fileID: 4973551439637827155}
@@ -934,6 +934,7 @@ GameObject:
   - component: {fileID: 5355653754265675392}
   - component: {fileID: 5355653754265675395}
   - component: {fileID: 5668338802902435625}
+  - component: {fileID: 4186257119322094809}
   m_Layer: 10
   m_Name: Satsuzin
   m_TagString: Enemy
@@ -1014,7 +1015,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 4, y: 4, z: 4}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &5355653754265675395
 MonoBehaviour:
@@ -1029,9 +1030,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
-  speed: 500
-  isRotate: 0
-  isHoming: 1
   particle: {fileID: 1886461600818200425, guid: 55b9ca71f9fc843459ea0b2e2943127f,
     type: 3}
   Item: {fileID: 803124592413104650, guid: 1b09b85d20109434dbae9f9246623506, type: 3}
@@ -1050,6 +1048,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 2185788596783466596}
   interval: 5
+--- !u!114 &4186257119322094809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355653754265675394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc79ddd1680cfc4a90a115eab587b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 225
+  MovePattern: 000001
+  RotationPattern: 01
+  interval: 9
 --- !u!1 &5853138987349904920
 GameObject:
   m_ObjectHideFlags: 0

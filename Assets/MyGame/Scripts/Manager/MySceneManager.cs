@@ -11,6 +11,7 @@ public class MySceneManager : MonoBehaviour
     float timeUp = 5.0f;
     float cnt = 0f;
     ScreenManager sm;
+    StageController sc;
 
     float cnt_t = 0f;
     int cnt_s = 0;
@@ -19,6 +20,7 @@ public class MySceneManager : MonoBehaviour
     void Start()
     {
         sm = GameObject.Find("SceneManager").GetComponent<ScreenManager>();
+        sc = new StageController();
     }
 
     void Update()
@@ -66,12 +68,12 @@ public class MySceneManager : MonoBehaviour
     public void GoToStage()
     {
         Time.timeScale = 1;
-        if (GetComponent<StageManager>().IsStageClear >= 2)
+        if (sc.IsStageClear >= 2)
         {
             SceneManager.LoadScene("GameClearScene");
             return;
         }
-        SceneManager.LoadScene("Stage" + (GetComponent<StageManager>().IsStageClear + 1));
+        SceneManager.LoadScene("Stage" + (sc.IsStageClear + 1));
     }
 
     public void ToGameOverScene(bool isGameOver)
@@ -105,7 +107,7 @@ public class MySceneManager : MonoBehaviour
     {
         Score score = new Score();
         GetComponent<RestManager>().Rest = 3;
-        GetComponent<StageManager>().IsStageClear = 0;
+        sc.IsStageClear = 0;
         score.Initialize();
         SceneManager.LoadScene("TitleScene");
     }

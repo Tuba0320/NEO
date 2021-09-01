@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class StageController : MonoBehaviour
 {
-    [SerializeField]
-    GameObject player;
+    static int isStageClear = 0;
+    public int IsStageClear 
+    {
+        get { return isStageClear; }
+        set { isStageClear = value; }
+    }
 
     [SerializeField]
     GameObject[] spawners;
@@ -119,9 +123,8 @@ public class StageController : MonoBehaviour
         {
             time.TimeSave();
             score.AddScore(gameManager.GetComponent<RestManager>().Rest, time.getTime(),enemyPoint);
-            gameManager.GetComponent<StageManager>().IsStageClear++;
+            isStageClear++;
             gameManager.GetComponent<SoundManager>().StopSe();
-            player.GetComponent<PlayerController>().EnemyHits = enemyCnt;
             scoreView.SetActive(true);
             viewCnt++;
             Time.timeScale = 0;

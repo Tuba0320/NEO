@@ -1253,7 +1253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc79ddd1680cfc4a90a115eab587b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 50
   MovePattern: 000000000001
   RotationPattern: 0100
   interval: 18

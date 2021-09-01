@@ -7,20 +7,15 @@ public class PhaseView : MonoBehaviour
 {
     [SerializeField]
     Text text;
-    static StageManager stageM;
-    static int cnt_find = 0;
+    StageController sc;
 
     void Start()
     {
-        if (cnt_find < 1)
-        {
-            stageM = GameObject.Find("GameManager").GetComponent<StageManager>();
-            cnt_find++;
-        }
+        sc = new StageController();
     }
 
     void Update()
     {
-        text.text = stageM.IsStageClear.ToString();
+        text.text = sc.IsStageClear.ToString();
     }
 }

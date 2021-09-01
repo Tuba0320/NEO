@@ -1254,9 +1254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  isHoming: 1
   MovePattern: 0100
   RotationPattern: 0100
+  interval: 9
 --- !u!1 &4680041042278475544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.35
 --- !u!1 &6500740650536701682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   Bflag: 0
   enemyBulletPrefab: {fileID: 4953489435100600765, guid: 4ded7044ed8ec8d439e6a3f4f77d5c89,
     type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.35
 --- !u!1 &6554088669913138610
 GameObject:
   m_ObjectHideFlags: 0

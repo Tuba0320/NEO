@@ -181,12 +181,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners:
-  - {fileID: 2034301262337182052, guid: b3bdb5c7540ea034a804de520146b2f8, type: 3}
-  - {fileID: 2034301262337182052, guid: f17551ab33c83884d9cf0491f699354f, type: 3}
+  - {fileID: 2034301262337182052, guid: 1297b8160a7faf34ca3cfeffad70d041, type: 3}
   - {fileID: 2034301262337182052, guid: c3f6446ab6ffa2b40afa316da8f92139, type: 3}
-  - {fileID: 2034301262337182052, guid: 106d419e1c4819141b048b45e83e59c4, type: 3}
-  - {fileID: 2034301262337182052, guid: a11e9a34182262241b61e5bf9c271ae1, type: 3}
   - {fileID: 2034301262337182052, guid: 8cf7643d8f5558e4097c60c099a71f90, type: 3}
+  - {fileID: 2034301262337182052, guid: e1c33fde4a44d154c82df6bc044e1604, type: 3}
+  - {fileID: 2034301262337182052, guid: d125b3bb6c0c67044875d433211169fc, type: 3}
+  - {fileID: 2034301262337182052, guid: bdc454517a0ef7042930970444081bd0, type: 3}
   scoreView: {fileID: 1211401515}
   Field:
   - {fileID: 8653055515369087733, guid: 3e1a0f2c6a0e2d94e89bb1fcc0b3930a, type: 3}
