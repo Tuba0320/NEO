@@ -698,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 275}
+  m_AnchoredPosition: {x: 225, y: 275}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469876652
@@ -748,7 +748,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u203B\u521D\u3081\u3066\u306E\u65B9\u306FManual\u306E\u89B3\u89A7\u3092\u63A8\u5968\u3057\u307E\u3059"
+  m_Text: "\u203B\u521D\u3081\u3066\u306E\u65B9\u306FManual\u3092\u304A\u9858\u3044\u3057\u307E\u3059"
 --- !u!222 &469876654
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1875,7 +1875,7 @@ PrefabInstance:
     - target: {fileID: 7301268626427315594, guid: 533c45e61f64b0f4e9102c850a8b5983,
         type: 3}
       propertyPath: bgmName
-      value: none
+      value: TitleBgm
       objectReference: {fileID: 0}
     - target: {fileID: 7301268626427315594, guid: 533c45e61f64b0f4e9102c850a8b5983,
         type: 3}

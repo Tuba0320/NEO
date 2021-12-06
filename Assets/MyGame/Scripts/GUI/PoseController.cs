@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class PoseController : MonoBehaviour
 {
     [SerializeField]
-    Text text;
+    GameObject menu;
+    [SerializeField]
+    GameObject sceneManager;
     bool isPose = false;
     float cnt;
-
+    
     void Update()
     {
         cnt += Time.deltaTime;
@@ -20,15 +22,20 @@ public class PoseController : MonoBehaviour
 
         if (Input.GetKeyDown("p") && isPose)
         {
-            text.enabled = false;
+            menu.SetActive(false);
             Time.timeScale = 1f;
             isPose = false;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else if (Input.GetKeyDown("p") && !isPose)
         {
-            text.enabled = true;
+            sceneManager.GetComponent<ScreenManager>().StopSe();
+            menu.SetActive(true);
             Time.timeScale = 0f;
             isPose = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             return;
         }
     }

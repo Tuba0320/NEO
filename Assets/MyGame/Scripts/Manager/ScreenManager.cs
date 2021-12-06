@@ -42,6 +42,7 @@ public class ScreenManager : MonoBehaviour
     public void selectStage()
     {
         gameManager.GetComponent<MySceneManager>().GoToStage();
+        Time.timeScale = 1f;
     }
 
     public void selectScene(string name)
@@ -49,8 +50,10 @@ public class ScreenManager : MonoBehaviour
         if (name == "TitleScene")
         {
             gameManager.GetComponent<MySceneManager>().DataClear();
+            Time.timeScale = 1f;
         }
         gameManager.GetComponent<MySceneManager>().GetToScene(name);
+        Time.timeScale = 1f;
     }
 
     public void StartFade()
@@ -61,6 +64,11 @@ public class ScreenManager : MonoBehaviour
         }
 
         StartCoroutine("Fadeout");
+    }
+
+    public void StopSe()
+    {
+        gameManager.GetComponent<SoundManager>().StopSe();
     }
 
     IEnumerator Fadeout()
@@ -82,32 +90,4 @@ public class ScreenManager : MonoBehaviour
             yield return null;
         }
     }
-
-    /*void textFlashing()
-    {
-        float textAlfa = 1f;
-        bool alphaAdditionFlag = true;
-        duration = 8f;
-
-        if (textAlfa >= 0.5f && !alphaAdditionFlag)
-        {
-            textAlfa -= Time.deltaTime / duration;
-            text.color = new Color(text.color.r, text.color.g, text.color.b, textAlfa);
-
-            if (textAlfa <= 0.5f)
-            {
-                alphaAdditionFlag = true;
-            }
-        }
-        else if (textAlfa <= 1f && alphaAdditionFlag)
-        {
-            textAlfa += Time.deltaTime / duration;
-            text.color = new Color(text.color.r, text.color.g, text.color.b, textAlfa);
-
-            if (textAlfa >= 1f)
-            {
-                alphaAdditionFlag = false;
-            }
-        }
-    }*/
 }
